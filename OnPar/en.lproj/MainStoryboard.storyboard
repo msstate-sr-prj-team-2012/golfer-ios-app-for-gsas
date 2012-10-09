@@ -54,6 +54,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="470" y="-284"/>
         </scene>
         <!--GolfersVC-->
         <scene sceneID="edS-9Y-JCa">
@@ -109,7 +110,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T4i-GK-APx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="956" y="-1055"/>
+            <point key="canvasLocation" x="956" y="-655"/>
         </scene>
         <!--Golfer AddVC-->
         <scene sceneID="wFj-XE-AKg">
@@ -187,7 +188,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A34-QJ-pSl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1416" y="-1055"/>
+            <point key="canvasLocation" x="1388" y="-655"/>
         </scene>
         <!--StrokeVC-->
         <scene sceneID="Xy6-VE-p8v">
@@ -468,15 +469,34 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dr9-ey-fTk">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="75" id="5US-jy-TUe"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Number of Putts" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tv6-Fa-sJf">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stepper hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="SYg-EU-aUs"/>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="AwQ-VR-gTN" firstAttribute="centerX" secondItem="eME-9A-yzQ" secondAttribute="centerX" type="default" id="1ZM-09-cCc"/>
+                            <constraint firstItem="SYg-EU-aUs" firstAttribute="top" secondItem="dr9-ey-fTk" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="1dc-BK-sA1"/>
                             <constraint firstItem="g6N-pg-yLt" firstAttribute="top" secondItem="ORJ-Fm-EXj" secondAttribute="top" constant="160" id="4Od-Ya-7Tw"/>
+                            <constraint firstItem="uRE-pd-DZv" firstAttribute="centerX" secondItem="eME-9A-yzQ" secondAttribute="centerX" type="default" id="9Nd-oJ-MY9"/>
                             <constraint firstItem="eME-9A-yzQ" firstAttribute="top" secondItem="ORJ-Fm-EXj" secondAttribute="top" type="default" id="DqQ-HV-x2T"/>
                             <constraint firstItem="eME-9A-yzQ" firstAttribute="trailing" secondItem="ORJ-Fm-EXj" secondAttribute="trailing" type="default" id="J8U-zz-X5q"/>
                             <constraint firstItem="eME-9A-yzQ" firstAttribute="leading" secondItem="ORJ-Fm-EXj" secondAttribute="leading" type="default" id="JoH-aJ-eMo"/>
+                            <constraint firstItem="dr9-ey-fTk" firstAttribute="top" secondItem="Tv6-Fa-sJf" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="JuS-27-MWJ"/>
                             <constraint firstItem="AwQ-VR-gTN" firstAttribute="centerX" secondItem="uRE-pd-DZv" secondAttribute="centerX" type="default" id="NGT-Dq-1bC"/>
+                            <constraint firstItem="uRE-pd-DZv" firstAttribute="centerX" secondItem="dr9-ey-fTk" secondAttribute="centerX" type="default" id="RYw-1Q-a64"/>
+                            <constraint firstItem="Tv6-Fa-sJf" firstAttribute="centerX" secondItem="g6N-pg-yLt" secondAttribute="centerX" type="default" id="UUk-o1-CJ3"/>
+                            <constraint firstItem="Tv6-Fa-sJf" firstAttribute="centerX" secondItem="SYg-EU-aUs" secondAttribute="centerX" type="default" id="Y0Q-TP-BaU"/>
+                            <constraint firstAttribute="bottom" secondItem="SYg-EU-aUs" secondAttribute="bottom" constant="88" id="bde-2G-zuN"/>
                             <constraint firstItem="AwQ-VR-gTN" firstAttribute="top" secondItem="ORJ-Fm-EXj" secondAttribute="top" constant="102" id="iA6-g2-SCP"/>
                             <constraint firstItem="uRE-pd-DZv" firstAttribute="top" secondItem="ORJ-Fm-EXj" secondAttribute="top" constant="244" id="pXn-WJ-58z"/>
                             <constraint firstItem="uRE-pd-DZv" firstAttribute="leading" secondItem="g6N-pg-yLt" secondAttribute="leading" type="default" id="rYf-s0-OTJ"/>
@@ -697,7 +717,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="8eN-YJ-ZEd"/>
+        <segue reference="aea-rb-H79"/>
         <segue reference="mAg-Ok-lx9"/>
     </inferredMetricsTieBreakers>
 </document>
