@@ -28,12 +28,15 @@
 		B679D7001623C5AB00E19F98 /* MSState.png in Resources */ = {isa = PBXBuildFile; fileRef = B679D6FE1623C5AB00E19F98 /* MSState.png */; };
 		B679D7041623C5C600E19F98 /* plus.png in Resources */ = {isa = PBXBuildFile; fileRef = B679D7021623C5C600E19F98 /* plus.png */; };
 		B679D7051623C5C600E19F98 /* plus@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B679D7031623C5C600E19F98 /* plus@2x.png */; };
+		B6AE43CE162D9F420070136C /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = B6AE43CD162D9F420070136C /* icon.png */; };
+		B6AE43D0162D9F490070136C /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B6AE43CF162D9F490070136C /* icon@2x.png */; };
+		B6B4F5D4162A56CC00C628EA /* MainVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B6B4F5D3162A56CC00C628EA /* MainVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		B63DA9841623E0F0000A968A /* OptionsAllVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OptionsAllVC.h; sourceTree = "<group>"; };
 		B63DA9851623E0F0000A968A /* OptionsAllVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OptionsAllVC.m; sourceTree = "<group>"; };
-		B679D6C01623C44200E19F98 /* OnPar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OnPar.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B679D6C01623C44200E19F98 /* On Par.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "On Par.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B679D6C41623C44200E19F98 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B679D6C61623C44200E19F98 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B679D6C81623C44200E19F98 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -63,6 +66,10 @@
 		B679D6FE1623C5AB00E19F98 /* MSState.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MSState.png; sourceTree = "<group>"; };
 		B679D7021623C5C600E19F98 /* plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plus.png; sourceTree = "<group>"; };
 		B679D7031623C5C600E19F98 /* plus@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "plus@2x.png"; sourceTree = "<group>"; };
+		B6AE43CD162D9F420070136C /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = ../icon.png; sourceTree = "<group>"; };
+		B6AE43CF162D9F490070136C /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon@2x.png"; path = "../icon@2x.png"; sourceTree = "<group>"; };
+		B6B4F5D2162A56CC00C628EA /* MainVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainVC.h; sourceTree = "<group>"; };
+		B6B4F5D3162A56CC00C628EA /* MainVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,7 +98,7 @@
 		B679D6C11623C44200E19F98 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B679D6C01623C44200E19F98 /* OnPar.app */,
+				B679D6C01623C44200E19F98 /* On Par.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -109,8 +116,8 @@
 		B679D6CA1623C44200E19F98 /* OnPar */ = {
 			isa = PBXGroup;
 			children = (
-				B679D6E71623C47500E19F98 /* Delegates */,
 				B679D6DC1623C44200E19F98 /* MainStoryboard.storyboard */,
+				B679D6E71623C47500E19F98 /* Delegates */,
 				B679D6E81623C48600E19F98 /* View Controllers */,
 				B679D6CB1623C44200E19F98 /* Supporting Files */,
 			);
@@ -149,6 +156,8 @@
 				B679D6F01623C4EE00E19F98 /* GolferChangeVC.m */,
 				B679D6E91623C4C100E19F98 /* GolfersVC.h */,
 				B679D6EA1623C4C100E19F98 /* GolfersVC.m */,
+				B6B4F5D2162A56CC00C628EA /* MainVC.h */,
+				B6B4F5D3162A56CC00C628EA /* MainVC.m */,
 				B63DA9841623E0F0000A968A /* OptionsAllVC.h */,
 				B63DA9851623E0F0000A968A /* OptionsAllVC.m */,
 				B679D6F21623C52500E19F98 /* StrokeVC.h */,
@@ -165,10 +174,12 @@
 				B679D6D61623C44200E19F98 /* Default.png */,
 				B679D6D81623C44200E19F98 /* Default@2x.png */,
 				B679D6DA1623C44200E19F98 /* Default-568h@2x.png */,
+				B679D6FD1623C5AB00E19F98 /* GolfCourse.png */,
+				B6AE43CD162D9F420070136C /* icon.png */,
+				B6AE43CF162D9F490070136C /* icon@2x.png */,
+				B679D6FE1623C5AB00E19F98 /* MSState.png */,
 				B679D7021623C5C600E19F98 /* plus.png */,
 				B679D7031623C5C600E19F98 /* plus@2x.png */,
-				B679D6FD1623C5AB00E19F98 /* GolfCourse.png */,
-				B679D6FE1623C5AB00E19F98 /* MSState.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -190,7 +201,7 @@
 			);
 			name = OnPar;
 			productName = OnPar;
-			productReference = B679D6C01623C44200E19F98 /* OnPar.app */;
+			productReference = B679D6C01623C44200E19F98 /* On Par.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -233,6 +244,8 @@
 				B679D7001623C5AB00E19F98 /* MSState.png in Resources */,
 				B679D7041623C5C600E19F98 /* plus.png in Resources */,
 				B679D7051623C5C600E19F98 /* plus@2x.png in Resources */,
+				B6AE43CE162D9F420070136C /* icon.png in Resources */,
+				B6AE43D0162D9F490070136C /* icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,6 +265,7 @@
 				B679D6F41623C52500E19F98 /* StrokeVC.m in Sources */,
 				B679D6F71623C54C00E19F98 /* ClubSelectionVC.m in Sources */,
 				B63DA9861623E0F0000A968A /* OptionsAllVC.m in Sources */,
+				B6B4F5D4162A56CC00C628EA /* MainVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -330,11 +344,12 @@
 		B679D6E51623C44200E19F98 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "OnPar/OnPar-Prefix.pch";
 				INFOPLIST_FILE = "OnPar/OnPar-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "On Par";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -346,7 +361,7 @@
 				GCC_PREFIX_HEADER = "OnPar/OnPar-Prefix.pch";
 				INFOPLIST_FILE = "OnPar/OnPar-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "On Par";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

@@ -59,7 +59,7 @@
     NSLog(@"User clicked End Stroke");
     
     UIAlertView *alert =[[UIAlertView alloc]
-                         initWithTitle:@"Are you ready to end this stroke?"
+                         initWithTitle:@"Are you ready to end this shot?"
                          message:@"Only answer when you are at the ball's current location"
                          delegate:self
                         cancelButtonTitle:@"NO"
