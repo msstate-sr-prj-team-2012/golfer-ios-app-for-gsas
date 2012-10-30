@@ -15,8 +15,6 @@
 @implementation GolferAddVC
 
 @synthesize golferNickname;
-@synthesize memberControl;
-@synthesize golferIdLabel;
 @synthesize golferIdTextField;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -32,6 +30,22 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
+                                   initWithTarget:self
+                                   action:@selector(dismissKeyboard)];
+    
+    [self.view addGestureRecognizer:tap];
+    
+    [self populateTees];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)theTextField {
+    if (theTextField == self.golferIdTextField) {
+        [theTextField resignFirstResponder];
+    } else if (theTextField == self.golferNickname) {
+        [self.golferIdTextField becomeFirstResponder];
+    }
+    return YES;
 }
 
 - (void)didReceiveMemoryWarning
@@ -42,22 +56,56 @@
 
 - (void)viewDidUnload {
     [self setGolferNickname:nil];
-    [self setMemberControl:nil];
-    [self setGolferIdLabel:nil];
     [self setGolferIdTextField:nil];
     [super viewDidUnload];
 }
-- (IBAction)memberControlChanged:(id)sender {
+
+- (IBAction)saveGolferInfo:(id)sender {
+    // Save Golfer Info
     
-    if(memberControl.selectedSegmentIndex == 1)
-    {
-        golferIdLabel.hidden = NO;
-        golferIdTextField.hidden = NO;
-    }
-    else
-    {
-        golferIdLabel.hidden = YES;
-        golferIdTextField.hidden = YES;
-    }
+    
+    // Return to Previous View
+    [self.navigationController popViewControllerAnimated:YES];
 }
+
+-(void)dismissKeyboard {
+    [golferNickname resignFirstResponder];
+    [golferIdTextField resignFirstResponder];
+}
+
+#pragma mark - Loading Arrays
+
+- (void)populateTees
+{
+    tees = [[NSMutableArray alloc] init];
+    [tees addObject:@" Beginner "];
+    [tees addObject:@" Intermediate "];
+    [tees addObject:@" Advanced "];
+    [tees addObject:@" Professional "];
+}
+
+#pragma mark - UIPickerView methods
+
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)thePickerView
+{
+    return 1;
+}
+
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
+{
+    if(component == 0)
+        return [tees count];
+    else
+        return 0;
+}
+
+- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
+{
+    if (component == 0)
+        return [tees objectAtIndex:row];
+    else
+        return 0;
+}
+
+
 @end

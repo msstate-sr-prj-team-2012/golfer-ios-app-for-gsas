@@ -15,12 +15,14 @@
 {
     __weak IBOutlet UIPickerView *clubSelectionPicker;
     NSMutableArray *clubType;
-    NSMutableArray *clubNum;
+    NSMutableArray *woodNum;
+    NSMutableArray *hybridNum;
+    NSMutableArray *ironNum;
     NSMutableArray *wedgeType;
 }
 
-- (void)populateClubTypes;
-- (void)populateClubNumbers;
-- (void)populateWedgeTypes;
+- (void)populateClubArrays;
+
+- (IBAction)saveClubSelection:(id)sender;
 
 @end

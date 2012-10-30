@@ -1,18 +1,18 @@
 //
-//  MainVC.m
+//  PenaltyVC.m
 //  OnPar
 //
-//  Created by Chad Galloway on 10/13/12.
+//  Created by Chad Galloway on 10/28/12.
 //  Copyright (c) 2012 Mississippi State. All rights reserved.
 //
 
-#import "MainVC.h"
+#import "PenaltyVC.h"
 
-@interface MainVC ()
+@interface PenaltyVC ()
 
 @end
 
-@implementation MainVC
+@implementation PenaltyVC
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -35,11 +35,11 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)zoomIn:(UIPinchGestureRecognizer *)recognizer
-{
-    recognizer.view.transform = CGAffineTransformScale(recognizer.view.transform, recognizer.scale, recognizer.scale);
-    
-    recognizer.scale = 1;
+- (IBAction)outOfBounds:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
+- (IBAction)waterHazard:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
 @end

@@ -8,6 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		B63DA9861623E0F0000A968A /* OptionsAllVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B63DA9851623E0F0000A968A /* OptionsAllVC.m */; };
+		B665966D163D2BC100FB19A9 /* ShotOptionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B665966C163D2BC100FB19A9 /* ShotOptionVC.m */; };
+		B6659676163D3A9200FB19A9 /* clubs.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B6659672163D3A9200FB19A9 /* clubs.jpg */; };
+		B6659677163D3A9200FB19A9 /* compass.png in Resources */ = {isa = PBXBuildFile; fileRef = B6659673163D3A9200FB19A9 /* compass.png */; };
+		B6659678163D3A9200FB19A9 /* checkbox.png in Resources */ = {isa = PBXBuildFile; fileRef = B6659674163D3A9200FB19A9 /* checkbox.png */; };
+		B6659679163D3A9200FB19A9 /* ballontee.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B6659675163D3A9200FB19A9 /* ballontee.jpg */; };
+		B665967C163D3D2D00FB19A9 /* lake.png in Resources */ = {isa = PBXBuildFile; fileRef = B665967B163D3D2D00FB19A9 /* lake.png */; };
+		B665967F163D3EAE00FB19A9 /* clubs5.png in Resources */ = {isa = PBXBuildFile; fileRef = B665967D163D3EAE00FB19A9 /* clubs5.png */; };
+		B6659680163D3EAE00FB19A9 /* hit.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B665967E163D3EAE00FB19A9 /* hit.jpg */; };
+		B6659682163D41F000FB19A9 /* golfswing.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B6659681163D41F000FB19A9 /* golfswing.jpg */; };
+		B6659684163D458F00FB19A9 /* map.png in Resources */ = {isa = PBXBuildFile; fileRef = B6659683163D458F00FB19A9 /* map.png */; };
+		B6659686163D45E100FB19A9 /* golfswing.png in Resources */ = {isa = PBXBuildFile; fileRef = B6659685163D45E100FB19A9 /* golfswing.png */; };
+		B6659688163D465600FB19A9 /* bagofclubs.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B6659687163D465600FB19A9 /* bagofclubs.jpg */; };
+		B665968B163D46C100FB19A9 /* clubsongreen.png in Resources */ = {isa = PBXBuildFile; fileRef = B6659689163D46C100FB19A9 /* clubsongreen.png */; };
+		B665968C163D46C100FB19A9 /* onparlogo.png in Resources */ = {isa = PBXBuildFile; fileRef = B665968A163D46C100FB19A9 /* onparlogo.png */; };
+		B665968F163D496700FB19A9 /* PenaltyVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B665968E163D496700FB19A9 /* PenaltyVC.m */; };
+		B6659695163DD58D00FB19A9 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = B6659694163DD58D00FB19A9 /* settings.png */; };
+		B6659699163DD6E500FB19A9 /* CourseSelectionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B6659698163DD6E500FB19A9 /* CourseSelectionVC.m */; };
+		B665969B163DEBC800FB19A9 /* scorecard.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B665969A163DEBC800FB19A9 /* scorecard.jpg */; };
+		B665969D163DEC9200FB19A9 /* To The Green.png in Resources */ = {isa = PBXBuildFile; fileRef = B665969C163DEC9200FB19A9 /* To The Green.png */; };
+		B665969F163DF52600FB19A9 /* course selection.png in Resources */ = {isa = PBXBuildFile; fileRef = B665969E163DF52600FB19A9 /* course selection.png */; };
 		B679D6C51623C44200E19F98 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B679D6C41623C44200E19F98 /* UIKit.framework */; };
 		B679D6C71623C44200E19F98 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B679D6C61623C44200E19F98 /* Foundation.framework */; };
 		B679D6C91623C44200E19F98 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B679D6C81623C44200E19F98 /* CoreGraphics.framework */; };
@@ -16,26 +36,71 @@
 		B679D6D51623C44200E19F98 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B679D6D41623C44200E19F98 /* AppDelegate.m */; };
 		B679D6D71623C44200E19F98 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = B679D6D61623C44200E19F98 /* Default.png */; };
 		B679D6D91623C44200E19F98 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B679D6D81623C44200E19F98 /* Default@2x.png */; };
-		B679D6DB1623C44200E19F98 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B679D6DA1623C44200E19F98 /* Default-568h@2x.png */; };
 		B679D6DE1623C44200E19F98 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B679D6DC1623C44200E19F98 /* MainStoryboard.storyboard */; };
 		B679D6E11623C44200E19F98 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B679D6E01623C44200E19F98 /* ViewController.m */; };
 		B679D6EB1623C4C100E19F98 /* GolfersVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B679D6EA1623C4C100E19F98 /* GolfersVC.m */; };
 		B679D6EE1623C4D600E19F98 /* GolferAddVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B679D6ED1623C4D600E19F98 /* GolferAddVC.m */; };
 		B679D6F11623C4EE00E19F98 /* GolferChangeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B679D6F01623C4EE00E19F98 /* GolferChangeVC.m */; };
-		B679D6F41623C52500E19F98 /* StrokeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B679D6F31623C52500E19F98 /* StrokeVC.m */; };
 		B679D6F71623C54C00E19F98 /* ClubSelectionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B679D6F61623C54C00E19F98 /* ClubSelectionVC.m */; };
 		B679D6FF1623C5AB00E19F98 /* GolfCourse.png in Resources */ = {isa = PBXBuildFile; fileRef = B679D6FD1623C5AB00E19F98 /* GolfCourse.png */; };
 		B679D7001623C5AB00E19F98 /* MSState.png in Resources */ = {isa = PBXBuildFile; fileRef = B679D6FE1623C5AB00E19F98 /* MSState.png */; };
 		B679D7041623C5C600E19F98 /* plus.png in Resources */ = {isa = PBXBuildFile; fileRef = B679D7021623C5C600E19F98 /* plus.png */; };
 		B679D7051623C5C600E19F98 /* plus@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B679D7031623C5C600E19F98 /* plus@2x.png */; };
+		B67AF7671635B74F008A9E9F /* GolfClub-GTASA-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = B67AF7661635B74F008A9E9F /* GolfClub-GTASA-icon.png */; };
+		B67AF76A1635BA00008A9E9F /* Golf_Club_Sports2010.png in Resources */ = {isa = PBXBuildFile; fileRef = B67AF7691635BA00008A9E9F /* Golf_Club_Sports2010.png */; };
+		B67AF76D1635BA40008A9E9F /* icon-done.png in Resources */ = {isa = PBXBuildFile; fileRef = B67AF76B1635BA40008A9E9F /* icon-done.png */; };
+		B67AF76E1635BA40008A9E9F /* icon-m-toolbar-done-dimmed.png in Resources */ = {isa = PBXBuildFile; fileRef = B67AF76C1635BA40008A9E9F /* icon-m-toolbar-done-dimmed.png */; };
+		B6A3CAFE163CF5CB008705DC /* GolferSelectVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B6A3CAFD163CF5CB008705DC /* GolferSelectVC.m */; };
+		B6A3CB01163CF694008705DC /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6A3CB00163CF694008705DC /* QuartzCore.framework */; };
+		B6A3CB03163D040E008705DC /* Golf-Green-Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = B6A3CB02163D040E008705DC /* Golf-Green-Icon.png */; };
+		B6A3CB05163D04E1008705DC /* ScoreCardIcon.gif in Resources */ = {isa = PBXBuildFile; fileRef = B6A3CB04163D04E1008705DC /* ScoreCardIcon.gif */; };
+		B6A3CB08163D06AD008705DC /* ShotVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B6A3CB07163D06AD008705DC /* ShotVC.m */; };
+		B6A49EBD163D177C00B28ECA /* resume.png in Resources */ = {isa = PBXBuildFile; fileRef = B6A49EBA163D177C00B28ECA /* resume.png */; };
+		B6A49EBE163D177C00B28ECA /* cancel.png in Resources */ = {isa = PBXBuildFile; fileRef = B6A49EBB163D177C00B28ECA /* cancel.png */; };
+		B6A49EBF163D177C00B28ECA /* add.png in Resources */ = {isa = PBXBuildFile; fileRef = B6A49EBC163D177C00B28ECA /* add.png */; };
+		B6A49EC6163D18A700B28ECA /* ShotSequenceVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B6A49EC5163D18A700B28ECA /* ShotSequenceVC.m */; };
+		B6AD37D7163F91CD003EF162 /* GolferTabBarVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B6AD37D6163F91CD003EF162 /* GolferTabBarVC.m */; };
+		B6AD37DA163FA72A003EF162 /* man@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B6AD37D8163FA72A003EF162 /* man@2x.png */; };
+		B6AD37DD163FA74D003EF162 /* man.png in Resources */ = {isa = PBXBuildFile; fileRef = B6AD37DC163FA74D003EF162 /* man.png */; };
+		B6AD37E4163FB34E003EF162 /* PuttingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B6AD37E3163FB34E003EF162 /* PuttingVC.m */; };
+		B6AD37E8164029B1003EF162 /* ShotSequenceDynamicTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B6AD37E7164029B1003EF162 /* ShotSequenceDynamicTVC.m */; };
 		B6AE43CE162D9F420070136C /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = B6AE43CD162D9F420070136C /* icon.png */; };
 		B6AE43D0162D9F490070136C /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B6AE43CF162D9F490070136C /* icon@2x.png */; };
-		B6B4F5D4162A56CC00C628EA /* MainVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B6B4F5D3162A56CC00C628EA /* MainVC.m */; };
+		B6C092781635B5C000AE2C8B /* plus_48.png in Resources */ = {isa = PBXBuildFile; fileRef = B6C092771635B5C000AE2C8B /* plus_48.png */; };
+		B6C5BEF41635BAAD00D7D732 /* golfball1.png in Resources */ = {isa = PBXBuildFile; fileRef = B6C5BEF11635BAAD00D7D732 /* golfball1.png */; };
+		B6C5BEF91635BCB200D7D732 /* icon-checkmark.png in Resources */ = {isa = PBXBuildFile; fileRef = B6C5BEF81635BCB200D7D732 /* icon-checkmark.png */; };
+		B6C5BEFB1635BD6700D7D732 /* pictograms-nps-golfing.png in Resources */ = {isa = PBXBuildFile; fileRef = B6C5BEFA1635BD6700D7D732 /* pictograms-nps-golfing.png */; };
+		B6C5BF0716372B1300D7D732 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B6C5BF0616372B1300D7D732 /* Default-568h@2x.png */; };
+		B6C5BF49163B812B00D7D732 /* MainMenuVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B6C5BF48163B812B00D7D732 /* MainMenuVC.m */; };
+		B6C5BF4D163B903900D7D732 /* SettingsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B6C5BF4C163B903900D7D732 /* SettingsVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		B63DA9841623E0F0000A968A /* OptionsAllVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OptionsAllVC.h; sourceTree = "<group>"; };
 		B63DA9851623E0F0000A968A /* OptionsAllVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OptionsAllVC.m; sourceTree = "<group>"; };
+		B665966B163D2BC100FB19A9 /* ShotOptionVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShotOptionVC.h; sourceTree = "<group>"; };
+		B665966C163D2BC100FB19A9 /* ShotOptionVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShotOptionVC.m; sourceTree = "<group>"; };
+		B6659672163D3A9200FB19A9 /* clubs.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = clubs.jpg; sourceTree = "<group>"; };
+		B6659673163D3A9200FB19A9 /* compass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = compass.png; sourceTree = "<group>"; };
+		B6659674163D3A9200FB19A9 /* checkbox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkbox.png; sourceTree = "<group>"; };
+		B6659675163D3A9200FB19A9 /* ballontee.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ballontee.jpg; sourceTree = "<group>"; };
+		B665967B163D3D2D00FB19A9 /* lake.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lake.png; sourceTree = "<group>"; };
+		B665967D163D3EAE00FB19A9 /* clubs5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clubs5.png; sourceTree = "<group>"; };
+		B665967E163D3EAE00FB19A9 /* hit.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = hit.jpg; sourceTree = "<group>"; };
+		B6659681163D41F000FB19A9 /* golfswing.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = golfswing.jpg; sourceTree = "<group>"; };
+		B6659683163D458F00FB19A9 /* map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map.png; sourceTree = "<group>"; };
+		B6659685163D45E100FB19A9 /* golfswing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = golfswing.png; sourceTree = "<group>"; };
+		B6659687163D465600FB19A9 /* bagofclubs.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bagofclubs.jpg; sourceTree = "<group>"; };
+		B6659689163D46C100FB19A9 /* clubsongreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clubsongreen.png; sourceTree = "<group>"; };
+		B665968A163D46C100FB19A9 /* onparlogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = onparlogo.png; sourceTree = "<group>"; };
+		B665968D163D496700FB19A9 /* PenaltyVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PenaltyVC.h; sourceTree = "<group>"; };
+		B665968E163D496700FB19A9 /* PenaltyVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PenaltyVC.m; sourceTree = "<group>"; };
+		B6659694163DD58D00FB19A9 /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
+		B6659697163DD6E500FB19A9 /* CourseSelectionVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CourseSelectionVC.h; sourceTree = "<group>"; };
+		B6659698163DD6E500FB19A9 /* CourseSelectionVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CourseSelectionVC.m; sourceTree = "<group>"; };
+		B665969A163DEBC800FB19A9 /* scorecard.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = scorecard.jpg; sourceTree = "<group>"; };
+		B665969C163DEC9200FB19A9 /* To The Green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "To The Green.png"; sourceTree = "<group>"; };
+		B665969E163DF52600FB19A9 /* course selection.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "course selection.png"; sourceTree = "<group>"; };
 		B679D6C01623C44200E19F98 /* On Par.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "On Par.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B679D6C41623C44200E19F98 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B679D6C61623C44200E19F98 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -48,7 +113,6 @@
 		B679D6D41623C44200E19F98 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		B679D6D61623C44200E19F98 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		B679D6D81623C44200E19F98 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		B679D6DA1623C44200E19F98 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		B679D6DD1623C44200E19F98 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		B679D6DF1623C44200E19F98 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		B679D6E01623C44200E19F98 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
@@ -58,18 +122,47 @@
 		B679D6ED1623C4D600E19F98 /* GolferAddVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GolferAddVC.m; sourceTree = "<group>"; };
 		B679D6EF1623C4EE00E19F98 /* GolferChangeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GolferChangeVC.h; sourceTree = "<group>"; };
 		B679D6F01623C4EE00E19F98 /* GolferChangeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GolferChangeVC.m; sourceTree = "<group>"; };
-		B679D6F21623C52500E19F98 /* StrokeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StrokeVC.h; sourceTree = "<group>"; };
-		B679D6F31623C52500E19F98 /* StrokeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StrokeVC.m; sourceTree = "<group>"; };
 		B679D6F51623C54C00E19F98 /* ClubSelectionVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClubSelectionVC.h; sourceTree = "<group>"; };
 		B679D6F61623C54C00E19F98 /* ClubSelectionVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClubSelectionVC.m; sourceTree = "<group>"; };
 		B679D6FD1623C5AB00E19F98 /* GolfCourse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GolfCourse.png; sourceTree = "<group>"; };
 		B679D6FE1623C5AB00E19F98 /* MSState.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MSState.png; sourceTree = "<group>"; };
 		B679D7021623C5C600E19F98 /* plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plus.png; sourceTree = "<group>"; };
 		B679D7031623C5C600E19F98 /* plus@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "plus@2x.png"; sourceTree = "<group>"; };
+		B67AF7661635B74F008A9E9F /* GolfClub-GTASA-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "GolfClub-GTASA-icon.png"; sourceTree = "<group>"; };
+		B67AF7691635BA00008A9E9F /* Golf_Club_Sports2010.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Golf_Club_Sports2010.png; sourceTree = "<group>"; };
+		B67AF76B1635BA40008A9E9F /* icon-done.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-done.png"; sourceTree = "<group>"; };
+		B67AF76C1635BA40008A9E9F /* icon-m-toolbar-done-dimmed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-m-toolbar-done-dimmed.png"; sourceTree = "<group>"; };
+		B6A3CAFC163CF5CB008705DC /* GolferSelectVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GolferSelectVC.h; sourceTree = "<group>"; };
+		B6A3CAFD163CF5CB008705DC /* GolferSelectVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GolferSelectVC.m; sourceTree = "<group>"; };
+		B6A3CB00163CF694008705DC /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		B6A3CB02163D040E008705DC /* Golf-Green-Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Golf-Green-Icon.png"; sourceTree = "<group>"; };
+		B6A3CB04163D04E1008705DC /* ScoreCardIcon.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = ScoreCardIcon.gif; sourceTree = "<group>"; };
+		B6A3CB06163D06AC008705DC /* ShotVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShotVC.h; sourceTree = "<group>"; };
+		B6A3CB07163D06AD008705DC /* ShotVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShotVC.m; sourceTree = "<group>"; };
+		B6A49EBA163D177C00B28ECA /* resume.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = resume.png; sourceTree = "<group>"; };
+		B6A49EBB163D177C00B28ECA /* cancel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cancel.png; sourceTree = "<group>"; };
+		B6A49EBC163D177C00B28ECA /* add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add.png; sourceTree = "<group>"; };
+		B6A49EC4163D18A700B28ECA /* ShotSequenceVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShotSequenceVC.h; sourceTree = "<group>"; };
+		B6A49EC5163D18A700B28ECA /* ShotSequenceVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShotSequenceVC.m; sourceTree = "<group>"; };
+		B6AD37D5163F91CD003EF162 /* GolferTabBarVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GolferTabBarVC.h; sourceTree = "<group>"; };
+		B6AD37D6163F91CD003EF162 /* GolferTabBarVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GolferTabBarVC.m; sourceTree = "<group>"; };
+		B6AD37D8163FA72A003EF162 /* man@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "man@2x.png"; sourceTree = "<group>"; };
+		B6AD37DC163FA74D003EF162 /* man.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = man.png; sourceTree = "<group>"; };
+		B6AD37E2163FB34E003EF162 /* PuttingVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PuttingVC.h; sourceTree = "<group>"; };
+		B6AD37E3163FB34E003EF162 /* PuttingVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PuttingVC.m; sourceTree = "<group>"; };
+		B6AD37E6164029B1003EF162 /* ShotSequenceDynamicTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShotSequenceDynamicTVC.h; sourceTree = "<group>"; };
+		B6AD37E7164029B1003EF162 /* ShotSequenceDynamicTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShotSequenceDynamicTVC.m; sourceTree = "<group>"; };
 		B6AE43CD162D9F420070136C /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = ../icon.png; sourceTree = "<group>"; };
 		B6AE43CF162D9F490070136C /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon@2x.png"; path = "../icon@2x.png"; sourceTree = "<group>"; };
-		B6B4F5D2162A56CC00C628EA /* MainVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainVC.h; sourceTree = "<group>"; };
-		B6B4F5D3162A56CC00C628EA /* MainVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainVC.m; sourceTree = "<group>"; };
+		B6C092771635B5C000AE2C8B /* plus_48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plus_48.png; sourceTree = "<group>"; };
+		B6C5BEF11635BAAD00D7D732 /* golfball1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = golfball1.png; sourceTree = "<group>"; };
+		B6C5BEF81635BCB200D7D732 /* icon-checkmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-checkmark.png"; sourceTree = "<group>"; };
+		B6C5BEFA1635BD6700D7D732 /* pictograms-nps-golfing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pictograms-nps-golfing.png"; sourceTree = "<group>"; };
+		B6C5BF0616372B1300D7D732 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
+		B6C5BF47163B812B00D7D732 /* MainMenuVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuVC.h; sourceTree = "<group>"; };
+		B6C5BF48163B812B00D7D732 /* MainMenuVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuVC.m; sourceTree = "<group>"; };
+		B6C5BF4B163B903900D7D732 /* SettingsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsVC.h; sourceTree = "<group>"; };
+		B6C5BF4C163B903900D7D732 /* SettingsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +170,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6A3CB01163CF694008705DC /* QuartzCore.framework in Frameworks */,
 				B679D6C51623C44200E19F98 /* UIKit.framework in Frameworks */,
 				B679D6C71623C44200E19F98 /* Foundation.framework in Frameworks */,
 				B679D6C91623C44200E19F98 /* CoreGraphics.framework in Frameworks */,
@@ -106,6 +200,7 @@
 		B679D6C31623C44200E19F98 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B6A3CB00163CF694008705DC /* QuartzCore.framework */,
 				B679D6C41623C44200E19F98 /* UIKit.framework */,
 				B679D6C61623C44200E19F98 /* Foundation.framework */,
 				B679D6C81623C44200E19F98 /* CoreGraphics.framework */,
@@ -120,6 +215,8 @@
 				B679D6E71623C47500E19F98 /* Delegates */,
 				B679D6E81623C48600E19F98 /* View Controllers */,
 				B679D6CB1623C44200E19F98 /* Supporting Files */,
+				B6AD37E6164029B1003EF162 /* ShotSequenceDynamicTVC.h */,
+				B6AD37E7164029B1003EF162 /* ShotSequenceDynamicTVC.m */,
 			);
 			path = OnPar;
 			sourceTree = "<group>";
@@ -127,6 +224,8 @@
 		B679D6CB1623C44200E19F98 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B6AD37DC163FA74D003EF162 /* man.png */,
+				B6AD37D8163FA72A003EF162 /* man@2x.png */,
 				B679D7011623C5B000E19F98 /* Images */,
 				B679D6CC1623C44200E19F98 /* OnPar-Info.plist */,
 				B679D6CD1623C44200E19F98 /* InfoPlist.strings */,
@@ -148,22 +247,17 @@
 		B679D6E81623C48600E19F98 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				B679D6F51623C54C00E19F98 /* ClubSelectionVC.h */,
-				B679D6F61623C54C00E19F98 /* ClubSelectionVC.m */,
-				B679D6EC1623C4D600E19F98 /* GolferAddVC.h */,
-				B679D6ED1623C4D600E19F98 /* GolferAddVC.m */,
-				B679D6EF1623C4EE00E19F98 /* GolferChangeVC.h */,
-				B679D6F01623C4EE00E19F98 /* GolferChangeVC.m */,
-				B679D6E91623C4C100E19F98 /* GolfersVC.h */,
-				B679D6EA1623C4C100E19F98 /* GolfersVC.m */,
-				B6B4F5D2162A56CC00C628EA /* MainVC.h */,
-				B6B4F5D3162A56CC00C628EA /* MainVC.m */,
-				B63DA9841623E0F0000A968A /* OptionsAllVC.h */,
-				B63DA9851623E0F0000A968A /* OptionsAllVC.m */,
-				B679D6F21623C52500E19F98 /* StrokeVC.h */,
-				B679D6F31623C52500E19F98 /* StrokeVC.m */,
 				B679D6DF1623C44200E19F98 /* ViewController.h */,
 				B679D6E01623C44200E19F98 /* ViewController.m */,
+				B6C5BF47163B812B00D7D732 /* MainMenuVC.h */,
+				B6C5BF48163B812B00D7D732 /* MainMenuVC.m */,
+				B6AD37CC163EE745003EF162 /* Golfers */,
+				B6AD37CF163EE752003EF162 /* Settings */,
+				B6AD37CE163EE74B003EF162 /* Course */,
+				B6AD37D0163EE792003EF162 /* Play */,
+				B6AD37D3163EE872003EF162 /* Unused */,
+				B6AD37D5163F91CD003EF162 /* GolferTabBarVC.h */,
+				B6AD37D6163F91CD003EF162 /* GolferTabBarVC.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -171,9 +265,39 @@
 		B679D7011623C5B000E19F98 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				B665969E163DF52600FB19A9 /* course selection.png */,
+				B665969C163DEC9200FB19A9 /* To The Green.png */,
+				B665969A163DEBC800FB19A9 /* scorecard.jpg */,
+				B6659694163DD58D00FB19A9 /* settings.png */,
+				B6659689163D46C100FB19A9 /* clubsongreen.png */,
+				B665968A163D46C100FB19A9 /* onparlogo.png */,
+				B6659687163D465600FB19A9 /* bagofclubs.jpg */,
+				B6659685163D45E100FB19A9 /* golfswing.png */,
+				B6659683163D458F00FB19A9 /* map.png */,
+				B6659681163D41F000FB19A9 /* golfswing.jpg */,
+				B665967D163D3EAE00FB19A9 /* clubs5.png */,
+				B665967E163D3EAE00FB19A9 /* hit.jpg */,
+				B665967B163D3D2D00FB19A9 /* lake.png */,
+				B6659672163D3A9200FB19A9 /* clubs.jpg */,
+				B6659673163D3A9200FB19A9 /* compass.png */,
+				B6659674163D3A9200FB19A9 /* checkbox.png */,
+				B6659675163D3A9200FB19A9 /* ballontee.jpg */,
+				B6A49EBA163D177C00B28ECA /* resume.png */,
+				B6A49EBB163D177C00B28ECA /* cancel.png */,
+				B6A49EBC163D177C00B28ECA /* add.png */,
+				B6A3CB04163D04E1008705DC /* ScoreCardIcon.gif */,
+				B6C5BF0616372B1300D7D732 /* Default-568h@2x.png */,
+				B6A3CB02163D040E008705DC /* Golf-Green-Icon.png */,
+				B6C5BEF11635BAAD00D7D732 /* golfball1.png */,
+				B6C5BEFA1635BD6700D7D732 /* pictograms-nps-golfing.png */,
+				B6C5BEF81635BCB200D7D732 /* icon-checkmark.png */,
+				B67AF76B1635BA40008A9E9F /* icon-done.png */,
+				B67AF76C1635BA40008A9E9F /* icon-m-toolbar-done-dimmed.png */,
+				B67AF7691635BA00008A9E9F /* Golf_Club_Sports2010.png */,
+				B67AF7661635B74F008A9E9F /* GolfClub-GTASA-icon.png */,
+				B6C092771635B5C000AE2C8B /* plus_48.png */,
 				B679D6D61623C44200E19F98 /* Default.png */,
 				B679D6D81623C44200E19F98 /* Default@2x.png */,
-				B679D6DA1623C44200E19F98 /* Default-568h@2x.png */,
 				B679D6FD1623C5AB00E19F98 /* GolfCourse.png */,
 				B6AE43CD162D9F420070136C /* icon.png */,
 				B6AE43CF162D9F490070136C /* icon@2x.png */,
@@ -182,6 +306,91 @@
 				B679D7031623C5C600E19F98 /* plus@2x.png */,
 			);
 			name = Images;
+			sourceTree = "<group>";
+		};
+		B6AD37CC163EE745003EF162 /* Golfers */ = {
+			isa = PBXGroup;
+			children = (
+				B679D6E91623C4C100E19F98 /* GolfersVC.h */,
+				B679D6EA1623C4C100E19F98 /* GolfersVC.m */,
+				B679D6EC1623C4D600E19F98 /* GolferAddVC.h */,
+				B679D6ED1623C4D600E19F98 /* GolferAddVC.m */,
+			);
+			name = Golfers;
+			sourceTree = "<group>";
+		};
+		B6AD37CE163EE74B003EF162 /* Course */ = {
+			isa = PBXGroup;
+			children = (
+				B6659697163DD6E500FB19A9 /* CourseSelectionVC.h */,
+				B6659698163DD6E500FB19A9 /* CourseSelectionVC.m */,
+			);
+			name = Course;
+			sourceTree = "<group>";
+		};
+		B6AD37CF163EE752003EF162 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				B6C5BF4B163B903900D7D732 /* SettingsVC.h */,
+				B6C5BF4C163B903900D7D732 /* SettingsVC.m */,
+			);
+			name = Settings;
+			sourceTree = "<group>";
+		};
+		B6AD37D0163EE792003EF162 /* Play */ = {
+			isa = PBXGroup;
+			children = (
+				B6A3CAFC163CF5CB008705DC /* GolferSelectVC.h */,
+				B6A3CAFD163CF5CB008705DC /* GolferSelectVC.m */,
+				B6AD37D1163EE7D7003EF162 /* Green */,
+				B6AD37D4163EE8BA003EF162 /* Scorecard */,
+			);
+			name = Play;
+			sourceTree = "<group>";
+		};
+		B6AD37D1163EE7D7003EF162 /* Green */ = {
+			isa = PBXGroup;
+			children = (
+				B665966B163D2BC100FB19A9 /* ShotOptionVC.h */,
+				B665966C163D2BC100FB19A9 /* ShotOptionVC.m */,
+				B6AD37D2163EE7F8003EF162 /* Checklist */,
+			);
+			name = Green;
+			sourceTree = "<group>";
+		};
+		B6AD37D2163EE7F8003EF162 /* Checklist */ = {
+			isa = PBXGroup;
+			children = (
+				B6A49EC4163D18A700B28ECA /* ShotSequenceVC.h */,
+				B6A49EC5163D18A700B28ECA /* ShotSequenceVC.m */,
+				B6A3CB06163D06AC008705DC /* ShotVC.h */,
+				B6A3CB07163D06AD008705DC /* ShotVC.m */,
+				B679D6F51623C54C00E19F98 /* ClubSelectionVC.h */,
+				B679D6F61623C54C00E19F98 /* ClubSelectionVC.m */,
+				B665968D163D496700FB19A9 /* PenaltyVC.h */,
+				B665968E163D496700FB19A9 /* PenaltyVC.m */,
+				B6AD37E2163FB34E003EF162 /* PuttingVC.h */,
+				B6AD37E3163FB34E003EF162 /* PuttingVC.m */,
+			);
+			name = Checklist;
+			sourceTree = "<group>";
+		};
+		B6AD37D3163EE872003EF162 /* Unused */ = {
+			isa = PBXGroup;
+			children = (
+				B679D6EF1623C4EE00E19F98 /* GolferChangeVC.h */,
+				B679D6F01623C4EE00E19F98 /* GolferChangeVC.m */,
+				B63DA9841623E0F0000A968A /* OptionsAllVC.h */,
+				B63DA9851623E0F0000A968A /* OptionsAllVC.m */,
+			);
+			name = Unused;
+			sourceTree = "<group>";
+		};
+		B6AD37D4163EE8BA003EF162 /* Scorecard */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Scorecard;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -238,7 +447,6 @@
 				B679D6CF1623C44200E19F98 /* InfoPlist.strings in Resources */,
 				B679D6D71623C44200E19F98 /* Default.png in Resources */,
 				B679D6D91623C44200E19F98 /* Default@2x.png in Resources */,
-				B679D6DB1623C44200E19F98 /* Default-568h@2x.png in Resources */,
 				B679D6DE1623C44200E19F98 /* MainStoryboard.storyboard in Resources */,
 				B679D6FF1623C5AB00E19F98 /* GolfCourse.png in Resources */,
 				B679D7001623C5AB00E19F98 /* MSState.png in Resources */,
@@ -246,6 +454,39 @@
 				B679D7051623C5C600E19F98 /* plus@2x.png in Resources */,
 				B6AE43CE162D9F420070136C /* icon.png in Resources */,
 				B6AE43D0162D9F490070136C /* icon@2x.png in Resources */,
+				B6C092781635B5C000AE2C8B /* plus_48.png in Resources */,
+				B67AF7671635B74F008A9E9F /* GolfClub-GTASA-icon.png in Resources */,
+				B67AF76A1635BA00008A9E9F /* Golf_Club_Sports2010.png in Resources */,
+				B67AF76D1635BA40008A9E9F /* icon-done.png in Resources */,
+				B67AF76E1635BA40008A9E9F /* icon-m-toolbar-done-dimmed.png in Resources */,
+				B6C5BEF41635BAAD00D7D732 /* golfball1.png in Resources */,
+				B6C5BEF91635BCB200D7D732 /* icon-checkmark.png in Resources */,
+				B6C5BEFB1635BD6700D7D732 /* pictograms-nps-golfing.png in Resources */,
+				B6C5BF0716372B1300D7D732 /* Default-568h@2x.png in Resources */,
+				B6A3CB03163D040E008705DC /* Golf-Green-Icon.png in Resources */,
+				B6A3CB05163D04E1008705DC /* ScoreCardIcon.gif in Resources */,
+				B6A49EBD163D177C00B28ECA /* resume.png in Resources */,
+				B6A49EBE163D177C00B28ECA /* cancel.png in Resources */,
+				B6A49EBF163D177C00B28ECA /* add.png in Resources */,
+				B6659676163D3A9200FB19A9 /* clubs.jpg in Resources */,
+				B6659677163D3A9200FB19A9 /* compass.png in Resources */,
+				B6659678163D3A9200FB19A9 /* checkbox.png in Resources */,
+				B6659679163D3A9200FB19A9 /* ballontee.jpg in Resources */,
+				B665967C163D3D2D00FB19A9 /* lake.png in Resources */,
+				B665967F163D3EAE00FB19A9 /* clubs5.png in Resources */,
+				B6659680163D3EAE00FB19A9 /* hit.jpg in Resources */,
+				B6659682163D41F000FB19A9 /* golfswing.jpg in Resources */,
+				B6659684163D458F00FB19A9 /* map.png in Resources */,
+				B6659686163D45E100FB19A9 /* golfswing.png in Resources */,
+				B6659688163D465600FB19A9 /* bagofclubs.jpg in Resources */,
+				B665968B163D46C100FB19A9 /* clubsongreen.png in Resources */,
+				B665968C163D46C100FB19A9 /* onparlogo.png in Resources */,
+				B6659695163DD58D00FB19A9 /* settings.png in Resources */,
+				B665969B163DEBC800FB19A9 /* scorecard.jpg in Resources */,
+				B665969D163DEC9200FB19A9 /* To The Green.png in Resources */,
+				B665969F163DF52600FB19A9 /* course selection.png in Resources */,
+				B6AD37DA163FA72A003EF162 /* man@2x.png in Resources */,
+				B6AD37DD163FA74D003EF162 /* man.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,10 +503,19 @@
 				B679D6EB1623C4C100E19F98 /* GolfersVC.m in Sources */,
 				B679D6EE1623C4D600E19F98 /* GolferAddVC.m in Sources */,
 				B679D6F11623C4EE00E19F98 /* GolferChangeVC.m in Sources */,
-				B679D6F41623C52500E19F98 /* StrokeVC.m in Sources */,
 				B679D6F71623C54C00E19F98 /* ClubSelectionVC.m in Sources */,
 				B63DA9861623E0F0000A968A /* OptionsAllVC.m in Sources */,
-				B6B4F5D4162A56CC00C628EA /* MainVC.m in Sources */,
+				B6C5BF49163B812B00D7D732 /* MainMenuVC.m in Sources */,
+				B6C5BF4D163B903900D7D732 /* SettingsVC.m in Sources */,
+				B6A3CAFE163CF5CB008705DC /* GolferSelectVC.m in Sources */,
+				B6A3CB08163D06AD008705DC /* ShotVC.m in Sources */,
+				B6A49EC6163D18A700B28ECA /* ShotSequenceVC.m in Sources */,
+				B665966D163D2BC100FB19A9 /* ShotOptionVC.m in Sources */,
+				B665968F163D496700FB19A9 /* PenaltyVC.m in Sources */,
+				B6659699163DD6E500FB19A9 /* CourseSelectionVC.m in Sources */,
+				B6AD37D7163F91CD003EF162 /* GolferTabBarVC.m in Sources */,
+				B6AD37E4163FB34E003EF162 /* PuttingVC.m in Sources */,
+				B6AD37E8164029B1003EF162 /* ShotSequenceDynamicTVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,12 +594,13 @@
 		B679D6E51623C44200E19F98 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "OnPar/OnPar-Prefix.pch";
 				INFOPLIST_FILE = "OnPar/OnPar-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "On Par";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;

@@ -12,7 +12,9 @@
 
 @end
 
-@implementation ClubSelectionVC
+@implementation ClubSelectionVC{
+    int selectedIndex;
+}
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -28,9 +30,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    [self populateClubTypes];
-    [self populateClubNumbers];
-    [self populateWedgeTypes];
+    [self populateClubArrays];
 }
 
 - (void)viewDidUnload
@@ -46,39 +46,48 @@
 
 #pragma mark - Loading Arrays
 
-- (void)populateClubTypes
+- (void)populateClubArrays
 {
     
     clubType = [[NSMutableArray alloc] init];
-    [clubType addObject:@" Iron "];
     [clubType addObject:@" Wood "];
     [clubType addObject:@" Hybrid "];
+    [clubType addObject:@" Iron "];
     [clubType addObject:@" Wedge "];
     
-}
-
-- (void)populateClubNumbers
-{
-    clubNum = [[NSMutableArray alloc] init];
-    [clubNum addObject:@" 1 "];
-    [clubNum addObject:@" 2 "];
-    [clubNum addObject:@" 3 "];
-    [clubNum addObject:@" 4 "];
-    [clubNum addObject:@" 5 "];
-    [clubNum addObject:@" 6 "];
-    [clubNum addObject:@" 7 "];
-    [clubNum addObject:@" 8 "];
-    [clubNum addObject:@" 9 "];
+    woodNum = [[NSMutableArray alloc] init];
+    [woodNum addObject:@" Driver "];
+    [woodNum addObject:@" 3 "];
+    [woodNum addObject:@" 5 "];
+    [woodNum addObject:@" 7 "];
+    [woodNum addObject:@" 9 "];
     
-}
+    hybridNum = [[NSMutableArray alloc] init];
+    [hybridNum addObject:@" 2 "];
+    [hybridNum addObject:@" 3 "];
+    [hybridNum addObject:@" 4 "];
+    [hybridNum addObject:@" 5 "];
+    [hybridNum addObject:@" 6 "];
 
-- (void)populateWedgeTypes;
-{
+    ironNum = [[NSMutableArray alloc] init];
+    [ironNum addObject:@" 2 "];
+    [ironNum addObject:@" 3 "];
+    [ironNum addObject:@" 4 "];
+    [ironNum addObject:@" 5 "];
+    [ironNum addObject:@" 6 "];
+    [ironNum addObject:@" 7 "];
+    [ironNum addObject:@" 8 "];
+    [ironNum addObject:@" 9 "];
+    
     wedgeType = [[NSMutableArray alloc] init];
     [wedgeType addObject:@" Gap "];
     [wedgeType addObject:@" Lob "];
     [wedgeType addObject:@" Pitching "];
     [wedgeType addObject:@" Sand "];
+}
+
+- (IBAction)saveClubSelection:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 #pragma mark - UIPickerView methods
@@ -92,22 +101,52 @@
 {
     if (component == CLUBTYPE)
         return [clubType count];
-    else if (component == CLUBNUMBER)
-        return [clubNum count];
+    else if (component == CLUBNUMBER && selectedIndex == 0)
+        return [woodNum count];
+    else if (component == CLUBNUMBER && selectedIndex == 1)
+        return [hybridNum count];
+    else if (component == CLUBNUMBER && selectedIndex == 2)
+        return [ironNum count];
+    else if (component == CLUBNUMBER && selectedIndex == 3)
+        return [wedgeType count];
     else
         return 0;
 }
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
 {
-    if (component == CLUBTYPE)
+   /* if (component == CLUBTYPE)
         return [clubType objectAtIndex:row];
     else if (component == CLUBNUMBER)
         return [clubNum objectAtIndex:row];
     else
         return 0;
+    */
+    if (component == CLUBTYPE)
+        return [clubType objectAtIndex:row];
+    else if (component == CLUBNUMBER && selectedIndex == 0)
+        return [woodNum objectAtIndex:row];
+    else if (component == CLUBNUMBER && selectedIndex == 1)
+        return [hybridNum objectAtIndex:row];
+    else if (component == CLUBNUMBER && selectedIndex == 2)
+        return [ironNum objectAtIndex:row];
+    else if (component == CLUBNUMBER && selectedIndex == 3)
+        return [wedgeType objectAtIndex:row];
+    else
+        return 0;
+    
+    
 }
 
-
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
+    
+    selectedIndex = [pickerView selectedRowInComponent:0];
+    if (component == 0 && !(selectedIndex < 0)) {
+        [pickerView reloadComponent:1];
+        
+        [pickerView selectRow:0 inComponent:1 animated:YES];
+    }
+    
+}
 
  @end

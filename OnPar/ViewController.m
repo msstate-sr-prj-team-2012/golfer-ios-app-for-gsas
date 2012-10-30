@@ -26,4 +26,10 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)viewDidUnload {
+    [super viewDidUnload];
+}
+- (IBAction)beginButton:(id)sender {
+    NSLog(@"Button press: 'Click Here To Begin'");
+}
 @end

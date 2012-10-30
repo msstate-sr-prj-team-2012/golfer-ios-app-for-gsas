@@ -8,13 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
-@interface GolferAddVC : UIViewController
+@interface GolferAddVC : UIViewController<UIPickerViewDataSource, UIPickerViewDelegate>
+{
+    __weak IBOutlet UIPickerView *teeSelectionPicker;
+    NSMutableArray *tees;
+}
+
 @property (weak, nonatomic) IBOutlet UITextField *golferNickname;
-@property (weak, nonatomic) IBOutlet UISegmentedControl *memberControl;
-@property (weak, nonatomic) IBOutlet UILabel *golferIdLabel;
 @property (weak, nonatomic) IBOutlet UITextField *golferIdTextField;
 
-- (IBAction)memberControlChanged:(id)sender;
+- (IBAction)saveGolferInfo:(id)sender;
 
+- (void)populateTees;
 
 @end
