@@ -50,7 +50,7 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
-    return 2;
+    return 3;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -123,7 +123,7 @@
     UITableViewCell *theCellClicked = [self.tableView cellForRowAtIndexPath:indexPath];
     
     if (theCellClicked == nrButton) {
-        
+
         // New or Resume Shot?
         if(shotStarted == FALSE)
         {
@@ -150,8 +150,9 @@
             // Resume Shot
             NSLog(@"Button press: 'Resume Shot'");
         }
+ 
     }
-    
+ 
     if (theCellClicked == cancelButton) {
         NSLog(@"Button press: 'Cancel Shot'");
         

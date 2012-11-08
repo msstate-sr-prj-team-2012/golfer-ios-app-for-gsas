@@ -7,15 +7,21 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FMDatabase.h"
+#import "FMResultSet.h"
 
 @interface CourseSelectionVC : UIViewController<UIPickerViewDataSource, UIPickerViewDelegate>
 {
     __weak IBOutlet UIPickerView *courseSelectionPicker;
-    NSMutableArray *courses;
+    NSMutableArray *courseNames;
+    NSMutableArray *courseIDs;
+    NSDictionary *courseDict;
+    NSString *selectedCourseName;
+    NSString *selectedCourseID;
 }
 
-- (void)populateCourses;
+- (void)getCourses;
 
-- (IBAction)saveCourseSelection:(id)sender;
+- (IBAction)saveSelection:(id)sender;
 
 @end

@@ -58,6 +58,7 @@
     woodNum = [[NSMutableArray alloc] init];
     [woodNum addObject:@" Driver "];
     [woodNum addObject:@" 3 "];
+    [woodNum addObject:@" 4 "];
     [woodNum addObject:@" 5 "];
     [woodNum addObject:@" 7 "];
     [woodNum addObject:@" 9 "];
@@ -80,7 +81,8 @@
     [ironNum addObject:@" 9 "];
     
     wedgeType = [[NSMutableArray alloc] init];
-    [wedgeType addObject:@" Gap "];
+    [wedgeType addObject:@" Approach "];
+    [wedgeType addObject:@" High Lob "];
     [wedgeType addObject:@" Lob "];
     [wedgeType addObject:@" Pitching "];
     [wedgeType addObject:@" Sand "];

@@ -7,11 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FMDatabase.h"
 
 @interface GolferAddVC : UIViewController<UIPickerViewDataSource, UIPickerViewDelegate>
 {
     __weak IBOutlet UIPickerView *teeSelectionPicker;
     NSMutableArray *tees;
+    NSMutableDictionary *tees2;
 }
 
 @property (weak, nonatomic) IBOutlet UITextField *golferNickname;
@@ -19,6 +21,6 @@
 
 - (IBAction)saveGolferInfo:(id)sender;
 
-- (void)populateTees;
+- (void)populateTeeDictionary;
 
 @end

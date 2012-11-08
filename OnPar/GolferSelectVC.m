@@ -32,33 +32,60 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-    // Start on first players tab
-    [golferTabBar setSelectedItem:[golferTabBar.items objectAtIndex:0]];
-    [self activateTab:1];
-    //////////////////////////////////////////////////
+    // get golfer info
+    golfers = [[NSMutableArray alloc] init];
+	NSString *path1  = [[NSBundle mainBundle] pathForResource:@"OnPar" ofType:@"sqlite"];
+	FMDatabase *db1  = [[FMDatabase alloc] initWithPath:path1];
+	[db1 open];
+	FMResultSet *fResult1= [db1 executeQuery:@"SELECT * FROM golfer"];
+    
+	while([fResult1 next])
+	{
+		name = [fResult1 stringForColumn:@"golfer_name"];
+		[golfers addObject:name];
+	}
+    
+    NSLog(@"golfer count tab page: %d", [golfers count]);
+    
+	[db1 close];
+    
+    // image to use on tabs
+    UIImage *man = [UIImage imageNamed:@"man.png"];
     
     // Sets the correct number of tabs on the tabBar
-    int golfers = 4;
+    if([golfers count] > 0)
+    {
+        [golfer0 setImage:man];
+        [golfer0 setTitle:[golfers objectAtIndex:0]];
+        [golfer0 setEnabled:YES];
+        
+        if([golfers count] > 1)
+        {
+            [golfer1 setImage:man];
+            [golfer1 setTitle:[golfers objectAtIndex:1]];
+            [golfer1 setEnabled:YES];
+            
+            if([golfers count] > 2)
+            {
+                [golfer2 setImage:man];
+                [golfer2 setTitle:[golfers objectAtIndex:2]];
+                [golfer2 setEnabled:YES];
+                
+                if([golfers count] > 3)
+                {
+                    [golfer3 setImage:man];
+                    [golfer3 setTitle:[golfers objectAtIndex:3]];
+                    [golfer3 setEnabled:YES];
+                }
+            }
+        }
+    }
     
-    if(golfers < 4)
-    {
-        [golfer3 setEnabled:NO];
-        [golfer3 setImage:nil];
-        [golfer3 setTitle:nil];
+    // Start on first players tab
+    if ([golfers count] > 0){
+        [golferTabBar setSelectedItem:[golferTabBar.items objectAtIndex:0]];
+        [self activateTab:1];
     }
-    if(golfers < 3)
-    {
-        [golfer2 setEnabled:NO];
-        [golfer2 setImage:nil];
-        [golfer2 setTitle:nil];
-    }
-    if(golfers < 2)
-    {
-        [golfer1 setEnabled:NO];
-        [golfer1 setImage:nil];
-        [golfer1 setTitle:nil];
-    }
-    ///////////////////////////////////////////////
 }
 
 - (void)didReceiveMemoryWarning
@@ -86,9 +113,9 @@
     
     NSInteger tabNumber = item.tag;
     
-        NSLog(@"tag action here");
+        NSLog(@"Tab %d Loaded", tabNumber);
     
-    [golferName setText:[NSString stringWithFormat:@"Golfer %d",tabNumber]];
+    [golferName setText:[NSString stringWithFormat:@"%@",[golfers objectAtIndex:tabNumber]]];
     [holeNumber setText:[NSString stringWithFormat:@"%d",tabNumber]];
     [shotNumber setText:[NSString stringWithFormat:@"%d", tabNumber]];
     [scoreTotal setText:[NSString stringWithFormat:@"%d", tabNumber]];

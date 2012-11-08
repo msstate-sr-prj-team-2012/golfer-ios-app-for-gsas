@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		B63DA9861623E0F0000A968A /* OptionsAllVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B63DA9851623E0F0000A968A /* OptionsAllVC.m */; };
+		B63EC84316499A320075467E /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B63EC84216499A320075467E /* CoreLocation.framework */; };
+		B63EC8B51649C09D0075467E /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B63EC8B41649C09D0075467E /* libsqlite3.dylib */; };
 		B665966D163D2BC100FB19A9 /* ShotOptionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B665966C163D2BC100FB19A9 /* ShotOptionVC.m */; };
 		B6659676163D3A9200FB19A9 /* clubs.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B6659672163D3A9200FB19A9 /* clubs.jpg */; };
 		B6659677163D3A9200FB19A9 /* compass.png in Resources */ = {isa = PBXBuildFile; fileRef = B6659673163D3A9200FB19A9 /* compass.png */; };
@@ -59,11 +61,10 @@
 		B6A49EBE163D177C00B28ECA /* cancel.png in Resources */ = {isa = PBXBuildFile; fileRef = B6A49EBB163D177C00B28ECA /* cancel.png */; };
 		B6A49EBF163D177C00B28ECA /* add.png in Resources */ = {isa = PBXBuildFile; fileRef = B6A49EBC163D177C00B28ECA /* add.png */; };
 		B6A49EC6163D18A700B28ECA /* ShotSequenceVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B6A49EC5163D18A700B28ECA /* ShotSequenceVC.m */; };
-		B6AD37D7163F91CD003EF162 /* GolferTabBarVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B6AD37D6163F91CD003EF162 /* GolferTabBarVC.m */; };
 		B6AD37DA163FA72A003EF162 /* man@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B6AD37D8163FA72A003EF162 /* man@2x.png */; };
 		B6AD37DD163FA74D003EF162 /* man.png in Resources */ = {isa = PBXBuildFile; fileRef = B6AD37DC163FA74D003EF162 /* man.png */; };
 		B6AD37E4163FB34E003EF162 /* PuttingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B6AD37E3163FB34E003EF162 /* PuttingVC.m */; };
-		B6AD37E8164029B1003EF162 /* ShotSequenceDynamicTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B6AD37E7164029B1003EF162 /* ShotSequenceDynamicTVC.m */; };
+		B6AD382F164073A4003EF162 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6AD382E164073A4003EF162 /* CoreData.framework */; };
 		B6AE43CE162D9F420070136C /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = B6AE43CD162D9F420070136C /* icon.png */; };
 		B6AE43D0162D9F490070136C /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B6AE43CF162D9F490070136C /* icon@2x.png */; };
 		B6C092781635B5C000AE2C8B /* plus_48.png in Resources */ = {isa = PBXBuildFile; fileRef = B6C092771635B5C000AE2C8B /* plus_48.png */; };
@@ -73,11 +74,19 @@
 		B6C5BF0716372B1300D7D732 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B6C5BF0616372B1300D7D732 /* Default-568h@2x.png */; };
 		B6C5BF49163B812B00D7D732 /* MainMenuVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B6C5BF48163B812B00D7D732 /* MainMenuVC.m */; };
 		B6C5BF4D163B903900D7D732 /* SettingsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B6C5BF4C163B903900D7D732 /* SettingsVC.m */; };
+		B6DD75A8164AE36D00A472D8 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = B6DD759F164AE36D00A472D8 /* FMDatabase.m */; };
+		B6DD75A9164AE36D00A472D8 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B6DD75A1164AE36D00A472D8 /* FMDatabaseAdditions.m */; };
+		B6DD75AA164AE36D00A472D8 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = B6DD75A3164AE36D00A472D8 /* FMDatabasePool.m */; };
+		B6DD75AB164AE36D00A472D8 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = B6DD75A5164AE36D00A472D8 /* FMDatabaseQueue.m */; };
+		B6DD75AC164AE36D00A472D8 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = B6DD75A7164AE36D00A472D8 /* FMResultSet.m */; };
+		B6DD75BB164B9A8500A472D8 /* OnPar.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = B6DD75BA164B9A8500A472D8 /* OnPar.sqlite */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		B63DA9841623E0F0000A968A /* OptionsAllVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OptionsAllVC.h; sourceTree = "<group>"; };
 		B63DA9851623E0F0000A968A /* OptionsAllVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OptionsAllVC.m; sourceTree = "<group>"; };
+		B63EC84216499A320075467E /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		B63EC8B41649C09D0075467E /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		B665966B163D2BC100FB19A9 /* ShotOptionVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShotOptionVC.h; sourceTree = "<group>"; };
 		B665966C163D2BC100FB19A9 /* ShotOptionVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShotOptionVC.m; sourceTree = "<group>"; };
 		B6659672163D3A9200FB19A9 /* clubs.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = clubs.jpg; sourceTree = "<group>"; };
@@ -144,14 +153,11 @@
 		B6A49EBC163D177C00B28ECA /* add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add.png; sourceTree = "<group>"; };
 		B6A49EC4163D18A700B28ECA /* ShotSequenceVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShotSequenceVC.h; sourceTree = "<group>"; };
 		B6A49EC5163D18A700B28ECA /* ShotSequenceVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShotSequenceVC.m; sourceTree = "<group>"; };
-		B6AD37D5163F91CD003EF162 /* GolferTabBarVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GolferTabBarVC.h; sourceTree = "<group>"; };
-		B6AD37D6163F91CD003EF162 /* GolferTabBarVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GolferTabBarVC.m; sourceTree = "<group>"; };
 		B6AD37D8163FA72A003EF162 /* man@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "man@2x.png"; sourceTree = "<group>"; };
 		B6AD37DC163FA74D003EF162 /* man.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = man.png; sourceTree = "<group>"; };
 		B6AD37E2163FB34E003EF162 /* PuttingVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PuttingVC.h; sourceTree = "<group>"; };
 		B6AD37E3163FB34E003EF162 /* PuttingVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PuttingVC.m; sourceTree = "<group>"; };
-		B6AD37E6164029B1003EF162 /* ShotSequenceDynamicTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShotSequenceDynamicTVC.h; sourceTree = "<group>"; };
-		B6AD37E7164029B1003EF162 /* ShotSequenceDynamicTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShotSequenceDynamicTVC.m; sourceTree = "<group>"; };
+		B6AD382E164073A4003EF162 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		B6AE43CD162D9F420070136C /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = ../icon.png; sourceTree = "<group>"; };
 		B6AE43CF162D9F490070136C /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon@2x.png"; path = "../icon@2x.png"; sourceTree = "<group>"; };
 		B6C092771635B5C000AE2C8B /* plus_48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plus_48.png; sourceTree = "<group>"; };
@@ -163,6 +169,17 @@
 		B6C5BF48163B812B00D7D732 /* MainMenuVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuVC.m; sourceTree = "<group>"; };
 		B6C5BF4B163B903900D7D732 /* SettingsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsVC.h; sourceTree = "<group>"; };
 		B6C5BF4C163B903900D7D732 /* SettingsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsVC.m; sourceTree = "<group>"; };
+		B6DD759E164AE36D00A472D8 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		B6DD759F164AE36D00A472D8 /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		B6DD75A0164AE36D00A472D8 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		B6DD75A1164AE36D00A472D8 /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		B6DD75A2164AE36D00A472D8 /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		B6DD75A3164AE36D00A472D8 /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		B6DD75A4164AE36D00A472D8 /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		B6DD75A5164AE36D00A472D8 /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		B6DD75A6164AE36D00A472D8 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		B6DD75A7164AE36D00A472D8 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		B6DD75BA164B9A8500A472D8 /* OnPar.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = OnPar.sqlite; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +187,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B63EC8B51649C09D0075467E /* libsqlite3.dylib in Frameworks */,
+				B63EC84316499A320075467E /* CoreLocation.framework in Frameworks */,
+				B6AD382F164073A4003EF162 /* CoreData.framework in Frameworks */,
 				B6A3CB01163CF694008705DC /* QuartzCore.framework in Frameworks */,
 				B679D6C51623C44200E19F98 /* UIKit.framework in Frameworks */,
 				B679D6C71623C44200E19F98 /* Foundation.framework in Frameworks */,
@@ -186,6 +206,7 @@
 				B679D6CA1623C44200E19F98 /* OnPar */,
 				B679D6C31623C44200E19F98 /* Frameworks */,
 				B679D6C11623C44200E19F98 /* Products */,
+				B6DD75AD164AE37700A472D8 /* FMDB */,
 			);
 			sourceTree = "<group>";
 		};
@@ -200,6 +221,9 @@
 		B679D6C31623C44200E19F98 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B63EC8B41649C09D0075467E /* libsqlite3.dylib */,
+				B63EC84216499A320075467E /* CoreLocation.framework */,
+				B6AD382E164073A4003EF162 /* CoreData.framework */,
 				B6A3CB00163CF694008705DC /* QuartzCore.framework */,
 				B679D6C41623C44200E19F98 /* UIKit.framework */,
 				B679D6C61623C44200E19F98 /* Foundation.framework */,
@@ -211,12 +235,11 @@
 		B679D6CA1623C44200E19F98 /* OnPar */ = {
 			isa = PBXGroup;
 			children = (
+				B6DD75BA164B9A8500A472D8 /* OnPar.sqlite */,
 				B679D6DC1623C44200E19F98 /* MainStoryboard.storyboard */,
 				B679D6E71623C47500E19F98 /* Delegates */,
 				B679D6E81623C48600E19F98 /* View Controllers */,
 				B679D6CB1623C44200E19F98 /* Supporting Files */,
-				B6AD37E6164029B1003EF162 /* ShotSequenceDynamicTVC.h */,
-				B6AD37E7164029B1003EF162 /* ShotSequenceDynamicTVC.m */,
 			);
 			path = OnPar;
 			sourceTree = "<group>";
@@ -224,8 +247,6 @@
 		B679D6CB1623C44200E19F98 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				B6AD37DC163FA74D003EF162 /* man.png */,
-				B6AD37D8163FA72A003EF162 /* man@2x.png */,
 				B679D7011623C5B000E19F98 /* Images */,
 				B679D6CC1623C44200E19F98 /* OnPar-Info.plist */,
 				B679D6CD1623C44200E19F98 /* InfoPlist.strings */,
@@ -247,17 +268,12 @@
 		B679D6E81623C48600E19F98 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				B679D6DF1623C44200E19F98 /* ViewController.h */,
-				B679D6E01623C44200E19F98 /* ViewController.m */,
-				B6C5BF47163B812B00D7D732 /* MainMenuVC.h */,
-				B6C5BF48163B812B00D7D732 /* MainMenuVC.m */,
+				B6DD75B9164B30D200A472D8 /* Main */,
+				B6AD37CE163EE74B003EF162 /* Course */,
 				B6AD37CC163EE745003EF162 /* Golfers */,
 				B6AD37CF163EE752003EF162 /* Settings */,
-				B6AD37CE163EE74B003EF162 /* Course */,
 				B6AD37D0163EE792003EF162 /* Play */,
 				B6AD37D3163EE872003EF162 /* Unused */,
-				B6AD37D5163F91CD003EF162 /* GolferTabBarVC.h */,
-				B6AD37D6163F91CD003EF162 /* GolferTabBarVC.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -265,6 +281,8 @@
 		B679D7011623C5B000E19F98 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				B6AD37DC163FA74D003EF162 /* man.png */,
+				B6AD37D8163FA72A003EF162 /* man@2x.png */,
 				B665969E163DF52600FB19A9 /* course selection.png */,
 				B665969C163DEC9200FB19A9 /* To The Green.png */,
 				B665969A163DEBC800FB19A9 /* scorecard.jpg */,
@@ -393,6 +411,34 @@
 			name = Scorecard;
 			sourceTree = "<group>";
 		};
+		B6DD75AD164AE37700A472D8 /* FMDB */ = {
+			isa = PBXGroup;
+			children = (
+				B6DD759E164AE36D00A472D8 /* FMDatabase.h */,
+				B6DD759F164AE36D00A472D8 /* FMDatabase.m */,
+				B6DD75A0164AE36D00A472D8 /* FMDatabaseAdditions.h */,
+				B6DD75A1164AE36D00A472D8 /* FMDatabaseAdditions.m */,
+				B6DD75A2164AE36D00A472D8 /* FMDatabasePool.h */,
+				B6DD75A3164AE36D00A472D8 /* FMDatabasePool.m */,
+				B6DD75A4164AE36D00A472D8 /* FMDatabaseQueue.h */,
+				B6DD75A5164AE36D00A472D8 /* FMDatabaseQueue.m */,
+				B6DD75A6164AE36D00A472D8 /* FMResultSet.h */,
+				B6DD75A7164AE36D00A472D8 /* FMResultSet.m */,
+			);
+			name = FMDB;
+			sourceTree = "<group>";
+		};
+		B6DD75B9164B30D200A472D8 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				B679D6DF1623C44200E19F98 /* ViewController.h */,
+				B679D6E01623C44200E19F98 /* ViewController.m */,
+				B6C5BF47163B812B00D7D732 /* MainMenuVC.h */,
+				B6C5BF48163B812B00D7D732 /* MainMenuVC.m */,
+			);
+			name = Main;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -487,6 +533,7 @@
 				B665969F163DF52600FB19A9 /* course selection.png in Resources */,
 				B6AD37DA163FA72A003EF162 /* man@2x.png in Resources */,
 				B6AD37DD163FA74D003EF162 /* man.png in Resources */,
+				B6DD75BB164B9A8500A472D8 /* OnPar.sqlite in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -513,9 +560,12 @@
 				B665966D163D2BC100FB19A9 /* ShotOptionVC.m in Sources */,
 				B665968F163D496700FB19A9 /* PenaltyVC.m in Sources */,
 				B6659699163DD6E500FB19A9 /* CourseSelectionVC.m in Sources */,
-				B6AD37D7163F91CD003EF162 /* GolferTabBarVC.m in Sources */,
 				B6AD37E4163FB34E003EF162 /* PuttingVC.m in Sources */,
-				B6AD37E8164029B1003EF162 /* ShotSequenceDynamicTVC.m in Sources */,
+				B6DD75A8164AE36D00A472D8 /* FMDatabase.m in Sources */,
+				B6DD75A9164AE36D00A472D8 /* FMDatabaseAdditions.m in Sources */,
+				B6DD75AA164AE36D00A472D8 /* FMDatabasePool.m in Sources */,
+				B6DD75AB164AE36D00A472D8 /* FMDatabaseQueue.m in Sources */,
+				B6DD75AC164AE36D00A472D8 /* FMResultSet.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

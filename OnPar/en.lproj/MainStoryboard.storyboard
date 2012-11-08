@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2843" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="4cv-X2-KIn">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1929"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -9,7 +9,7 @@
             <objects>
                 <viewController id="2" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="MSState.png" translatesAutoresizingMaskIntoConstraints="NO" id="Fpv-Lh-nuc">
@@ -42,7 +42,7 @@
                                 </state>
                                 <connections>
                                     <action selector="beginButton:" destination="2" eventType="touchUpInside" id="So6-KB-KJT"/>
-                                    <segue destination="4cv-X2-KIn" kind="modal" id="QKs-7n-h3a"/>
+                                    <segue destination="sKd-IN-kWI" kind="push" id="E8Q-XT-gYt"/>
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Are you..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6GB-Ed-g4G">
@@ -66,133 +66,51 @@
                             <constraint firstItem="Fpv-Lh-nuc" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="ZTd-jg-gm3"/>
                             <constraint firstItem="6GB-Ed-g4G" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="ad8-ZV-jRx"/>
                             <constraint firstItem="NBC-Ts-CfF" firstAttribute="top" secondItem="A0G-eN-mxL" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="bce-f4-nkg"/>
+                            <constraint firstAttribute="bottom" secondItem="HN9-li-0ti" secondAttribute="bottom" constant="46" id="dJa-MG-1NJ"/>
                             <constraint firstItem="fhw-Kv-PIC" firstAttribute="top" secondItem="3" secondAttribute="top" constant="154" id="djc-51-ZwA"/>
                             <constraint firstItem="Fpv-Lh-nuc" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="eVS-7P-LfI"/>
                             <constraint firstItem="fhw-Kv-PIC" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="36" id="goV-fx-4Tp"/>
                             <constraint firstAttribute="trailing" secondItem="NBC-Ts-CfF" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="pSY-tQ-0IJ"/>
-                            <constraint firstAttribute="bottom" secondItem="HN9-li-0ti" secondAttribute="bottom" constant="49" id="uxn-t7-K3e"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="K5J-L1-Cql"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1201" y="-687"/>
+            <point key="canvasLocation" x="-883" y="-687"/>
         </scene>
-        <!--Main MenuVC - Main Menu-->
-        <scene sceneID="MKj-Es-QVp">
+        <!--View Controller - Options-->
+        <scene sceneID="TBO-gA-O1e">
             <objects>
-                <tableViewController id="6GD-UD-ZY2" customClass="MainMenuVC" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="krg-rg-jjo">
+                <viewController id="yCG-cr-cDN" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xYd-1W-KZI">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MB9-kl-WiQ">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Upload Results">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                        <sections>
-                            <tableViewSection id="P42-cG-Udy">
-                                <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="GolferMenu" textLabel="31k-VP-Z6N" imageView="E8v-8J-DTs" style="IBUITableViewCellStyleDefault" id="Xvz-bo-zDi">
-                                        <rect key="frame" x="0.0" y="10" width="320" height="46"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="10" y="1" width="280" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Golfers" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="31k-VP-Z6N">
-                                                    <rect key="frame" x="53" y="0.0" width="217" height="43"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                </label>
-                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="golfswing.png" id="E8v-8J-DTs">
-                                                    <rect key="frame" x="0.0" y="0.0" width="43" height="43"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                </imageView>
-                                            </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                        <connections>
-                                            <segue destination="XoO-E7-uF7" kind="push" id="Ewq-0e-Tyo"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                            <tableViewSection id="E32-Ea-B0s">
-                                <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="CourseMenu" textLabel="r6y-n7-wI8" imageView="gPq-Ww-NI5" style="IBUITableViewCellStyleDefault" id="Y3y-Zs-irN">
-                                        <rect key="frame" x="0.0" y="76" width="320" height="46"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="10" y="1" width="280" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Course" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="r6y-n7-wI8">
-                                                    <rect key="frame" x="53" y="0.0" width="217" height="43"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                </label>
-                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="course selection.png" id="gPq-Ww-NI5">
-                                                    <rect key="frame" x="0.0" y="0.0" width="43" height="43"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                </imageView>
-                                            </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                        <connections>
-                                            <segue destination="sKd-IN-kWI" kind="push" id="run-kd-XSz"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                            <tableViewSection id="fL0-H5-NV9">
-                                <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="SettingsMenu" textLabel="gvH-l2-hOm" imageView="O2n-H4-mWE" style="IBUITableViewCellStyleDefault" id="Hla-Yc-POO">
-                                        <rect key="frame" x="0.0" y="142" width="320" height="46"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="10" y="1" width="280" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Settings" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gvH-l2-hOm">
-                                                    <rect key="frame" x="53" y="0.0" width="217" height="43"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                </label>
-                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="settings.png" id="O2n-H4-mWE">
-                                                    <rect key="frame" x="0.0" y="0.0" width="43" height="43"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                </imageView>
-                                            </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                        <connections>
-                                            <segue destination="ZOf-KO-EYs" kind="push" id="QfH-Gj-m8z"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                        </sections>
-                        <connections>
-                            <outlet property="dataSource" destination="6GD-UD-ZY2" id="Lgy-vU-rXZ"/>
-                            <outlet property="delegate" destination="6GD-UD-ZY2" id="CLK-iJ-5Rq"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Main Menu" id="ZCv-ac-4pK">
-                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="play" id="gwK-9f-70p">
-                            <connections>
-                                <segue destination="mgf-Tl-DQP" kind="push" id="CMW-K0-gMz"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="SzQ-Ya-gPk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <constraints>
+                            <constraint firstItem="MB9-kl-WiQ" firstAttribute="centerX" secondItem="xYd-1W-KZI" secondAttribute="centerX" type="default" id="YJO-Pu-Ese"/>
+                            <constraint firstItem="MB9-kl-WiQ" firstAttribute="top" secondItem="xYd-1W-KZI" secondAttribute="top" constant="113" id="hO6-xd-gF7"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Options" id="r1t-Uf-con"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fJL-9K-pzM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-364" y="-687"/>
+            <point key="canvasLocation" x="1608" y="-1429"/>
         </scene>
-        <!--SettingsVC-->
+        <!--SettingsVC - Settings-->
         <scene sceneID="XDN-jx-hsv">
             <objects>
                 <viewController id="ZOf-KO-EYs" customClass="SettingsVC" sceneMemberID="viewController">
@@ -200,40 +118,45 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bordered" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="YqY-IK-1cO">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="199" id="SzX-3n-fpO"/>
-                                </constraints>
-                                <segments>
-                                    <segment title="Front 9"/>
-                                    <segment title="Back 9"/>
-                                </segments>
-                            </segmentedControl>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Starting Location" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BTB-Sc-Elp">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Enter Starting Hole" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BTB-Sc-Elp">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="D1P-VX-gBZ">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="97" id="xnF-Qh-zbi"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <connections>
+                                    <outlet property="delegate" destination="ZOf-KO-EYs" id="4hb-wn-fQX"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="YqY-IK-1cO" firstAttribute="top" secondItem="pdW-wE-brE" secondAttribute="top" constant="78" id="Bmv-VW-6kW"/>
-                            <constraint firstItem="BTB-Sc-Elp" firstAttribute="centerX" secondItem="YqY-IK-1cO" secondAttribute="centerX" type="default" id="QVf-LW-B8n"/>
+                            <constraint firstItem="D1P-VX-gBZ" firstAttribute="centerX" secondItem="BTB-Sc-Elp" secondAttribute="centerX" type="default" id="6DV-it-QRC"/>
+                            <constraint firstItem="D1P-VX-gBZ" firstAttribute="top" secondItem="BTB-Sc-Elp" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="CpB-mH-DbX"/>
                             <constraint firstItem="BTB-Sc-Elp" firstAttribute="top" secondItem="pdW-wE-brE" secondAttribute="top" constant="43" id="gcP-Oa-ehu"/>
-                            <constraint firstItem="BTB-Sc-Elp" firstAttribute="centerX" secondItem="pdW-wE-brE" secondAttribute="centerX" type="default" id="ohD-Wd-TwD"/>
+                            <constraint firstItem="D1P-VX-gBZ" firstAttribute="centerX" secondItem="pdW-wE-brE" secondAttribute="centerX" type="default" id="spJ-fl-mel"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="2rv-J2-53u">
+                    <navigationItem key="navigationItem" title="Settings" id="2rv-J2-53u">
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="dgv-hh-Gk4">
                             <connections>
                                 <action selector="saveSettings:" destination="ZOf-KO-EYs" id="ipg-CK-d2x"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="startingHoleTextField" destination="D1P-VX-gBZ" id="Hk1-If-vSn"/>
+                        <segue destination="mgf-Tl-DQP" kind="push" identifier="saveSettings" id="4oR-Ok-6WY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OhS-lY-byI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="154" y="37"/>
+            <point key="canvasLocation" x="636" y="-687"/>
         </scene>
         <!--Golfer SelectVC - Select A Golfer-->
         <scene sceneID="a13-ch-qex">
@@ -246,10 +169,10 @@
                             <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uTQ-k2-5VA">
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <items>
-                                    <tabBarItem title="Golfer 0" image="man.png" id="APU-hs-gbH"/>
-                                    <tabBarItem tag="1" title="Golfer 1" image="man.png" id="G1T-od-ZG4"/>
-                                    <tabBarItem tag="2" title="Golfer 2" image="man.png" id="UHj-ZL-cJH"/>
-                                    <tabBarItem tag="3" title="Golfer 3" image="man.png" id="ohr-SI-Igu"/>
+                                    <tabBarItem enabled="NO" title="" id="APU-hs-gbH"/>
+                                    <tabBarItem tag="1" enabled="NO" title="" id="G1T-od-ZG4"/>
+                                    <tabBarItem tag="2" enabled="NO" title="" id="UHj-ZL-cJH"/>
+                                    <tabBarItem tag="3" enabled="NO" title="" id="ohr-SI-Igu"/>
                                 </items>
                                 <connections>
                                     <outlet property="delegate" destination="mgf-Tl-DQP" id="sb9-J8-k0u"/>
@@ -354,7 +277,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bju-Yq-sSy">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bju-Yq-sSy">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="89" id="CNf-VJ-TzY"/>
                                 </constraints>
@@ -367,12 +290,12 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="scorecard.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="bUn-68-Lt7">
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="scorecard.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="bUn-68-Lt7">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="63" id="1av-E1-dbH"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="View Scorecard" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oCT-yw-1s0">
+                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="View Scorecard" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oCT-yw-1s0">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="86" id="DJY-ka-Ign"/>
                                 </constraints>
@@ -445,7 +368,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Select A Golfer" id="GSA-sa-rCa">
-                        <barButtonItem key="rightBarButtonItem" title="•••" id="QiK-LH-56m"/>
+                        <barButtonItem key="rightBarButtonItem" title="Options" id="QiK-LH-56m">
+                            <connections>
+                                <segue destination="yCG-cr-cDN" kind="push" id="xJX-Uv-pmp"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="golfer0" destination="APU-hs-gbH" id="2xA-G3-Juq"/>
@@ -462,7 +389,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YJY-jz-FNv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="146" y="781"/>
+            <point key="canvasLocation" x="1116" y="-687"/>
         </scene>
         <!--Course SelectionVC - Course Selection-->
         <scene sceneID="hlJ-nm-8dM">
@@ -499,17 +426,18 @@
                     <navigationItem key="navigationItem" title="Course Selection" id="jII-Xi-efb">
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="tLU-BL-aDZ">
                             <connections>
-                                <action selector="saveCourseSelection:" destination="sKd-IN-kWI" id="h4Y-vZ-d0L"/>
+                                <action selector="saveSelection:" destination="sKd-IN-kWI" id="gQc-dI-i9m"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="courseSelectionPicker" destination="rTE-Zr-EdD" id="PJ1-QL-5Bg"/>
+                        <segue destination="XoO-E7-uF7" kind="push" identifier="courseSave" id="we2-np-Ku2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="anU-vv-9yg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="154" y="-687"/>
+            <point key="canvasLocation" x="-412" y="-687"/>
         </scene>
         <!--Shot OptionVC - Shot-->
         <scene sceneID="bsI-vd-FIf">
@@ -542,7 +470,7 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <connections>
-                                            <segue destination="jU4-cg-rKm" kind="push" id="L9H-b7-geq"/>
+                                            <segue destination="jU4-cg-rKm" kind="push" id="eEK-D5-KVR"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -614,7 +542,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R17-N6-ofd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="636" y="790"/>
+            <point key="canvasLocation" x="1608" y="-687"/>
         </scene>
         <!--Shot SequenceVC - Shot-->
         <scene sceneID="SNI-n5-pUY">
@@ -791,7 +719,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IDo-hy-oQK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1118" y="482"/>
+            <point key="canvasLocation" x="2090" y="-1030"/>
         </scene>
         <!--PuttingVC-->
         <scene sceneID="1nO-ES-Aic">
@@ -809,6 +737,9 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KnF-fM-y4L">
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="XeL-6I-70n" id="tFS-In-eRN"/>
+                                </connections>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -827,10 +758,13 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="numberOfPutts" destination="KnF-fM-y4L" id="TlV-5m-oZN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ecq-MB-xqA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1118" y="1117"/>
+            <point key="canvasLocation" x="2090" y="-349"/>
         </scene>
         <!--ShotVC - Intended Direction-->
         <scene sceneID="oZB-z4-hM1">
@@ -845,7 +779,7 @@
                                     <imageView multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="GolfCourse.png" translatesAutoresizingMaskIntoConstraints="NO" id="3GK-tf-gFX">
                                         <gestureRecognizers/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="253" id="7yv-Yj-ULk"/>
+                                            <constraint firstAttribute="width" constant="287" id="L0P-5Q-kpX"/>
                                         </constraints>
                                         <connections>
                                             <outletCollection property="gestureRecognizers" destination="iBi-rj-ICj" appends="YES" id="DQ2-uC-2cF"/>
@@ -854,8 +788,8 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="3GK-tf-gFX" firstAttribute="centerY" secondItem="8rP-ob-wXP" secondAttribute="centerY" type="default" id="G8V-13-NQQ"/>
-                                    <constraint firstAttribute="trailing" secondItem="3GK-tf-gFX" secondAttribute="trailing" constant="33" id="Lx6-Z6-Jqh"/>
-                                    <constraint firstItem="3GK-tf-gFX" firstAttribute="centerX" secondItem="8rP-ob-wXP" secondAttribute="centerX" type="default" id="SJN-1x-m6z"/>
+                                    <constraint firstAttribute="trailing" secondItem="3GK-tf-gFX" secondAttribute="trailing" constant="16" id="Mx8-aY-aRE"/>
+                                    <constraint firstItem="3GK-tf-gFX" firstAttribute="centerX" secondItem="8rP-ob-wXP" secondAttribute="centerX" type="default" id="Ugl-do-MYD"/>
                                     <constraint firstItem="3GK-tf-gFX" firstAttribute="bottom" secondItem="8rP-ob-wXP" secondAttribute="bottom" type="default" id="vUY-Ia-Nbj"/>
                                     <constraint firstItem="3GK-tf-gFX" firstAttribute="top" secondItem="8rP-ob-wXP" secondAttribute="top" type="default" id="vjN-Iq-6F0"/>
                                 </constraints>
@@ -888,7 +822,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1755" y="-166"/>
+            <point key="canvasLocation" x="2731" y="-1680"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="hv6-Wn-skT">
@@ -898,12 +832,12 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="6GD-UD-ZY2" kind="relationship" relationship="rootViewController" id="Xv1-bn-ffH"/>
+                        <segue destination="2" kind="relationship" relationship="rootViewController" id="kWB-uq-cUQ"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="995-xc-X44" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-786" y="-687"/>
+            <point key="canvasLocation" x="-1434" y="-687"/>
         </scene>
         <!--GolfersVC - Golfers-->
         <scene sceneID="edS-9Y-JCa">
@@ -915,6 +849,9 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="e9J-Fc-Ua0">
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="263" id="6MX-FH-729"/>
+                                </constraints>
                                 <color key="separatorColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="gray" showsReorderControl="YES" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Golfer1NameCell" textLabel="vIx-Ed-Svf" style="IBUITableViewCellStyleDefault" id="ubP-H6-BPt">
@@ -985,27 +922,54 @@
                                         </view>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="XoO-E7-uF7" id="0DY-TZ-ajg"/>
+                                    <outlet property="delegate" destination="XoO-E7-uF7" id="RUR-E5-oP2"/>
+                                </connections>
                             </tableView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="08P-kP-HGg">
+                                <items>
+                                    <barButtonItem enabled="NO" title="Item" id="woO-fl-umf">
+                                        <connections>
+                                            <action selector="editOrder:" destination="XoO-E7-uF7" id="SoA-Wh-4HE"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="NCF-4d-fDQ"/>
+                                    <barButtonItem systemItem="add" id="V3I-IS-8E9">
+                                        <connections>
+                                            <segue destination="ljy-Y6-jhd" kind="push" id="JwQ-e0-c0T"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                                <color key="tintColor" red="0.50196081400000003" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="e9J-Fc-Ua0" firstAttribute="bottom" secondItem="EvK-kb-oBt" secondAttribute="bottom" type="default" id="I3c-s9-yVE"/>
+                            <constraint firstItem="08P-kP-HGg" firstAttribute="bottom" secondItem="EvK-kb-oBt" secondAttribute="bottom" type="default" id="5cy-Jo-Oxc"/>
                             <constraint firstItem="e9J-Fc-Ua0" firstAttribute="top" secondItem="EvK-kb-oBt" secondAttribute="top" type="default" id="MqG-C1-RWc"/>
                             <constraint firstItem="e9J-Fc-Ua0" firstAttribute="trailing" secondItem="EvK-kb-oBt" secondAttribute="trailing" type="default" id="bX1-Dt-2sb"/>
+                            <constraint firstItem="08P-kP-HGg" firstAttribute="trailing" secondItem="EvK-kb-oBt" secondAttribute="trailing" type="default" id="cez-u0-hMj"/>
                             <constraint firstItem="e9J-Fc-Ua0" firstAttribute="leading" secondItem="EvK-kb-oBt" secondAttribute="leading" type="default" id="dJD-GI-Uuh"/>
+                            <constraint firstItem="08P-kP-HGg" firstAttribute="leading" secondItem="EvK-kb-oBt" secondAttribute="leading" type="default" id="f04-Ha-5QR"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Golfers" id="AxS-Zz-3ct">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="V3I-IS-8E9">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="DH5-eE-uCM">
                             <connections>
-                                <segue destination="ljy-Y6-jhd" kind="push" id="JwQ-e0-c0T"/>
+                                <segue destination="ZOf-KO-EYs" kind="push" id="Wp1-yX-ncg"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="addButton" destination="V3I-IS-8E9" id="N9g-kd-Zrc"/>
+                        <outlet property="editButton" destination="woO-fl-umf" id="LWf-Al-bAW"/>
+                        <outlet property="golferTableView" destination="e9J-Fc-Ua0" id="JGO-OI-Zbv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T4i-GK-APx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="154" y="-1401"/>
+            <point key="canvasLocation" x="106" y="-687"/>
         </scene>
         <!--Golfer AddVC - Golfer Info-->
         <scene sceneID="wFj-XE-AKg">
@@ -1141,7 +1105,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dQb-fa-C5b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1755" y="482"/>
+            <point key="canvasLocation" x="2731" y="-1032"/>
         </scene>
         <!--PenaltyVC - Penalty Options-->
         <scene sceneID="WBk-YO-bDc">
@@ -1198,7 +1162,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A92-PL-s57" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1744" y="1117"/>
+            <point key="canvasLocation" x="2731" y="-397"/>
         </scene>
     </scenes>
     <resources>
@@ -1209,14 +1173,11 @@
         <image name="cancel.png" width="256" height="256"/>
         <image name="checkbox.png" width="256" height="256"/>
         <image name="clubsongreen.png" width="256" height="256"/>
-        <image name="course selection.png" width="128" height="128"/>
         <image name="golfswing.png" width="128" height="128"/>
         <image name="lake.png" width="100" height="100"/>
-        <image name="man.png" width="24" height="24"/>
         <image name="map.png" width="128" height="128"/>
         <image name="onparlogo.png" width="256" height="256"/>
         <image name="scorecard.jpg" width="128" height="128"/>
-        <image name="settings.png" width="256" height="256"/>
     </resources>
     <classes>
         <class className="ClubSelectionVC" superclassName="UIViewController">
@@ -1229,7 +1190,7 @@
         <class className="CourseSelectionVC" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CourseSelectionVC.h"/>
             <relationships>
-                <relationship kind="action" name="saveCourseSelection:"/>
+                <relationship kind="action" name="saveSelection:"/>
                 <relationship kind="outlet" name="courseSelectionPicker" candidateClass="UIPickerView"/>
             </relationships>
         </class>
@@ -1259,9 +1220,12 @@
         </class>
         <class className="GolfersVC" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/GolfersVC.h"/>
-        </class>
-        <class className="MainMenuVC" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MainMenuVC.h"/>
+            <relationships>
+                <relationship kind="action" name="editOrder:"/>
+                <relationship kind="outlet" name="addButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="editButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="golferTableView" candidateClass="UITableView"/>
+            </relationships>
         </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
@@ -1277,12 +1241,14 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PuttingVC.h"/>
             <relationships>
                 <relationship kind="action" name="savePuttingInfo:"/>
+                <relationship kind="outlet" name="numberOfPutts" candidateClass="UITextField"/>
             </relationships>
         </class>
         <class className="SettingsVC" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SettingsVC.h"/>
             <relationships>
                 <relationship kind="action" name="saveSettings:"/>
+                <relationship kind="outlet" name="startingHoleTextField" candidateClass="UITextField"/>
             </relationships>
         </class>
         <class className="ShotOptionVC" superclassName="UITableViewController">

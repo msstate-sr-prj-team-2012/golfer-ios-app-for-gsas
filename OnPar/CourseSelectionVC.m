@@ -27,7 +27,8 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    [self populateCourses];
+    [self getCourses];
+    NSLog(@"view loaded");
 }
 
 - (void)didReceiveMemoryWarning
@@ -38,18 +39,47 @@
 
 #pragma mark - Loading Arrays
 
-- (void)populateCourses
+- (void)getCourses
 {
-    courses = [[NSMutableArray alloc] init];
-    [courses addObject:@" Mississippi State University "];
+    //here is where you would return all courses and ids
+    //iterate through results
+    courseNames = [[NSMutableArray alloc] init];
+    [courseNames addObject:@"Mississippi State University"];
+    
+    courseIDs = [[NSMutableArray alloc] init];
+    [courseIDs addObject:@"1"];
+    ////
+    
+    // once results have all been added to arrays
+    courseDict = [NSDictionary dictionaryWithObjects:courseIDs forKeys:courseNames];
 }
 
-- (IBAction)saveCourseSelection:(id)sender {
-    // Save Golfer Info
+- (IBAction)saveSelection:(id)sender {
     
+    // Save Course Selection
+    selectedCourseName = [courseNames objectAtIndex:[courseSelectionPicker selectedRowInComponent:0]];
     
-    // Return to Previous View
-    [self.navigationController popViewControllerAnimated:YES];
+    selectedCourseID = [courseDict objectForKey:selectedCourseName];
+    
+    // Insert course_id into DB
+    NSString *path1  = [[NSBundle mainBundle] pathForResource:@"OnPar" ofType:@"sqlite"];
+	FMDatabase *db1  = [[FMDatabase alloc] initWithPath:path1];
+	if(![db1 open])
+        NSLog(@"database could not open");
+
+    BOOL success = [db1 executeUpdate:@"INSERT INTO info (course_id) VALUES (?)", selectedCourseID];
+    
+	/* Closing the Database */
+	[db1 close];
+    
+    // debugging
+     if(success)
+         NSLog(@"success");
+     else
+         NSLog(@"failure");
+    
+    // push new view on nav controller
+    [self performSegueWithIdentifier:@"courseSave" sender:nil];
 }
 
 #pragma mark - UIPickerView methods
@@ -62,7 +92,7 @@
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
 {
     if(component == 0)
-        return [courses count];
+        return [courseDict count];
     else
         return 0;
  }
@@ -70,7 +100,7 @@
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
 {
     if (component == 0)
-        return [courses objectAtIndex:row];
+        return [courseNames objectAtIndex:row];
     else
         return 0;
 }

@@ -10,6 +10,8 @@
 
 @interface PuttingVC : UIViewController
 
+@property (strong, nonatomic) IBOutlet UITextField *numberOfPutts;
+
 - (IBAction)savePuttingInfo:(id)sender;
 
 @end

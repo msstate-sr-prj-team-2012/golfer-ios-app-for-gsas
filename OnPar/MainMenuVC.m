@@ -35,9 +35,6 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    // NavBar Color
-    self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:128/255.0f green:0/255.0f blue:0/255.0f alpha:1];
-    
     // Initialize table data
     //mainMenuOptions = [NSArray arrayWithObjects:@"Golfers", @"Settings", nil];
 
@@ -122,6 +119,7 @@
     return YES;
 }
 */
+
 
 #pragma mark - Table view delegate
 

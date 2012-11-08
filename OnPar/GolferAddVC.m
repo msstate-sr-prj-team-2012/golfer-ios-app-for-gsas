@@ -7,12 +7,17 @@
 //
 
 #import "GolferAddVC.h"
+#import "AppDelegate.h"
+#import "FMDatabase.h"
+
 
 @interface GolferAddVC ()
 
 @end
 
-@implementation GolferAddVC
+@implementation GolferAddVC{
+    NSDictionary *teeDict;
+}
 
 @synthesize golferNickname;
 @synthesize golferIdTextField;
@@ -36,7 +41,7 @@
     
     [self.view addGestureRecognizer:tap];
     
-    [self populateTees];
+    [self populateTeeDictionary];
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)theTextField {
@@ -61,8 +66,32 @@
 }
 
 - (IBAction)saveGolferInfo:(id)sender {
-    // Save Golfer Info
     
+    // Save Golfer Info
+    NSString *golferID = golferIdTextField.text;
+    NSString *golferName = golferNickname.text;
+    
+    NSInteger golferTee = [teeSelectionPicker selectedRowInComponent:0]+1;
+    
+    // Insert Golfer into DB
+    NSString *path1  = [[NSBundle mainBundle] pathForResource:@"OnPar" ofType:@"sqlite"];
+	FMDatabase *db1  = [[FMDatabase alloc] initWithPath:path1];
+	if(![db1 open])
+        NSLog(@"database could not open");
+    
+    NSNumber *tee = [NSNumber numberWithInt:golferTee];
+    
+    BOOL success = [db1 executeUpdate:@"INSERT INTO golfer (golfer_id, golfer_name, golfer_tee) VALUES (?, ?, ?)", golferID, golferName, tee];
+    
+    NSLog(@"database is here: %@", path1);
+	
+	/* Closing the Database */
+	[db1 close];
+    
+    if(success)
+        NSLog(@"success");
+    else
+        NSLog(@"failure");
     
     // Return to Previous View
     [self.navigationController popViewControllerAnimated:YES];
@@ -73,15 +102,29 @@
     [golferIdTextField resignFirstResponder];
 }
 
-#pragma mark - Loading Arrays
+#pragma mark - Preparing Dictionary of Tees
 
-- (void)populateTees
+- (void)populateTeeDictionary
 {
-    tees = [[NSMutableArray alloc] init];
-    [tees addObject:@" Beginner "];
-    [tees addObject:@" Intermediate "];
-    [tees addObject:@" Advanced "];
-    [tees addObject:@" Professional "];
+    // download tee names here and populate this array
+    
+    NSMutableArray *teeKey = [[NSMutableArray alloc]init];
+    NSMutableArray *teeValue = [[NSMutableArray alloc] init];
+    [teeValue addObject:@" Aggies "];
+    [teeValue addObject:@" Maroons "];
+    [teeValue addObject:@" Cowbells "];
+    [teeValue addObject:@" Tips "];
+    
+    for (int i=1; i<=[teeValue count]; i++)
+    {
+        NSString *id = [NSString stringWithFormat:@"%d",i];
+        [teeKey addObject:id];
+    }
+    
+    teeDict = [[NSDictionary alloc]initWithObjects:teeValue forKeys:teeKey];
+    
+    for(id key in teeDict)
+        NSLog(@"key=%@ value=%@", key, [teeDict objectForKey:key]);
 }
 
 #pragma mark - UIPickerView methods
@@ -94,7 +137,7 @@
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
 {
     if(component == 0)
-        return [tees count];
+        return [teeDict count];
     else
         return 0;
 }
@@ -102,10 +145,10 @@
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
 {
     if (component == 0)
-        return [tees objectAtIndex:row];
-    else
+    {       NSString *id = [NSString stringWithFormat:@"%d",row+1];
+            return [teeDict objectForKey:id];
+    }else
         return 0;
 }
-
 
 @end

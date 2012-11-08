@@ -7,8 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FMDatabase.h"
+#import "FMResultSet.h"
 
 @interface SettingsVC : UIViewController
+
+
+@property (strong, nonatomic) IBOutlet UITextField *startingHoleTextField;
 
 - (IBAction)saveSettings:(id)sender;
 

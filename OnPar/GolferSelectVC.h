@@ -7,8 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FMDatabase.h"
+#import "FMResultSet.h"
 
-@interface GolferSelectVC : UIViewController <UITabBarDelegate>
+@interface GolferSelectVC : UIViewController <UITabBarDelegate>{
+    NSMutableArray *golfers;
+    NSString *name;
+    int golferCount;
+}
 
 @property (weak, nonatomic) IBOutlet UILabel *golferName;
 

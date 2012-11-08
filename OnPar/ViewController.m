@@ -14,10 +14,19 @@
 
 @implementation ViewController
 
+-(void)viewWillAppear:(BOOL)animated{
+    [self.navigationController setNavigationBarHidden:YES];   //it hides
+}
+
+-(void)viewWillDisappear:(BOOL)animated{
+    [self.navigationController setNavigationBarHidden:NO];    // it shows
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+        self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:128/255.0f green:0/255.0f blue:0/255.0f alpha:1];
 }
 
 - (void)didReceiveMemoryWarning
@@ -29,7 +38,9 @@
 - (void)viewDidUnload {
     [super viewDidUnload];
 }
+
 - (IBAction)beginButton:(id)sender {
     NSLog(@"Button press: 'Click Here To Begin'");
 }
+
 @end
