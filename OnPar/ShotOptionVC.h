@@ -7,10 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "dataManager.h"
 
 @interface ShotOptionVC : UITableViewController<UITableViewDelegate, UITableViewDataSource>
 
 @property (strong, nonatomic) IBOutlet UITableViewCell *nrButton;
 @property (strong, nonatomic) IBOutlet UITableViewCell *cancelButton;
+
 
 @end

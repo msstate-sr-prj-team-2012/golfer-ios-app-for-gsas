@@ -7,12 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "dataManager.h"
 
 @interface ShotVC : UIViewController<UIScrollViewDelegate>
 
 @property (strong, nonatomic) IBOutlet UIScrollView *scrollV;
 
 @property (strong, nonatomic) IBOutlet UIImageView *imageV;
+
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *doneButton;
 
 - (IBAction)tapDetected:(UIGestureRecognizer*)recognizer;
 

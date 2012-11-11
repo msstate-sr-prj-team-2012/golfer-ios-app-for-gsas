@@ -12,7 +12,9 @@
 
 @end
 
-@implementation PuttingVC
+@implementation PuttingVC{
+    dataManager *myDataManager;
+}
 
 @synthesize numberOfPutts;
 
@@ -23,6 +25,13 @@
         // Custom initialization
     }
     return self;
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    // get shared data
+    myDataManager = [dataManager myDataManager];
 }
 
 - (void)viewDidLoad

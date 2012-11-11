@@ -7,8 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "FMDatabase.h"
-#import "FMResultSet.h"
+#import "dataManager.h"
 
 @interface CourseSelectionVC : UIViewController<UIPickerViewDataSource, UIPickerViewDelegate>
 {

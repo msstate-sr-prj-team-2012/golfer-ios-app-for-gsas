@@ -52,6 +52,7 @@
 		B67AF76A1635BA00008A9E9F /* Golf_Club_Sports2010.png in Resources */ = {isa = PBXBuildFile; fileRef = B67AF7691635BA00008A9E9F /* Golf_Club_Sports2010.png */; };
 		B67AF76D1635BA40008A9E9F /* icon-done.png in Resources */ = {isa = PBXBuildFile; fileRef = B67AF76B1635BA40008A9E9F /* icon-done.png */; };
 		B67AF76E1635BA40008A9E9F /* icon-m-toolbar-done-dimmed.png in Resources */ = {isa = PBXBuildFile; fileRef = B67AF76C1635BA40008A9E9F /* icon-m-toolbar-done-dimmed.png */; };
+		B699756B164DEB5E00FD14E9 /* dataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B699756A164DEB5E00FD14E9 /* dataManager.m */; };
 		B6A3CAFE163CF5CB008705DC /* GolferSelectVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B6A3CAFD163CF5CB008705DC /* GolferSelectVC.m */; };
 		B6A3CB01163CF694008705DC /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6A3CB00163CF694008705DC /* QuartzCore.framework */; };
 		B6A3CB03163D040E008705DC /* Golf-Green-Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = B6A3CB02163D040E008705DC /* Golf-Green-Icon.png */; };
@@ -74,11 +75,6 @@
 		B6C5BF0716372B1300D7D732 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B6C5BF0616372B1300D7D732 /* Default-568h@2x.png */; };
 		B6C5BF49163B812B00D7D732 /* MainMenuVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B6C5BF48163B812B00D7D732 /* MainMenuVC.m */; };
 		B6C5BF4D163B903900D7D732 /* SettingsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B6C5BF4C163B903900D7D732 /* SettingsVC.m */; };
-		B6DD75A8164AE36D00A472D8 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = B6DD759F164AE36D00A472D8 /* FMDatabase.m */; };
-		B6DD75A9164AE36D00A472D8 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B6DD75A1164AE36D00A472D8 /* FMDatabaseAdditions.m */; };
-		B6DD75AA164AE36D00A472D8 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = B6DD75A3164AE36D00A472D8 /* FMDatabasePool.m */; };
-		B6DD75AB164AE36D00A472D8 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = B6DD75A5164AE36D00A472D8 /* FMDatabaseQueue.m */; };
-		B6DD75AC164AE36D00A472D8 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = B6DD75A7164AE36D00A472D8 /* FMResultSet.m */; };
 		B6DD75BB164B9A8500A472D8 /* OnPar.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = B6DD75BA164B9A8500A472D8 /* OnPar.sqlite */; };
 /* End PBXBuildFile section */
 
@@ -141,6 +137,8 @@
 		B67AF7691635BA00008A9E9F /* Golf_Club_Sports2010.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Golf_Club_Sports2010.png; sourceTree = "<group>"; };
 		B67AF76B1635BA40008A9E9F /* icon-done.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-done.png"; sourceTree = "<group>"; };
 		B67AF76C1635BA40008A9E9F /* icon-m-toolbar-done-dimmed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-m-toolbar-done-dimmed.png"; sourceTree = "<group>"; };
+		B6997569164DEB5E00FD14E9 /* dataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dataManager.h; sourceTree = "<group>"; };
+		B699756A164DEB5E00FD14E9 /* dataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dataManager.m; sourceTree = "<group>"; };
 		B6A3CAFC163CF5CB008705DC /* GolferSelectVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GolferSelectVC.h; sourceTree = "<group>"; };
 		B6A3CAFD163CF5CB008705DC /* GolferSelectVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GolferSelectVC.m; sourceTree = "<group>"; };
 		B6A3CB00163CF694008705DC /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -169,16 +167,6 @@
 		B6C5BF48163B812B00D7D732 /* MainMenuVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuVC.m; sourceTree = "<group>"; };
 		B6C5BF4B163B903900D7D732 /* SettingsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsVC.h; sourceTree = "<group>"; };
 		B6C5BF4C163B903900D7D732 /* SettingsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsVC.m; sourceTree = "<group>"; };
-		B6DD759E164AE36D00A472D8 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
-		B6DD759F164AE36D00A472D8 /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
-		B6DD75A0164AE36D00A472D8 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
-		B6DD75A1164AE36D00A472D8 /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
-		B6DD75A2164AE36D00A472D8 /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
-		B6DD75A3164AE36D00A472D8 /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
-		B6DD75A4164AE36D00A472D8 /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
-		B6DD75A5164AE36D00A472D8 /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
-		B6DD75A6164AE36D00A472D8 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
-		B6DD75A7164AE36D00A472D8 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
 		B6DD75BA164B9A8500A472D8 /* OnPar.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = OnPar.sqlite; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -206,7 +194,6 @@
 				B679D6CA1623C44200E19F98 /* OnPar */,
 				B679D6C31623C44200E19F98 /* Frameworks */,
 				B679D6C11623C44200E19F98 /* Products */,
-				B6DD75AD164AE37700A472D8 /* FMDB */,
 			);
 			sourceTree = "<group>";
 		};
@@ -237,6 +224,7 @@
 			children = (
 				B6DD75BA164B9A8500A472D8 /* OnPar.sqlite */,
 				B679D6DC1623C44200E19F98 /* MainStoryboard.storyboard */,
+				B699756D164DEB6400FD14E9 /* Classes */,
 				B679D6E71623C47500E19F98 /* Delegates */,
 				B679D6E81623C48600E19F98 /* View Controllers */,
 				B679D6CB1623C44200E19F98 /* Supporting Files */,
@@ -326,6 +314,15 @@
 			name = Images;
 			sourceTree = "<group>";
 		};
+		B699756D164DEB6400FD14E9 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				B6997569164DEB5E00FD14E9 /* dataManager.h */,
+				B699756A164DEB5E00FD14E9 /* dataManager.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
 		B6AD37CC163EE745003EF162 /* Golfers */ = {
 			isa = PBXGroup;
 			children = (
@@ -409,23 +406,6 @@
 			children = (
 			);
 			name = Scorecard;
-			sourceTree = "<group>";
-		};
-		B6DD75AD164AE37700A472D8 /* FMDB */ = {
-			isa = PBXGroup;
-			children = (
-				B6DD759E164AE36D00A472D8 /* FMDatabase.h */,
-				B6DD759F164AE36D00A472D8 /* FMDatabase.m */,
-				B6DD75A0164AE36D00A472D8 /* FMDatabaseAdditions.h */,
-				B6DD75A1164AE36D00A472D8 /* FMDatabaseAdditions.m */,
-				B6DD75A2164AE36D00A472D8 /* FMDatabasePool.h */,
-				B6DD75A3164AE36D00A472D8 /* FMDatabasePool.m */,
-				B6DD75A4164AE36D00A472D8 /* FMDatabaseQueue.h */,
-				B6DD75A5164AE36D00A472D8 /* FMDatabaseQueue.m */,
-				B6DD75A6164AE36D00A472D8 /* FMResultSet.h */,
-				B6DD75A7164AE36D00A472D8 /* FMResultSet.m */,
-			);
-			name = FMDB;
 			sourceTree = "<group>";
 		};
 		B6DD75B9164B30D200A472D8 /* Main */ = {
@@ -561,11 +541,7 @@
 				B665968F163D496700FB19A9 /* PenaltyVC.m in Sources */,
 				B6659699163DD6E500FB19A9 /* CourseSelectionVC.m in Sources */,
 				B6AD37E4163FB34E003EF162 /* PuttingVC.m in Sources */,
-				B6DD75A8164AE36D00A472D8 /* FMDatabase.m in Sources */,
-				B6DD75A9164AE36D00A472D8 /* FMDatabaseAdditions.m in Sources */,
-				B6DD75AA164AE36D00A472D8 /* FMDatabasePool.m in Sources */,
-				B6DD75AB164AE36D00A472D8 /* FMDatabaseQueue.m in Sources */,
-				B6DD75AC164AE36D00A472D8 /* FMResultSet.m in Sources */,
+				B699756B164DEB5E00FD14E9 /* dataManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

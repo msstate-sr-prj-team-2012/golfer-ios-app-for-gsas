@@ -13,11 +13,12 @@
 
 @end
 
-@implementation GolfersVC
+@implementation GolfersVC{
+    dataManager *myDataManager;
+}
 
 @synthesize golferTableView;
-@synthesize editButton;
-@synthesize addButton;
+@synthesize editButton, addButton, doneButton;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -28,40 +29,37 @@
     return self;
 }
 
+
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    
-    // get golfer info
-    golfers = [[NSMutableArray alloc] init];
-	NSString *path1  = [[NSBundle mainBundle] pathForResource:@"OnPar" ofType:@"sqlite"];
-	FMDatabase *db1  = [[FMDatabase alloc] initWithPath:path1];
-	[db1 open];
-	FMResultSet *fResult1= [db1 executeQuery:@"SELECT * FROM golfer"];
-    
-	while([fResult1 next])
-	{
-		golferName = [fResult1 stringForColumn:@"golfer_name"];
-		[golfers addObject:golferName];
-		NSLog(@"The data is %@=",golferName);
-	}
-    
-	[db1 close];
 
+    NSLog(@"GolfersVC has appeared");
+    
+    // get shared data
+    myDataManager = [dataManager myDataManager];
+ 
     // Disable add button if 4 golfers already added
-    if([golfers count] > 3)
+    if([myDataManager.golfers count] > 3)
     {
         // disable the button
         addButton.enabled = NO;
     }
     
+    if ([myDataManager.golfers count] > 0){
+        [doneButton setEnabled:YES];
+    }
+    
+    // reload tableview to reflect updates
     [golferTableView reloadData];
-    
-    
 }
+
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    NSLog(@"GolfersVC has loaded");
+    
 	// Do any additional setup after loading the view.
     
     // Set edit button
@@ -69,11 +67,13 @@
     editButton.title = @"Edit";
 }
 
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 
 - (IBAction)editOrder:(id)sender {
     
@@ -94,13 +94,18 @@
     }
 }
 
+
 - (void)viewDidUnload {
     [self setEditButton:nil];
     [self setAddButton:nil];
+    [self setDoneButton:nil];
     [super viewDidUnload];
 }
 
+
+
 #pragma mark - Table view data source
+
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -112,27 +117,25 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    //return [mainMenuOptions count];
-    
-    return [golfers count];
+    return [myDataManager.golfers count];
 }
 
- - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
- {
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+     static NSString *CellIdentifier = @"Right Detail";
+     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
  
- static NSString *simpleTableIdentifier = @"golferCell";
- UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
- 
- if (cell == nil) {
- cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
- }
- 
- cell.textLabel.text = [golfers objectAtIndex:indexPath.row];
+     if (cell == nil) {
+         cell = [[UITableViewCell alloc] initWithStyle: UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier];
+     }
      
-     NSLog(@"%d", indexPath.row);
- 
- return cell;
- }
+     cell.textLabel.text = [[myDataManager.golfers objectAtIndex:indexPath.row] valueForKey:@"golferName"];
+     
+    cell.detailTextLabel.text = [[myDataManager.golfers objectAtIndex:indexPath.row] valueForKey:@"golferID"];
+     
+     return cell;
+}
 
 
 /*
@@ -143,6 +146,7 @@
  return YES;
  }
  */
+
 
 /*
  // Override to support editing the table view.
@@ -155,8 +159,9 @@
  else if (editingStyle == UITableViewCellEditingStyleInsert) {
  // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
  }
- }
- */
+}
+*/
+
 
 /*
  // Override to support rearranging the table view.
@@ -165,6 +170,7 @@
  }
  */
 
+
 /*
  // Override to support conditional rearranging of the table view.
  - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
@@ -172,6 +178,7 @@
  // Return NO if you do not want the item to be re-orderable.
  return YES;
  }
- */
+*/
+
 
 @end

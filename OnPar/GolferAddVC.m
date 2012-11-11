@@ -7,9 +7,6 @@
 //
 
 #import "GolferAddVC.h"
-#import "AppDelegate.h"
-#import "FMDatabase.h"
-
 
 @interface GolferAddVC ()
 
@@ -17,6 +14,7 @@
 
 @implementation GolferAddVC{
     NSDictionary *teeDict;
+    dataManager *myDataManager;
 }
 
 @synthesize golferNickname;
@@ -31,9 +29,22 @@
     return self;
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    NSLog(@"GolferAddVC has appeared");
+    
+    // get shared data
+    myDataManager = [dataManager myDataManager];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    NSLog(@"GolferAddVC has loaded");
+    
 	// Do any additional setup after loading the view.
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
                                    initWithTarget:self
@@ -44,6 +55,7 @@
     [self populateTeeDictionary];
 }
 
+
 - (BOOL)textFieldShouldReturn:(UITextField *)theTextField {
     if (theTextField == self.golferIdTextField) {
         [theTextField resignFirstResponder];
@@ -53,11 +65,13 @@
     return YES;
 }
 
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 
 - (void)viewDidUnload {
     [self setGolferNickname:nil];
@@ -65,44 +79,38 @@
     [super viewDidUnload];
 }
 
+
 - (IBAction)saveGolferInfo:(id)sender {
     
     // Save Golfer Info
     NSString *golferID = golferIdTextField.text;
     NSString *golferName = golferNickname.text;
+    NSString *golferTee = [NSString stringWithFormat:@"%i", [teeSelectionPicker selectedRowInComponent:0]+1];
+    NSMutableArray *holes = [[NSMutableArray alloc] init];
     
-    NSInteger golferTee = [teeSelectionPicker selectedRowInComponent:0]+1;
+    NSMutableDictionary *golferInfo = [[NSMutableDictionary alloc] init];
     
-    // Insert Golfer into DB
-    NSString *path1  = [[NSBundle mainBundle] pathForResource:@"OnPar" ofType:@"sqlite"];
-	FMDatabase *db1  = [[FMDatabase alloc] initWithPath:path1];
-	if(![db1 open])
-        NSLog(@"database could not open");
+    [golferInfo setValue:golferID forKey:@"golferID"];
+    [golferInfo setValue:golferName forKey:@"golferName"];
+    [golferInfo setValue:golferTee forKey:@"golferTee"];
+    [golferInfo setObject:holes forKey:@"holes"];
     
-    NSNumber *tee = [NSNumber numberWithInt:golferTee];
-    
-    BOOL success = [db1 executeUpdate:@"INSERT INTO golfer (golfer_id, golfer_name, golfer_tee) VALUES (?, ?, ?)", golferID, golferName, tee];
-    
-    NSLog(@"database is here: %@", path1);
-	
-	/* Closing the Database */
-	[db1 close];
-    
-    if(success)
-        NSLog(@"success");
-    else
-        NSLog(@"failure");
-    
+    [myDataManager.golfers addObject:golferInfo];
+        
     // Return to Previous View
     [self.navigationController popViewControllerAnimated:YES];
 }
+
 
 -(void)dismissKeyboard {
     [golferNickname resignFirstResponder];
     [golferIdTextField resignFirstResponder];
 }
 
+
+
 #pragma mark - Preparing Dictionary of Tees
+
 
 - (void)populateTeeDictionary
 {
@@ -117,7 +125,7 @@
     
     for (int i=1; i<=[teeValue count]; i++)
     {
-        NSString *id = [NSString stringWithFormat:@"%d",i];
+        NSString *id = [NSString stringWithFormat:@"%i",i];
         [teeKey addObject:id];
     }
     
@@ -127,12 +135,16 @@
         NSLog(@"key=%@ value=%@", key, [teeDict objectForKey:key]);
 }
 
+
+
 #pragma mark - UIPickerView methods
+
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)thePickerView
 {
     return 1;
 }
+
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
 {
@@ -142,13 +154,15 @@
         return 0;
 }
 
+
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
 {
     if (component == 0)
-    {       NSString *id = [NSString stringWithFormat:@"%d",row+1];
+    {       NSString *id = [NSString stringWithFormat:@"%i",row+1];
             return [teeDict objectForKey:id];
     }else
         return 0;
 }
+
 
 @end

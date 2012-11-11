@@ -12,7 +12,9 @@
 
 @end
 
-@implementation PenaltyVC
+@implementation PenaltyVC{
+    dataManager *myDataManager;
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -21,6 +23,13 @@
         // Custom initialization
     }
     return self;
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    // get shared data
+    myDataManager = [dataManager myDataManager];
 }
 
 - (void)viewDidLoad

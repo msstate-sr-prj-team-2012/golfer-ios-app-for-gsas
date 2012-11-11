@@ -19,6 +19,7 @@
 @synthesize nrButton;
 @synthesize cancelButton;
 
+
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -28,9 +29,43 @@
     return self;
 }
 
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+
+    NSLog(@"ShotOptionVC appeared");
+
+    // get shared data
+    dataManager *myDataManager = [dataManager myDataManager];
+    
+    // get selected golfer
+    int selectedGolfer = [[myDataManager.roundInfo valueForKey:@"selectedGolfer"] intValue];
+    
+    // has shot already been started
+    int started = [[[[myDataManager.golfers objectAtIndex:selectedGolfer] objectForKey:@"currentShot"] valueForKey:@"started"] intValue];
+    
+    if(started == 1)
+    {    // Change label to resume shot
+    nrButton.textLabel.text = @"Resume Shot";
+    UIImage *nrImage = [UIImage imageNamed:@"resume.png"];
+    [nrButton.imageView setImage:nrImage];
+    
+    // Create cancel shot button
+    cancelButton.textLabel.text = @"Cancel Shot";
+    UIImage *cancelImage = [UIImage imageNamed:@"cancel.png"];
+    [cancelButton.imageView setImage:cancelImage];
+    [cancelButton setHidden:NO];
+    
+    //[tableView reloadData];
+    }
+}
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    NSLog(@"ShotOption loaded");
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -39,13 +74,17 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
+
+
 #pragma mark - Table view data source
+
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -53,11 +92,13 @@
     return 3;
 }
 
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
     return 1;
 }
+
 
 /*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -100,12 +141,14 @@
 }
 */
 
+
 /*
 // Override to support rearranging the table view.
 - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
 {
 }
 */
+
 
 /*
 // Override to support conditional rearranging of the table view.
@@ -116,21 +159,63 @@
 }
 */
 
+
+
 #pragma mark - Table view delegate
+
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {    
     UITableViewCell *theCellClicked = [self.tableView cellForRowAtIndexPath:indexPath];
+
+    // get shared data
+    dataManager *myDataManager = [dataManager myDataManager];
+    
+    // get current golfer
+    int selectedGolfer = [[myDataManager.roundInfo valueForKey:@"selectedGolfer"] intValue];
+    
+    NSLog(@"selectedGolfer is: %i", selectedGolfer);
+    
+    // has shot been started
+    if ([[myDataManager.golfers objectAtIndex: selectedGolfer] objectForKey:@"currentShot"] == nil)
+    {
+        NSLog(@"Shot has not been started");
+        shotStarted = FALSE;
+    }
+    else
+    {
+        NSLog(@"Shot has already been started");
+        shotStarted = TRUE;
+    }
     
     if (theCellClicked == nrButton) {
-
+        
         // New or Resume Shot?
         if(shotStarted == FALSE)
         {
             // New Shot
             NSLog(@"Button press: 'New Shot'");
-            shotStarted = TRUE;
+            //shotStarted = TRUE;
             
+            NSMutableDictionary *currentShot = [[NSMutableDictionary alloc] init];
+            
+            [[myDataManager.golfers objectAtIndex:selectedGolfer] setObject:currentShot forKey:@"currentShot"];
+            
+            // start shot
+            [[[myDataManager.golfers objectAtIndex:selectedGolfer] objectForKey:@"currentShot"] setValue:@"1" forKey:@"started"];
+            
+            // get last shot number
+            int lastShot = [[[myDataManager.golfers objectAtIndex:selectedGolfer] valueForKey:@"shotCount"] intValue];
+            
+            // add new shot number
+            [[myDataManager.golfers objectAtIndex:selectedGolfer] setValue:[NSString stringWithFormat:@"%i", lastShot+1] forKey:@"shotCount"];
+            
+            // find currentHole
+            NSString *currentHole = [[[myDataManager.golfers objectAtIndex:selectedGolfer] objectForKey:@"currentHole"]valueForKey:@"holeNum"];
+            
+            // set hole num for current shot
+            [[[myDataManager.golfers objectAtIndex:selectedGolfer] objectForKey:@"currentShot"] setValue:currentHole forKey:@"holeNum"];
+                        
             // Change label to resume shot
             nrButton.textLabel.text = @"Resume Shot";
             UIImage *nrImage = [UIImage imageNamed:@"resume.png"];
@@ -143,13 +228,14 @@
             [cancelButton setHidden:NO];
             
             [tableView reloadData];
-            
         }
         else
         {
             // Resume Shot
             NSLog(@"Button press: 'Resume Shot'");
         }
+        
+        [self performSegueWithIdentifier:@"toShotSequence" sender:nil]; 
  
     }
  
@@ -167,8 +253,12 @@
         }
 }
 
+
 // Called when an alertview button is touched
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    
+        // get shared data
+        dataManager *myDataManager = [dataManager myDataManager];
     
         switch (buttonIndex){
             case 0:
@@ -182,6 +272,18 @@
                 // YES - cancel shot
                 NSLog(@"Button press: 'YES' - shot cancelled");
                 shotStarted = FALSE;
+                
+                // get selected golfer
+                int selectedGolfer = [[myDataManager.roundInfo valueForKey:@"selectedGolfer"] intValue];
+                
+                // cancel current shot
+                [[myDataManager.golfers objectAtIndex:selectedGolfer] setValue:nil forKey:@"currentShot"];
+                
+                // current shot count
+                int count = [[[myDataManager.golfers objectAtIndex:selectedGolfer] valueForKey:@"shotCount"] intValue];
+                
+                // decrement shotCount
+                [[myDataManager.golfers objectAtIndex:selectedGolfer] setValue:[NSString stringWithFormat:@"%i", count-1] forKey:@"shotCount"];
                     
                 // Change label to resume shot
                 nrButton.textLabel.text = @"New Shot";
@@ -206,9 +308,12 @@
 
 }
 
+
 - (void)viewDidUnload {
     [self setNrButton:nil];
     [self setCancelButton:nil];
     [super viewDidUnload];
 }
+
+
 @end

@@ -12,9 +12,8 @@
 
 @end
 
-@implementation MainMenuVC{
-    //NSArray *mainMenuOptions;
-}
+@implementation MainMenuVC
+
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -25,9 +24,12 @@
     return self;
 }
 
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    NSLog(@"MainMenuVC has loaded");
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -40,13 +42,17 @@
 
 }
 
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
+
+
 #pragma mark - Table view data source
+
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -121,7 +127,9 @@
 */
 
 
+
 #pragma mark - Table view delegate
+
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -134,7 +142,10 @@
      */
 }
 
+
 - (void)viewDidUnload {
     [super viewDidUnload];
 }
+
+
 @end

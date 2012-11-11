@@ -12,11 +12,15 @@
 
 @end
 
-@implementation GolferSelectVC
+@implementation GolferSelectVC{
+    NSInteger tabNumber;
+}
+
 @synthesize golferName;
 @synthesize golferTabBar;
 @synthesize golfer0, golfer1, golfer2, golfer3;
 @synthesize holeNumber, shotNumber, scoreTotal, rankNumber;
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -27,72 +31,79 @@
     return self;
 }
 
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+
+    NSLog(@"GolferSelectVC has appeared");
+    
+    // get shared data
+    dataManager *myDataManager = [dataManager myDataManager];
+    
+    
+    // get selected golfer
+    int selectedGolfer = [[myDataManager.roundInfo valueForKey:@"selectedGolfer"] intValue];
+    
+    
+    // Start on first golfers tab
+    if ([myDataManager.golfers count] > 0){
+        [golferTabBar setSelectedItem:[golferTabBar.items objectAtIndex: selectedGolfer]];
+        NSLog(@"selectedGolfer is %i", selectedGolfer);
+        [self activateTab:selectedGolfer + 1];
+    }
+
+}
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
     
-    // get golfer info
-    golfers = [[NSMutableArray alloc] init];
-	NSString *path1  = [[NSBundle mainBundle] pathForResource:@"OnPar" ofType:@"sqlite"];
-	FMDatabase *db1  = [[FMDatabase alloc] initWithPath:path1];
-	[db1 open];
-	FMResultSet *fResult1= [db1 executeQuery:@"SELECT * FROM golfer"];
+    NSLog(@"GolferSelectVC has loaded");
     
-	while([fResult1 next])
-	{
-		name = [fResult1 stringForColumn:@"golfer_name"];
-		[golfers addObject:name];
-	}
-    
-    NSLog(@"golfer count tab page: %d", [golfers count]);
-    
-	[db1 close];
+    // getting shared data
+    dataManager *myDataManager = [dataManager myDataManager];
     
     // image to use on tabs
     UIImage *man = [UIImage imageNamed:@"man.png"];
-    
+        
     // Sets the correct number of tabs on the tabBar
-    if([golfers count] > 0)
+    if([myDataManager.golfers count] > 0)
     {
         [golfer0 setImage:man];
-        [golfer0 setTitle:[golfers objectAtIndex:0]];
+        [golfer0 setTitle:[[myDataManager.golfers objectAtIndex:0]valueForKey:@"golferName"]];
         [golfer0 setEnabled:YES];
         
-        if([golfers count] > 1)
+        if([myDataManager.golfers count] > 1)
         {
             [golfer1 setImage:man];
-            [golfer1 setTitle:[golfers objectAtIndex:1]];
+            [golfer1 setTitle:[[myDataManager.golfers objectAtIndex:1]valueForKey:@"golferName"]];
             [golfer1 setEnabled:YES];
             
-            if([golfers count] > 2)
+            if([myDataManager.golfers count] > 2)
             {
                 [golfer2 setImage:man];
-                [golfer2 setTitle:[golfers objectAtIndex:2]];
+                [golfer2 setTitle:[[myDataManager.golfers objectAtIndex:2]valueForKey:@"golferName"]];
                 [golfer2 setEnabled:YES];
                 
-                if([golfers count] > 3)
+                if([myDataManager.golfers count] > 3)
                 {
                     [golfer3 setImage:man];
-                    [golfer3 setTitle:[golfers objectAtIndex:3]];
+                    [golfer3 setTitle:[[myDataManager.golfers objectAtIndex:3]valueForKey:@"golferName"]];
                     [golfer3 setEnabled:YES];
                 }
             }
         }
     }
-    
-    // Start on first players tab
-    if ([golfers count] > 0){
-        [golferTabBar setSelectedItem:[golferTabBar.items objectAtIndex:0]];
-        [self activateTab:1];
-    }
 }
+
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 
 - (void)viewDidUnload {
     [self setGolferName:nil];
@@ -108,25 +119,40 @@
     [super viewDidUnload];
 }
 
+
 - (void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item {
-    NSLog(@"didSelectItem: %d", item.tag);
+
+    dataManager *myDataManager = [dataManager myDataManager];
     
-    NSInteger tabNumber = item.tag;
+    tabNumber = item.tag;
+    NSLog(@"Tab %i Selected", tabNumber);
     
-        NSLog(@"Tab %d Loaded", tabNumber);
+    // update name
+    [golferName setText:[NSString stringWithFormat:@"%@",[[myDataManager.golfers objectAtIndex:tabNumber] valueForKey:@"golferName"]]];
     
-    [golferName setText:[NSString stringWithFormat:@"%@",[golfers objectAtIndex:tabNumber]]];
-    [holeNumber setText:[NSString stringWithFormat:@"%d",tabNumber]];
-    [shotNumber setText:[NSString stringWithFormat:@"%d", tabNumber]];
-    [scoreTotal setText:[NSString stringWithFormat:@"%d", tabNumber]];
-    [rankNumber setText:[NSString stringWithFormat:@"%d", tabNumber]];
+    // get current hole number for golfer
+    int holeNum = [[[[myDataManager.golfers objectAtIndex:tabNumber] valueForKey:@"currentHole"] valueForKey:@"holeNum"] intValue];
+
+    // get current shot number for golfer
+    int shotNum = [[[myDataManager.golfers objectAtIndex:tabNumber] valueForKey:@"shotCount"] intValue];
+    
+    NSLog(@"shot count updated to %i", shotNum);
+    
+    
+    // update labels
+    [holeNumber setText:[NSString stringWithFormat:@"%i", holeNum]];
+    [shotNumber setText:[NSString stringWithFormat:@"%i", shotNum]];
+    //[scoreTotal setText:[NSString stringWithFormat:@"%d", tabNumber]];
+    //[rankNumber setText:[NSString stringWithFormat:@"%d", tabNumber]];
 }
+
 
 - (void)activateTab:(int)index {
     switch (index) {
         case 1:
             [self tabBar:golferTabBar didSelectItem: golfer0];
-             break;
+            NSLog(@"Tab 0 activated");
+            break;
         case 2:
             [self tabBar:golferTabBar didSelectItem: golfer1];
             break;
@@ -140,5 +166,16 @@
             break;
     }
 }
+
+
+- (IBAction)goToGreen:(id)sender {
+    dataManager *myDataManager = [dataManager myDataManager];
+    
+    // save which golfer is selected
+    [myDataManager.roundInfo setValue: [NSString stringWithFormat:@"%i", tabNumber] forKey:@"selectedGolfer"];
+    
+    [self performSegueWithIdentifier:@"toShotStart" sender:nil];
+}
+
 
 @end

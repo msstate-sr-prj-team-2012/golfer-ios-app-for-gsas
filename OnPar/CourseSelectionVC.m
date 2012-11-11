@@ -12,7 +12,10 @@
 
 @end
 
-@implementation CourseSelectionVC
+@implementation CourseSelectionVC{
+    dataManager *myDataManager;
+}
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -23,13 +26,27 @@
     return self;
 }
 
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    NSLog(@"CourseSelectionVC has appeared");
+    
+    // get shared data
+    myDataManager = [dataManager myDataManager];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    NSLog(@"CourseSelectionVC has loaded");
+    
 	// Do any additional setup after loading the view.
     [self getCourses];
-    NSLog(@"view loaded");
 }
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -37,7 +54,10 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+
 #pragma mark - Loading Arrays
+
 
 - (void)getCourses
 {
@@ -54,13 +74,18 @@
     courseDict = [NSDictionary dictionaryWithObjects:courseIDs forKeys:courseNames];
 }
 
+
 - (IBAction)saveSelection:(id)sender {
     
     // Save Course Selection
     selectedCourseName = [courseNames objectAtIndex:[courseSelectionPicker selectedRowInComponent:0]];
-    
+
     selectedCourseID = [courseDict objectForKey:selectedCourseName];
     
+    [myDataManager.roundInfo setValue:selectedCourseName forKey:@"courseName"];
+    [myDataManager.roundInfo setValue:selectedCourseID forKey:@"courseID"];
+    
+/*
     // Insert course_id into DB
     NSString *path1  = [[NSBundle mainBundle] pathForResource:@"OnPar" ofType:@"sqlite"];
 	FMDatabase *db1  = [[FMDatabase alloc] initWithPath:path1];
@@ -69,7 +94,7 @@
 
     BOOL success = [db1 executeUpdate:@"INSERT INTO info (course_id) VALUES (?)", selectedCourseID];
     
-	/* Closing the Database */
+	// Closing the Database
 	[db1 close];
     
     // debugging
@@ -77,17 +102,22 @@
          NSLog(@"success");
      else
          NSLog(@"failure");
+*/
     
     // push new view on nav controller
-    [self performSegueWithIdentifier:@"courseSave" sender:nil];
+    [self performSegueWithIdentifier:@"courseToGolfer" sender:nil];
 }
 
+
+
 #pragma mark - UIPickerView methods
+
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)thePickerView
 {
     return 1;
 }
+
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
 {
@@ -96,6 +126,7 @@
     else
         return 0;
  }
+
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
 {
@@ -109,5 +140,6 @@
 - (void)viewDidUnload {
     [super viewDidUnload];
 }
+
 
 @end

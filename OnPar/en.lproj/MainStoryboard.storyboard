@@ -158,7 +158,7 @@
             </objects>
             <point key="canvasLocation" x="636" y="-687"/>
         </scene>
-        <!--Golfer SelectVC - Select A Golfer-->
+        <!--Golfer SelectVC - Home-->
         <scene sceneID="a13-ch-qex">
             <objects>
                 <viewController id="mgf-Tl-DQP" customClass="GolferSelectVC" sceneMemberID="viewController">
@@ -187,7 +187,7 @@
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Round Stats" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XMU-4b-URb">
+                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Round Stats" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XMU-4b-URb">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="aer-cb-vDE"/>
                                     <constraint firstAttribute="width" constant="127" id="fcd-kY-H6o"/>
@@ -197,12 +197,12 @@
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Rank:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wVv-BJ-baP">
+                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Rank:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wVv-BJ-baP">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Score:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Mg-Vd-H6r">
+                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Score:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Mg-Vd-H6r">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -227,12 +227,12 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="raP-tH-V3W">
+                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="raP-tH-V3W">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bI8-7D-Gun">
+                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bI8-7D-Gun">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -260,7 +260,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="h9w-6J-GwK" kind="push" id="TBs-rC-De1"/>
+                                    <action selector="goToGreen:" destination="mgf-Tl-DQP" eventType="touchUpInside" id="vWt-oc-Cl0"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="To The Green.png" translatesAutoresizingMaskIntoConstraints="NO" id="6P1-Hh-rQW">
@@ -309,7 +309,7 @@
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="______________" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jDP-41-tAG">
+                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="______________" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jDP-41-tAG">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -367,7 +367,7 @@
                             <constraint firstItem="uH9-IX-bLf" firstAttribute="leading" secondItem="w7E-V1-zFr" secondAttribute="leading" type="default" id="vti-K7-TNk"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Select A Golfer" id="GSA-sa-rCa">
+                    <navigationItem key="navigationItem" title="Home" id="GSA-sa-rCa">
                         <barButtonItem key="rightBarButtonItem" title="Options" id="QiK-LH-56m">
                             <connections>
                                 <segue destination="yCG-cr-cDN" kind="push" id="xJX-Uv-pmp"/>
@@ -385,13 +385,14 @@
                         <outlet property="rankNumber" destination="bI8-7D-Gun" id="XIR-ZZ-of9"/>
                         <outlet property="scoreTotal" destination="raP-tH-V3W" id="H4u-vW-6zf"/>
                         <outlet property="shotNumber" destination="w7E-V1-zFr" id="V9w-6u-IBt"/>
+                        <segue destination="h9w-6J-GwK" kind="push" identifier="toShotStart" id="nrd-Bx-SEK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YJY-jz-FNv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1116" y="-687"/>
         </scene>
-        <!--Course SelectionVC - Course Selection-->
+        <!--Course SelectionVC - Courses-->
         <scene sceneID="hlJ-nm-8dM">
             <objects>
                 <viewController id="sKd-IN-kWI" customClass="CourseSelectionVC" sceneMemberID="viewController">
@@ -423,7 +424,7 @@
                             <constraint firstItem="YUr-T7-nz5" firstAttribute="top" secondItem="FNZ-RA-j7b" secondAttribute="top" constant="61" id="p2z-Li-aCE"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Course Selection" id="jII-Xi-efb">
+                    <navigationItem key="navigationItem" title="Courses" id="jII-Xi-efb">
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="tLU-BL-aDZ">
                             <connections>
                                 <action selector="saveSelection:" destination="sKd-IN-kWI" id="gQc-dI-i9m"/>
@@ -432,7 +433,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="courseSelectionPicker" destination="rTE-Zr-EdD" id="PJ1-QL-5Bg"/>
-                        <segue destination="XoO-E7-uF7" kind="push" identifier="courseSave" id="we2-np-Ku2"/>
+                        <segue destination="XoO-E7-uF7" kind="push" identifier="courseToGolfer" id="we2-np-Ku2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="anU-vv-9yg" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -448,7 +449,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <sections>
-                            <tableViewSection headerTitle="Hole 1" id="hf5-O3-wK7">
+                            <tableViewSection headerTitle="Hole #" id="hf5-O3-wK7">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ShotOption" textLabel="d5f-8m-AJy" imageView="gzM-sl-Zzi" style="IBUITableViewCellStyleDefault" id="3xt-iy-8Ie">
                                         <rect key="frame" x="0.0" y="46" width="320" height="46"/>
@@ -469,9 +470,6 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
-                                        <connections>
-                                            <segue destination="jU4-cg-rKm" kind="push" id="eEK-D5-KVR"/>
-                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -538,6 +536,7 @@
                     <connections>
                         <outlet property="cancelButton" destination="uYj-PE-8wh" id="8Mh-bO-Uzp"/>
                         <outlet property="nrButton" destination="3xt-iy-8Ie" id="f1V-JA-16f"/>
+                        <segue destination="jU4-cg-rKm" kind="push" identifier="toShotSequence" id="PK8-DO-B1D"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R17-N6-ofd" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -721,7 +720,7 @@
             </objects>
             <point key="canvasLocation" x="2090" y="-1030"/>
         </scene>
-        <!--PuttingVC-->
+        <!--PuttingVC - Putts-->
         <scene sceneID="1nO-ES-Aic">
             <objects>
                 <viewController id="XeL-6I-70n" customClass="PuttingVC" sceneMemberID="viewController">
@@ -751,7 +750,7 @@
                             <constraint firstItem="KnF-fM-y4L" firstAttribute="leading" secondItem="iZV-qf-e9Z" secondAttribute="leading" type="default" id="v8m-Nn-hcf"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="2UK-hz-w0u">
+                    <navigationItem key="navigationItem" title="Putts" id="2UK-hz-w0u">
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="fsr-IE-cVE">
                             <connections>
                                 <action selector="savePuttingInfo:" destination="XeL-6I-70n" id="o16-An-bjB"/>
@@ -766,7 +765,7 @@
             </objects>
             <point key="canvasLocation" x="2090" y="-349"/>
         </scene>
-        <!--ShotVC - Intended Direction-->
+        <!--ShotVC - Aim-->
         <scene sceneID="oZB-z4-hM1">
             <objects>
                 <viewController id="NR7-cP-jfi" customClass="ShotVC" sceneMemberID="viewController">
@@ -803,14 +802,15 @@
                             <constraint firstItem="8rP-ob-wXP" firstAttribute="leading" secondItem="zst-v7-kO7" secondAttribute="leading" type="default" id="eBw-qn-xhL"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Intended Direction" id="2XL-L5-Tf2">
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="BM5-AE-w0S">
+                    <navigationItem key="navigationItem" title="Aim" id="2XL-L5-Tf2">
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" systemItem="done" id="BM5-AE-w0S">
                             <connections>
                                 <action selector="saveIntendedDirection:" destination="NR7-cP-jfi" id="HV5-uO-niC"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="doneButton" destination="BM5-AE-w0S" id="Nvk-nT-xO5"/>
                         <outlet property="imageV" destination="3GK-tf-gFX" id="L1N-CX-qm1"/>
                         <outlet property="scrollV" destination="8rP-ob-wXP" id="stk-2O-mbB"/>
                     </connections>
@@ -849,13 +849,10 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="e9J-Fc-Ua0">
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="263" id="6MX-FH-729"/>
-                                </constraints>
                                 <color key="separatorColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="gray" showsReorderControl="YES" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Golfer1NameCell" textLabel="vIx-Ed-Svf" style="IBUITableViewCellStyleDefault" id="ubP-H6-BPt">
-                                        <rect key="frame" x="0.0" y="46" width="320" height="45"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="gray" showsReorderControl="YES" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Golfer1NameCell" textLabel="vIx-Ed-Svf" detailTextLabel="eFf-tc-iRt" style="IBUITableViewCellStyleValue1" id="ubP-H6-BPt">
+                                        <rect key="frame" x="0.0" y="46" width="320" height="46"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="1" width="280" height="43"/>
@@ -866,55 +863,9 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </label>
-                                            </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="gray" showsReorderControl="YES" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Golfer2NameCell" textLabel="RAk-i9-JBZ" style="IBUITableViewCellStyleDefault" id="IUe-bq-uqG">
-                                        <rect key="frame" x="0.0" y="91" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="10" y="0.0" width="280" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Kevin" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="RAk-i9-JBZ">
-                                                    <rect key="frame" x="10" y="0.0" width="260" height="43"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                </label>
-                                            </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="gray" showsReorderControl="YES" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Golfer3NameCell" textLabel="b1W-HR-GLH" style="IBUITableViewCellStyleDefault" id="FVr-nu-5BH">
-                                        <rect key="frame" x="0.0" y="135" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="10" y="0.0" width="280" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Travis" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="b1W-HR-GLH">
-                                                    <rect key="frame" x="10" y="0.0" width="260" height="43"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                </label>
-                                            </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="gray" showsReorderControl="YES" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Golfer4NameCell" textLabel="W4a-JT-hPd" style="IBUITableViewCellStyleDefault" id="W0e-tp-qdi">
-                                        <rect key="frame" x="0.0" y="179" width="320" height="45"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="10" y="0.0" width="280" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Vu" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="W4a-JT-hPd">
-                                                    <rect key="frame" x="10" y="0.0" width="260" height="43"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eFf-tc-iRt">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.2196078431372549" green="0.32941176470588235" blue="0.52941176470588236" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </label>
                                             </subviews>
@@ -948,6 +899,7 @@
                         <constraints>
                             <constraint firstItem="08P-kP-HGg" firstAttribute="bottom" secondItem="EvK-kb-oBt" secondAttribute="bottom" type="default" id="5cy-Jo-Oxc"/>
                             <constraint firstItem="e9J-Fc-Ua0" firstAttribute="top" secondItem="EvK-kb-oBt" secondAttribute="top" type="default" id="MqG-C1-RWc"/>
+                            <constraint firstItem="08P-kP-HGg" firstAttribute="top" secondItem="e9J-Fc-Ua0" secondAttribute="bottom" type="default" id="YaZ-Ae-yEf"/>
                             <constraint firstItem="e9J-Fc-Ua0" firstAttribute="trailing" secondItem="EvK-kb-oBt" secondAttribute="trailing" type="default" id="bX1-Dt-2sb"/>
                             <constraint firstItem="08P-kP-HGg" firstAttribute="trailing" secondItem="EvK-kb-oBt" secondAttribute="trailing" type="default" id="cez-u0-hMj"/>
                             <constraint firstItem="e9J-Fc-Ua0" firstAttribute="leading" secondItem="EvK-kb-oBt" secondAttribute="leading" type="default" id="dJD-GI-Uuh"/>
@@ -955,7 +907,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Golfers" id="AxS-Zz-3ct">
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="DH5-eE-uCM">
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" systemItem="done" id="DH5-eE-uCM">
                             <connections>
                                 <segue destination="ZOf-KO-EYs" kind="push" id="Wp1-yX-ncg"/>
                             </connections>
@@ -963,6 +915,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="addButton" destination="V3I-IS-8E9" id="N9g-kd-Zrc"/>
+                        <outlet property="doneButton" destination="DH5-eE-uCM" id="UIz-6j-yKM"/>
                         <outlet property="editButton" destination="woO-fl-umf" id="LWf-Al-bAW"/>
                         <outlet property="golferTableView" destination="e9J-Fc-Ua0" id="JGO-OI-Zbv"/>
                     </connections>
@@ -971,7 +924,7 @@
             </objects>
             <point key="canvasLocation" x="106" y="-687"/>
         </scene>
-        <!--Golfer AddVC - Golfer Info-->
+        <!--Golfer AddVC - New Golfer-->
         <scene sceneID="wFj-XE-AKg">
             <objects>
                 <viewController id="ljy-Y6-jhd" customClass="GolferAddVC" sceneMemberID="viewController">
@@ -984,7 +937,7 @@
                                     <constraint firstAttribute="width" constant="177" id="uQo-v5-fpT"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="next"/>
                                 <connections>
                                     <outlet property="delegate" destination="ljy-Y6-jhd" id="90u-t5-486"/>
                                 </connections>
@@ -1043,8 +996,8 @@
                             <constraint firstItem="NGx-3z-ReA" firstAttribute="bottom" secondItem="Lyy-dv-1NW" secondAttribute="bottom" type="default" id="ya6-RS-pxR"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Golfer Info" id="LJe-4l-DRw">
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="ppG-hk-gIB">
+                    <navigationItem key="navigationItem" title="New Golfer" id="LJe-4l-DRw">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="ppG-hk-gIB">
                             <connections>
                                 <action selector="saveGolferInfo:" destination="ljy-Y6-jhd" id="5h4-1s-AVy"/>
                             </connections>
@@ -1060,7 +1013,7 @@
             </objects>
             <point key="canvasLocation" x="636" y="-1401"/>
         </scene>
-        <!--Club SelectionVC - Club Selection-->
+        <!--Club SelectionVC - Clubs-->
         <scene sceneID="Dfl-Tk-nAj">
             <objects>
                 <viewController id="ldU-pR-O2K" customClass="ClubSelectionVC" sceneMemberID="viewController">
@@ -1092,7 +1045,7 @@
                             <constraint firstItem="eHg-Ba-f47" firstAttribute="trailing" secondItem="yH6-hD-OdI" secondAttribute="trailing" type="default" id="jXT-eX-BgU"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Club Selection" id="0db-rj-D31">
+                    <navigationItem key="navigationItem" title="Clubs" id="0db-rj-D31">
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="aGo-hp-iF8">
                             <connections>
                                 <action selector="saveClubSelection:" destination="ldU-pR-O2K" id="yMn-TG-uXU"/>
@@ -1107,7 +1060,7 @@
             </objects>
             <point key="canvasLocation" x="2731" y="-1032"/>
         </scene>
-        <!--PenaltyVC - Penalty Options-->
+        <!--PenaltyVC - Penalty-->
         <scene sceneID="WBk-YO-bDc">
             <objects>
                 <viewController id="njD-SV-uZk" customClass="PenaltyVC" sceneMemberID="viewController">
@@ -1158,7 +1111,7 @@
                             <constraint firstItem="NQ2-YX-VI9" firstAttribute="top" secondItem="JRK-6m-R0S" secondAttribute="top" constant="122" id="uQE-7w-aLf"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Penalty Options" id="wVM-iH-u3s"/>
+                    <navigationItem key="navigationItem" title="Penalty" id="wVM-iH-u3s"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A92-PL-s57" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1206,6 +1159,7 @@
         <class className="GolferSelectVC" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/GolferSelectVC.h"/>
             <relationships>
+                <relationship kind="action" name="goToGreen:"/>
                 <relationship kind="outlet" name="golfer0" candidateClass="UITabBarItem"/>
                 <relationship kind="outlet" name="golfer1" candidateClass="UITabBarItem"/>
                 <relationship kind="outlet" name="golfer2" candidateClass="UITabBarItem"/>
@@ -1223,6 +1177,7 @@
             <relationships>
                 <relationship kind="action" name="editOrder:"/>
                 <relationship kind="outlet" name="addButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="doneButton" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="editButton" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="golferTableView" candidateClass="UITableView"/>
             </relationships>
@@ -1275,6 +1230,7 @@
             <relationships>
                 <relationship kind="action" name="saveIntendedDirection:"/>
                 <relationship kind="action" name="tapDetected:" candidateClass="UIGestureRecognizer"/>
+                <relationship kind="outlet" name="doneButton" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="imageV" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="scrollV" candidateClass="UIScrollView"/>
             </relationships>

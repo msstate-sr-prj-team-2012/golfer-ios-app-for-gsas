@@ -13,6 +13,7 @@
 @end
 
 @implementation ClubSelectionVC{
+    dataManager *myDataManager;
     int selectedIndex;
 }
 
@@ -24,6 +25,13 @@
         // Custom initialization
     }
     return self;
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    // get shared data
+    myDataManager = [dataManager myDataManager];
 }
 
 - (void)viewDidLoad

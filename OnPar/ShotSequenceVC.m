@@ -18,7 +18,9 @@
     BOOL hit;
     BOOL ended;
     BOOL putting;
+    dataManager *myDataManager;
 }
+
 @synthesize tableView;
 @synthesize intendedDirection, clubSelection, hitTheBall, penaltyOptions, endShot;
 
@@ -31,10 +33,32 @@
     return self;
 }
 
+// this method does get called now
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+
+        NSLog(@"ShotSequenceVC appeared");
+    
+    // get shared data
+    myDataManager = [dataManager myDataManager];
+    
+    int selectedGolfer = [[myDataManager.roundInfo valueForKey:@"selectedGolfer"] intValue];
+    
+    // get current hole and shot number
+    int shot = [[[myDataManager.golfers objectAtIndex:selectedGolfer] valueForKey:@"shotCount"] intValue];
+    
+    int hole = [[[[myDataManager.golfers objectAtIndex:selectedGolfer] objectForKey:@"currentShot"] valueForKey:@"holeNum"] intValue];
+    
+    NSLog(@"Hole: %i, Shot: %i", hole, shot);
+}
+
+// this method does not get called
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 
+    NSLog(@"ShotSequenceVC loaded");
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
@@ -130,11 +154,14 @@
      */
 }
 
+
 - (IBAction)changeGolfer:(id)sender {
     
     // Goes back 2 view controllers
     [self.navigationController popToViewController:[self.navigationController.viewControllers objectAtIndex:[self.navigationController.viewControllers count]-3] animated:YES];
 }
+
+
 - (void)viewDidUnload {
     [self setHitTheBall:nil];
     [self setClubSelection:nil];

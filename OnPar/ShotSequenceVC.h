@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "dataManager.h"
 
 @interface ShotSequenceVC : UITableViewController<UITableViewDelegate>
 

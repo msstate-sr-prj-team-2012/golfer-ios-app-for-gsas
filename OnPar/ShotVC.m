@@ -12,9 +12,13 @@
 
 @end
 
-@implementation ShotVC
+@implementation ShotVC{
+    double x, y;
+    double lat, lon;
+}
 
-@synthesize scrollV, imageV;
+@synthesize scrollV, imageV, doneButton;
+
 
 /*
 - (void) loadView {
@@ -49,14 +53,38 @@
 }
 */
 
+
 -(void)tapDetected:(UIGestureRecognizer*)recognizer{
     NSLog(@"tap detected.");
     CGPoint point = [recognizer locationInView:imageV];
     
     NSLog(@"x = %f y = %f", point.x, point.y );
+    
+    x = point.x;
+    y = point.y;
+    
+    // should place image on top of hole pic to indicate selection here //
+    
+    [doneButton setEnabled:YES];
 }
 
+
 - (IBAction)saveIntendedDirection:(id)sender {
+    
+    dataManager *myDataManager = [dataManager myDataManager];
+    
+    // should be converted to actual gps location
+    lat = x;
+    lon = y;
+    
+    // get selected golfer
+    int selectedGolfer = [[myDataManager.roundInfo valueForKey:@"selectedGolfer"] intValue];
+    
+    // add gps location to current shot dictionary
+    [[[myDataManager.golfers objectAtIndex:selectedGolfer] objectForKey:@"currentShot"] setValue:[NSString stringWithFormat:@"%f",lat] forKey:@"aimLatitude"];
+
+    [[[myDataManager.golfers objectAtIndex:selectedGolfer] objectForKey:@"currentShot"] setValue:[NSString stringWithFormat:@"%f",lon] forKey:@"aimLongitude"];
+    
     [self.navigationController popViewControllerAnimated:YES];
 }
 
@@ -66,11 +94,32 @@
 }
 
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    NSLog(@"ShotVC has appeared");
+    
+    //dataManager *myDataManager = [dataManager myDataManager];
+}
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    
+    NSLog(@"ShotVC has loaded");
+    
+    dataManager *myDataManager = [dataManager myDataManager];
+    
+    // get current golfer
+    int selectedGolfer = [[myDataManager.roundInfo valueForKey:@"selectedGolfer"] intValue];
+    
+    // get current shot number
+    int shot = [[[myDataManager.golfers objectAtIndex:selectedGolfer] valueForKey:@"shotCount"] intValue];
+    
+    NSLog(@"current shot number: %i", shot);
 }
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -78,10 +127,13 @@
     // Dispose of any resources that can be recreated.
 }
 
+
 - (void)viewDidUnload {
     [self setScrollV:nil];
     [self setImageV:nil];
+    [self setDoneButton:nil];
     [super viewDidUnload];
 }
+
 
 @end

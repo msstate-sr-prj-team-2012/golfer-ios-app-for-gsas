@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "FMDatabase.h"
+#import "dataManager.h"
 
 @interface GolferAddVC : UIViewController<UIPickerViewDataSource, UIPickerViewDelegate>
 {

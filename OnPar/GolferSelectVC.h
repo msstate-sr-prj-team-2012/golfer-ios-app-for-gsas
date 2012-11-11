@@ -7,12 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "FMDatabase.h"
-#import "FMResultSet.h"
+#import "dataManager.h"
 
 @interface GolferSelectVC : UIViewController <UITabBarDelegate>{
-    NSMutableArray *golfers;
-    NSString *name;
+    NSMutableArray *golfersInOrder;
+    NSMutableDictionary *golferInfo;
     int golferCount;
 }
 
@@ -29,5 +28,7 @@
 @property (strong, nonatomic) IBOutlet UITabBarItem *golfer1;
 @property (strong, nonatomic) IBOutlet UITabBarItem *golfer2;
 @property (strong, nonatomic) IBOutlet UITabBarItem *golfer3;
+
+- (IBAction)goToGreen:(id)sender;
 
 @end

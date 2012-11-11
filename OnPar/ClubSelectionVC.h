@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "dataManager.h"
+
 #define CLUBTYPE 0
 #define CLUBNUMBER 1
 
