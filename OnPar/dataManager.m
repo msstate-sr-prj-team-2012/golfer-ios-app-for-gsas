@@ -11,7 +11,7 @@
 @implementation dataManager
 
 @synthesize golfers;
-@synthesize golfer0, golfer1, golfer2, golfer3;
+//@synthesize golfer0, golfer1, golfer2, golfer3;
 @synthesize roundInfo;
 
 #pragma mark Singleton Methods
@@ -30,10 +30,10 @@
         // initialize data here
         golfers = [[NSMutableArray alloc] init];
         roundInfo = [[NSMutableDictionary alloc] init];
-        golfer0 = [[NSMutableDictionary alloc] init];
-        golfer1 = [[NSMutableDictionary alloc] init];
-        golfer2 = [[NSMutableDictionary alloc] init];
-        golfer3 = [[NSMutableDictionary alloc] init];
+        //golfer0 = [[NSMutableDictionary alloc] init];
+        //golfer1 = [[NSMutableDictionary alloc] init];
+        //golfer2 = [[NSMutableDictionary alloc] init];
+        //golfer3 = [[NSMutableDictionary alloc] init];
     }
     return self;
 }

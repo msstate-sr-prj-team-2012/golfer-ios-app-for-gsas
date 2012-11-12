@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
 #import "dataManager.h"
 
-@interface ShotSequenceVC : UITableViewController<UITableViewDelegate>
+@interface ShotSequenceVC : UITableViewController<UITableViewDelegate, CLLocationManagerDelegate>
 
 - (IBAction)changeGolfer:(id)sender;
 

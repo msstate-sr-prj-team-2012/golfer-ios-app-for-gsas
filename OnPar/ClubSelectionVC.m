@@ -56,7 +56,6 @@
 
 - (void)populateClubArrays
 {
-    
     clubType = [[NSMutableArray alloc] init];
     [clubType addObject:@" Wood "];
     [clubType addObject:@" Hybrid "];

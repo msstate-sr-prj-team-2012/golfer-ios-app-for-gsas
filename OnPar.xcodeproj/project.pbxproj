@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B607B99616504E8100025E10 /* Hole.m in Sources */ = {isa = PBXBuildFile; fileRef = B607B99516504E8100025E10 /* Hole.m */; };
+		B607B99F16504EF400025E10 /* Shot.m in Sources */ = {isa = PBXBuildFile; fileRef = B607B99E16504EF400025E10 /* Shot.m */; };
+		B607B9A216507E8500025E10 /* OptionsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B607B9A116507E8500025E10 /* OptionsVC.m */; };
 		B63DA9861623E0F0000A968A /* OptionsAllVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B63DA9851623E0F0000A968A /* OptionsAllVC.m */; };
 		B63EC84316499A320075467E /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B63EC84216499A320075467E /* CoreLocation.framework */; };
 		B63EC8B51649C09D0075467E /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B63EC8B41649C09D0075467E /* libsqlite3.dylib */; };
@@ -75,10 +78,15 @@
 		B6C5BF0716372B1300D7D732 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B6C5BF0616372B1300D7D732 /* Default-568h@2x.png */; };
 		B6C5BF49163B812B00D7D732 /* MainMenuVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B6C5BF48163B812B00D7D732 /* MainMenuVC.m */; };
 		B6C5BF4D163B903900D7D732 /* SettingsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B6C5BF4C163B903900D7D732 /* SettingsVC.m */; };
-		B6DD75BB164B9A8500A472D8 /* OnPar.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = B6DD75BA164B9A8500A472D8 /* OnPar.sqlite */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B607B99416504E8100025E10 /* Hole.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Hole.h; sourceTree = "<group>"; };
+		B607B99516504E8100025E10 /* Hole.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hole.m; sourceTree = "<group>"; };
+		B607B99D16504EF400025E10 /* Shot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Shot.h; sourceTree = "<group>"; };
+		B607B99E16504EF400025E10 /* Shot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Shot.m; sourceTree = "<group>"; };
+		B607B9A016507E8500025E10 /* OptionsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OptionsVC.h; sourceTree = "<group>"; };
+		B607B9A116507E8500025E10 /* OptionsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OptionsVC.m; sourceTree = "<group>"; };
 		B63DA9841623E0F0000A968A /* OptionsAllVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OptionsAllVC.h; sourceTree = "<group>"; };
 		B63DA9851623E0F0000A968A /* OptionsAllVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OptionsAllVC.m; sourceTree = "<group>"; };
 		B63EC84216499A320075467E /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -167,7 +175,6 @@
 		B6C5BF48163B812B00D7D732 /* MainMenuVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuVC.m; sourceTree = "<group>"; };
 		B6C5BF4B163B903900D7D732 /* SettingsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsVC.h; sourceTree = "<group>"; };
 		B6C5BF4C163B903900D7D732 /* SettingsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsVC.m; sourceTree = "<group>"; };
-		B6DD75BA164B9A8500A472D8 /* OnPar.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = OnPar.sqlite; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -222,7 +229,7 @@
 		B679D6CA1623C44200E19F98 /* OnPar */ = {
 			isa = PBXGroup;
 			children = (
-				B6DD75BA164B9A8500A472D8 /* OnPar.sqlite */,
+				B6AD37D3163EE872003EF162 /* Unused */,
 				B679D6DC1623C44200E19F98 /* MainStoryboard.storyboard */,
 				B699756D164DEB6400FD14E9 /* Classes */,
 				B679D6E71623C47500E19F98 /* Delegates */,
@@ -261,7 +268,6 @@
 				B6AD37CC163EE745003EF162 /* Golfers */,
 				B6AD37CF163EE752003EF162 /* Settings */,
 				B6AD37D0163EE792003EF162 /* Play */,
-				B6AD37D3163EE872003EF162 /* Unused */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -357,6 +363,8 @@
 			children = (
 				B6A3CAFC163CF5CB008705DC /* GolferSelectVC.h */,
 				B6A3CAFD163CF5CB008705DC /* GolferSelectVC.m */,
+				B607B9A016507E8500025E10 /* OptionsVC.h */,
+				B607B9A116507E8500025E10 /* OptionsVC.m */,
 				B6AD37D1163EE7D7003EF162 /* Green */,
 				B6AD37D4163EE8BA003EF162 /* Scorecard */,
 			);
@@ -393,6 +401,10 @@
 		B6AD37D3163EE872003EF162 /* Unused */ = {
 			isa = PBXGroup;
 			children = (
+				B607B99416504E8100025E10 /* Hole.h */,
+				B607B99516504E8100025E10 /* Hole.m */,
+				B607B99D16504EF400025E10 /* Shot.h */,
+				B607B99E16504EF400025E10 /* Shot.m */,
 				B679D6EF1623C4EE00E19F98 /* GolferChangeVC.h */,
 				B679D6F01623C4EE00E19F98 /* GolferChangeVC.m */,
 				B63DA9841623E0F0000A968A /* OptionsAllVC.h */,
@@ -513,7 +525,6 @@
 				B665969F163DF52600FB19A9 /* course selection.png in Resources */,
 				B6AD37DA163FA72A003EF162 /* man@2x.png in Resources */,
 				B6AD37DD163FA74D003EF162 /* man.png in Resources */,
-				B6DD75BB164B9A8500A472D8 /* OnPar.sqlite in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -542,6 +553,9 @@
 				B6659699163DD6E500FB19A9 /* CourseSelectionVC.m in Sources */,
 				B6AD37E4163FB34E003EF162 /* PuttingVC.m in Sources */,
 				B699756B164DEB5E00FD14E9 /* dataManager.m in Sources */,
+				B607B99616504E8100025E10 /* Hole.m in Sources */,
+				B607B99F16504EF400025E10 /* Shot.m in Sources */,
+				B607B9A216507E8500025E10 /* OptionsVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

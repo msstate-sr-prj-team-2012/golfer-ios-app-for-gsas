@@ -18,11 +18,13 @@
     BOOL hit;
     BOOL ended;
     BOOL putting;
-    dataManager *myDataManager;
+    int alertIndex;
+    CLLocationManager *locationManager;
 }
 
 @synthesize tableView;
-@synthesize intendedDirection, clubSelection, hitTheBall, penaltyOptions, endShot;
+@synthesize intendedDirection, clubSelection, hitTheBall;
+@synthesize penaltyOptions, endShot;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -40,7 +42,7 @@
         NSLog(@"ShotSequenceVC appeared");
     
     // get shared data
-    myDataManager = [dataManager myDataManager];
+    dataManager *myDataManager = [dataManager myDataManager];
     
     int selectedGolfer = [[myDataManager.roundInfo valueForKey:@"selectedGolfer"] intValue];
     
@@ -102,6 +104,7 @@
 }
 */
 
+
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
@@ -141,18 +144,98 @@
 }
 */
 
+
+
 #pragma mark - Table view delegate
+
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
+    UITableViewCell *theCellClicked = [self.tableView cellForRowAtIndexPath:indexPath];
+    
+    // get shared data
+    //dataManager *myDataManager = [dataManager myDataManager];
+    
+    if (theCellClicked == hitTheBall) {
+        NSLog(@"Button press: 'Hit The Ball'");
+        
+        // Cancel Confirmation
+        UIAlertView *alert = [[UIAlertView alloc]
+                              initWithTitle: NSLocalizedString(@"Hit The Ball",nil)
+                              message: NSLocalizedString(@"Press OK when you are at the ball's starting location.",nil)
+                              delegate: self
+                              cancelButtonTitle: NSLocalizedString(@"Cancel",nil)
+                              otherButtonTitles: NSLocalizedString(@"OK",nil), nil];
+        alert.tag = 1;
+        alertIndex = alert.tag;
+        [alert show];
+    }
+    
+    
+    if (theCellClicked == endShot) {
+        NSLog(@"Button press: 'End Shot'");
+        
+        // Cancel Confirmation
+        UIAlertView *alert = [[UIAlertView alloc]
+                              initWithTitle: NSLocalizedString(@"End The Shot",nil)
+                              message: NSLocalizedString(@"Press OK when you are at the ball's ending location.",nil)
+                              delegate: self
+                              cancelButtonTitle: NSLocalizedString(@"Cancel",nil)
+                              otherButtonTitles: NSLocalizedString(@"OK",nil), nil];
+        alert.tag = 2;
+        alertIndex = alert.tag;
+        [alert show];
+    }
+
 }
+
+
+// Called when an alertview button is touched
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    
+    // get shared data
+    //dataManager *myDataManager = [dataManager myDataManager];
+    
+    switch (buttonIndex){
+        case 0:
+            
+            if (alertView.tag == 1)
+            {
+                // Cancel - cancel hit
+                NSLog(@"Button press: 'Cancel' - cancel hit");
+            }
+            if (alertView.tag == 2)
+            {
+                // Cancel - do not end shot
+                NSLog(@"Button press: 'Cancel' - do not end shot");
+            }
+            break;
+            
+        case 1:
+            
+            if (alertView.tag == 1)
+            {
+                // OK - get starting location
+                NSLog(@"Button press: 'OK' - get starting location");
+            }
+            
+            if (alertView.tag == 2)
+            {
+                // OK - get ending location
+                NSLog(@"Button press: 'OK' - get ending location");
+            }
+            
+            locationManager = [[CLLocationManager alloc] init];
+            
+            locationManager.delegate = self;
+            locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+            
+            [locationManager startUpdatingLocation];
+            
+            break;
+    }
+}
+
 
 
 - (IBAction)changeGolfer:(id)sender {
@@ -171,4 +254,61 @@
     [self setTableView:nil];
     [super viewDidUnload];
 }
+
+
+
+#pragma mark - CLLocationManagerDelegate
+
+
+- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
+{
+    NSLog(@"didFailWithError: %@", error);
+    UIAlertView *errorAlert = [[UIAlertView alloc]
+                               initWithTitle:@"Error" message:@"Failed to Get Your Location" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    [errorAlert show];
+}
+
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
+{
+    NSLog(@"didUpdateToLocation: %@", newLocation);
+    CLLocation *currentLocation = newLocation;
+    
+    if (currentLocation != nil) {
+        
+        dataManager *myDataManager = [dataManager myDataManager];
+        
+        // get selected golfer
+        int selectedGolfer = [[myDataManager.roundInfo valueForKey:@"selectedGolfer"] intValue];
+        
+        if (alertIndex == 1)
+        {
+            // set startLatitude and startLongitude for currentShot
+            [[[myDataManager.golfers objectAtIndex:selectedGolfer] objectForKey:@"currentShot"] setValue:[NSString stringWithFormat:@"%.8f", currentLocation.coordinate.latitude] forKey:@"startLatitude"];
+        
+            NSLog(@"startLatitude is: %f", currentLocation.coordinate.latitude);
+        
+            [[[myDataManager.golfers objectAtIndex:selectedGolfer] objectForKey:@"currentShot"] setValue:[NSString stringWithFormat:@"%.8f", currentLocation.coordinate.longitude] forKey:@"startLongitude"];
+     
+            NSLog(@"startLongitude is: %f", currentLocation.coordinate.longitude);
+        }
+        
+        if (alertIndex == 2)
+        {
+            // set startLatitude and startLongitude for currentShot
+            [[[myDataManager.golfers objectAtIndex:selectedGolfer] objectForKey:@"currentShot"] setValue:[NSString stringWithFormat:@"%.8f", currentLocation.coordinate.latitude] forKey:@"endLatitude"];
+            
+            NSLog(@"endLatitude is: %f", currentLocation.coordinate.latitude);
+            
+            [[[myDataManager.golfers objectAtIndex:selectedGolfer] objectForKey:@"currentShot"] setValue:[NSString stringWithFormat:@"%.8f", currentLocation.coordinate.longitude] forKey:@"endLongitude"];
+            
+            NSLog(@"endLongitude is: %f", currentLocation.coordinate.longitude);
+        }
+
+        // Stop Location Manager
+        [locationManager stopUpdatingLocation];
+    }
+}
+
+
 @end

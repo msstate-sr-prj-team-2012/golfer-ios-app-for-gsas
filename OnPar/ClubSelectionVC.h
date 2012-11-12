@@ -17,6 +17,12 @@
 {
     __weak IBOutlet UIPickerView *clubSelectionPicker;
     NSMutableArray *clubType;
+    
+    NSMutableArray *woods;
+    NSMutableArray *hybrids;
+    NSMutableArray *irons;
+    NSMutableArray *wedges;
+    
     NSMutableArray *woodNum;
     NSMutableArray *hybridNum;
     NSMutableArray *ironNum;
