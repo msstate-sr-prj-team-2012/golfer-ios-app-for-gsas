@@ -37,6 +37,9 @@
 
     NSLog(@"GolferSelectVC has appeared");
     
+    // hide back button
+    self.navigationItem.hidesBackButton = YES;
+    
     // get shared data
     dataManager *myDataManager = [dataManager myDataManager];
     

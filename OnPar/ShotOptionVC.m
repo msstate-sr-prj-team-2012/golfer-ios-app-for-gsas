@@ -34,6 +34,9 @@
     [super viewWillAppear:animated];
 
     NSLog(@"ShotOptionVC appeared");
+    
+    // show back button
+    self.navigationItem.hidesBackButton = NO;
 
     // get shared data
     dataManager *myDataManager = [dataManager myDataManager];
@@ -65,7 +68,7 @@
 {
     [super viewDidLoad];
     
-    NSLog(@"ShotOption loaded");
+    NSLog(@"ShotOptionVC loaded");
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
