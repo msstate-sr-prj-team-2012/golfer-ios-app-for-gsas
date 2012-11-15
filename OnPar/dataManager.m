@@ -54,7 +54,6 @@
 
 - (Round *) roundForUserWithID: (int) userID;
 {
-    NSLog(@"Round: %@", [[[self rounds] valueForKey: [NSString stringWithFormat:@"%d", userID]] export]);
     return [[self rounds] valueForKey: [NSString stringWithFormat:@"%d", userID]];
 }
 
@@ -117,9 +116,11 @@
 
 - (Hole *) addShot: (Shot *) shot toHoleWithHoleNumber: (int) holeNumber forUserWithID: (int) userID;
 {
+    NSLog(@"Adding shot: %@ to hole with holeNumber: %d for user with ID: %d", [shot export], holeNumber, userID);
     Round *r = [self roundForUserWithID: userID];
     
     for (Hole *h in [r holes]) {
+        NSLog(@"Hole number: %d", [h holeNumber]);
         if ([h holeNumber] == holeNumber) {
             [[h shots] addObject: shot];
             return h;

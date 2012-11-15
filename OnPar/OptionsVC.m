@@ -73,6 +73,7 @@
     [super viewDidUnload];
 }
 - (IBAction)UploadButton:(id)sender {
+    NSLog(@"Uploading rounds");
     dataManager *myDataManager = [dataManager myDataManager];
     [myDataManager uploadRounds];
 }

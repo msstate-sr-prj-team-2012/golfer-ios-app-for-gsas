@@ -255,7 +255,7 @@
                 s._endLatitude = 33.12343456;
                 s._endLongitude = -88.1234;
                 
-                int holeNumber = [[[myDataManager.golfers objectAtIndex: selectedGolfer] valueForKey: @"holeNum"] intValue];
+                int holeNumber = [[[myDataManager.golfers objectAtIndex: selectedGolfer] valueForKey: @"holeNum"] intValue] + 1;
                 int uid = [[[myDataManager users] objectAtIndex: selectedGolfer] uid];
                 
                 Hole *h = [myDataManager addShot: s toHoleWithHoleNumber: holeNumber forUserWithID: uid];
