@@ -72,4 +72,8 @@
     [self setEndLongitude:nil];
     [super viewDidUnload];
 }
+- (IBAction)UploadButton:(id)sender {
+    dataManager *myDataManager = [dataManager myDataManager];
+    [myDataManager uploadRounds];
+}
 @end

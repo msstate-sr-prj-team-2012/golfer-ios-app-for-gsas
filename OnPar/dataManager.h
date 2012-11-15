@@ -7,28 +7,38 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "API_Interface.h"
 
 @interface dataManager : NSObject{
     
     NSMutableArray *golfers;
     NSMutableDictionary *roundInfo;
-    //NSMutableDictionary *golfer0;
-    //NSMutableDictionary *golfer1;
-    //NSMutableDictionary *golfer2;
-    //NSMutableDictionary *golfer3;
 }
 
 
 
 @property (nonatomic, retain) NSMutableArray *golfers;
-
 @property (nonatomic, retain) NSMutableDictionary *roundInfo;
 
-//@property (nonatomic, retain) NSMutableDictionary *golfer0;
-//@property (nonatomic, retain) NSMutableDictionary *golfer1;
-//@property (nonatomic, retain) NSMutableDictionary *golfer2;
-//@property (nonatomic, retain) NSMutableDictionary *golfer3;
+@property (nonatomic, retain) NSMutableDictionary *_rounds;
+@property (nonatomic, retain) NSMutableArray *_users;
+@property (nonatomic, retain) Course *_course;
 
-+ (id)myDataManager;
+
+- (NSMutableDictionary *) rounds;
+- (NSMutableArray *) users;
+- (Course *) course;
+
+- (id) init;
+- (void) addRound: (Round *) round forUserWithID: (int) userID;
+- (Round *) roundForUserWithID: (int) userID;
+- (void) addUser: (User *) user;
+- (BOOL) uploadRounds;
+- (void) startRoundForUser: (User *) user teeID: (int) teeID;
+
+- (Hole *) getHoleWithHoleNumber: (int) holeNumber forUserWithID: (int) userID;
+- (Hole *) addShot: (Shot *) shot toHoleWithHoleNumber: (int) holeNumber forUserWithID: (int) userID;
+
++ (id) myDataManager;
 
 @end

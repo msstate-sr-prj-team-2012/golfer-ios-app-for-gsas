@@ -200,6 +200,12 @@
             NSLog(@"Button press: 'New Shot'");
             //shotStarted = TRUE;
             
+            /*Shot *s = [[Shot alloc] init];
+            s._shotNumber = [[[myDataManager.golfers objectAtIndex:selectedGolfer] valueForKey:@"shotCount"] intValue] + 1;
+            
+            [[myDataManager shots] setValue: s forKey: [NSString stringWithFormat: @"%d", [[[myDataManager users] objectAtIndex: selectedGolfer] uid ]]];
+            NSLog(@"shots: %@", [myDataManager shots]);*/
+            
             NSMutableDictionary *currentShot = [[NSMutableDictionary alloc] init];
             
             [[myDataManager.golfers objectAtIndex:selectedGolfer] setObject:currentShot forKey:@"currentShot"];

@@ -7,6 +7,7 @@
 //
 
 #import "CourseSelectionVC.h"
+#import "API_Interface.h"
 
 @interface CourseSelectionVC ()
 
@@ -64,11 +65,13 @@
     //here is where you would return all courses and ids
     //iterate through results
     courseNames = [[NSMutableArray alloc] init];
-    [courseNames addObject:@"Mississippi State University"];
-    
     courseIDs = [[NSMutableArray alloc] init];
-    [courseIDs addObject:@"1"];
-    ////
+    
+    NSMutableArray *courses = [Course getAll];
+    for (Course *c in courses) {
+        [courseNames addObject: [c name]];
+        [courseIDs addObject: [[NSNumber alloc] initWithInt: [c cid]]];
+    }
     
     // once results have all been added to arrays
     courseDict = [NSDictionary dictionaryWithObjects:courseIDs forKeys:courseNames];
@@ -81,9 +84,14 @@
     selectedCourseName = [courseNames objectAtIndex:[courseSelectionPicker selectedRowInComponent:0]];
 
     selectedCourseID = [courseDict objectForKey:selectedCourseName];
+    int ID = [selectedCourseID intValue];
     
     [myDataManager.roundInfo setValue:selectedCourseName forKey:@"courseName"];
     [myDataManager.roundInfo setValue:selectedCourseID forKey:@"courseID"];
+    
+    myDataManager._course = [[Course alloc] construct: ID];
+    NSLog(@"Selected Course: %@", [[myDataManager course] export]);
+    
     
 /*
     // Insert course_id into DB

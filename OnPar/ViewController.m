@@ -42,6 +42,7 @@
 }
 
 - (void)viewDidUnload {
+    [self setActivity:nil];
     [super viewDidUnload];
 }
 

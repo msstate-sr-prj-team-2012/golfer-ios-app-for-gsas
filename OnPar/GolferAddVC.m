@@ -96,6 +96,12 @@
     [golferInfo setObject:holes forKey:@"holes"];
     
     [myDataManager.golfers addObject:golferInfo];
+    
+    User *u = [[User alloc] construct: [golferID intValue]];
+    [myDataManager addUser: u];
+    [myDataManager addRound: [Round startNewWithUser: u Course: [myDataManager course] teeID: [golferTee intValue]] forUserWithID: [u uid]];
+    
+    NSLog(@"Round: %@", [[myDataManager roundForUserWithID: [u uid]] export]);
         
     // Return to Previous View
     [self.navigationController popViewControllerAnimated:YES];
@@ -123,11 +129,10 @@
     [teeValue addObject:@" Cowbells "];
     [teeValue addObject:@" Tips "];
     
-    for (int i=1; i<=[teeValue count]; i++)
-    {
-        NSString *id = [NSString stringWithFormat:@"%i",i];
-        [teeKey addObject:id];
-    }
+    [teeKey addObject: [NSString stringWithFormat: @"%i", (int) AGGIES]];
+    [teeKey addObject: [NSString stringWithFormat: @"%i", (int) MAROONS]];
+    [teeKey addObject: [NSString stringWithFormat: @"%i", (int) COWBELLS]];
+    [teeKey addObject: [NSString stringWithFormat: @"%i", (int) TIPS]];
     
     teeDict = [[NSDictionary alloc]initWithObjects:teeValue forKeys:teeKey];
     

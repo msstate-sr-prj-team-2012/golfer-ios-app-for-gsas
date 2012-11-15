@@ -185,6 +185,7 @@
         alert.tag = 2;
         alertIndex = alert.tag;
         [alert show];
+        
     }
 
 }
@@ -217,20 +218,52 @@
             {
                 // OK - get starting location
                 NSLog(@"Button press: 'OK' - get starting location");
+                
+                locationManager = [[CLLocationManager alloc] init];
+                
+                locationManager.delegate = self;
+                locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+                
+                [locationManager startUpdatingLocation];
             }
             
             if (alertView.tag == 2)
             {
                 // OK - get ending location
                 NSLog(@"Button press: 'OK' - get ending location");
+                
+                locationManager = [[CLLocationManager alloc] init];
+                
+                locationManager.delegate = self;
+                locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+                
+                [locationManager startUpdatingLocation];
+                
+                dataManager *myDataManager = [dataManager myDataManager];
+                Shot *s = [[Shot alloc] init];
+                int selectedGolfer = [[myDataManager.roundInfo valueForKey:@"selectedGolfer"] intValue];
+                s._shotNumber = [[[myDataManager.golfers objectAtIndex: selectedGolfer] valueForKey: @"shotCount"] intValue];
+                s._club = 11;
+                
+                s._aimLatitude = [[[[myDataManager.golfers objectAtIndex: selectedGolfer] valueForKey: @"currentShot"] valueForKey: @"aimLatitude"] doubleValue];
+                s._aimLongitude = [[[[myDataManager.golfers objectAtIndex: selectedGolfer] valueForKey: @"currentShot"] valueForKey: @"aimLongitude"] doubleValue];
+                s._startLatitude = [[[[myDataManager.golfers objectAtIndex: selectedGolfer] valueForKey: @"currentShot"] valueForKey: @"startLatitude"] doubleValue];
+                s._startLongitude = [[[[myDataManager.golfers objectAtIndex: selectedGolfer] valueForKey: @"currentShot"] valueForKey: @"startLongitude"] doubleValue];
+                //s._endLatitude = [[[[myDataManager.golfers objectAtIndex: selectedGolfer] valueForKey: @"currentShot"] valueForKey: @"endLatitude"] doubleValue];
+                //s._endLongitude = [[[[myDataManager.golfers objectAtIndex: selectedGolfer] valueForKey: @"currentShot"] valueForKey: @"endLongitude"] doubleValue];
+                
+                s._endLatitude = 33.12343456;
+                s._endLongitude = -88.1234;
+                
+                int holeNumber = [[[myDataManager.golfers objectAtIndex: selectedGolfer] valueForKey: @"holeNum"] intValue];
+                int uid = [[[myDataManager users] objectAtIndex: selectedGolfer] uid];
+                
+                Hole *h = [myDataManager addShot: s toHoleWithHoleNumber: holeNumber forUserWithID: uid];
+                NSLog(@"Shot: %@", [s export]);
+                NSLog(@"Hole: %@", [h export]);
             }
             
-            locationManager = [[CLLocationManager alloc] init];
             
-            locationManager.delegate = self;
-            locationManager.desiredAccuracy = kCLLocationAccuracyBest;
-            
-            [locationManager startUpdatingLocation];
             
             break;
     }
@@ -295,6 +328,7 @@
         
         if (alertIndex == 2)
         {
+            //__block int status = -1;
             // set startLatitude and startLongitude for currentShot
             [[[myDataManager.golfers objectAtIndex:selectedGolfer] objectForKey:@"currentShot"] setValue:[NSString stringWithFormat:@"%.8f", currentLocation.coordinate.latitude] forKey:@"endLatitude"];
             
@@ -303,6 +337,9 @@
             [[[myDataManager.golfers objectAtIndex:selectedGolfer] objectForKey:@"currentShot"] setValue:[NSString stringWithFormat:@"%.8f", currentLocation.coordinate.longitude] forKey:@"endLongitude"];
             
             NSLog(@"endLongitude is: %f", currentLocation.coordinate.longitude);
+            
+            //while (status == -1)
+                //[[NSRunLoop currentRunLoop] runUntilDate: [NSDate dateWithTimeIntervalSinceNow: 0.01]];
         }
 
         // Stop Location Manager
