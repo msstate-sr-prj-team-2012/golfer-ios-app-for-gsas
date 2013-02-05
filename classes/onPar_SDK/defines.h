@@ -1,0 +1,54 @@
+//
+//  defines.h
+//  OnPar
+//
+//  Created by Kevin R Benton on 11/14/12.
+//  Copyright (c) 2012 Mississippi State. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+
+@interface defines : NSObject
+
+// API HTTP Basic Authentication parameters
+FOUNDATION_EXPORT NSString *const API_USERNAME;
+FOUNDATION_EXPORT NSString *const API_PASSWORD;
+
+// Club constants
+FOUNDATION_EXPORT int const DRIVER;
+FOUNDATION_EXPORT int const THREE_WOOD;
+FOUNDATION_EXPORT int const FOUR_WOOD;
+FOUNDATION_EXPORT int const FIVE_WOOD;
+FOUNDATION_EXPORT int const SEVEN_WOOD;
+FOUNDATION_EXPORT int const NINE_WOOD;
+FOUNDATION_EXPORT int const TWO_HYBRID;
+FOUNDATION_EXPORT int const THREE_HYBRID;
+FOUNDATION_EXPORT int const FOUR_HYBRID;
+FOUNDATION_EXPORT int const FIVE_HYBRID;
+FOUNDATION_EXPORT int const SIX_HYBRID;
+FOUNDATION_EXPORT int const TWO_IRON;
+FOUNDATION_EXPORT int const THREE_IRON;
+FOUNDATION_EXPORT int const FOUR_IRON;
+FOUNDATION_EXPORT int const FIVE_IRON;
+FOUNDATION_EXPORT int const SIX_IRON;
+FOUNDATION_EXPORT int const SEVEN_IRON;
+FOUNDATION_EXPORT int const EIGHT_IRON;
+FOUNDATION_EXPORT int const NINE_IRON;
+FOUNDATION_EXPORT int const PW;
+FOUNDATION_EXPORT int const AW;
+FOUNDATION_EXPORT int const SW;
+FOUNDATION_EXPORT int const LW;
+FOUNDATION_EXPORT int const HLW;
+
+// tee constants
+FOUNDATION_EXPORT int const AGGIES;
+FOUNDATION_EXPORT int const MAROONS;
+FOUNDATION_EXPORT int const COWBELLS;
+FOUNDATION_EXPORT int const TIPS;
+
+//Base URL
+FOUNDATION_EXPORT NSString *const BASE_URL;
+
+
+@end
+
