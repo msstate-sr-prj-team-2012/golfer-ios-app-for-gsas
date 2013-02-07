@@ -8,18 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "dataManager.h"
-#import "API_Interface.h"
 
 @interface OptionsVC : UIViewController
-
-@property (strong, nonatomic) IBOutlet UILabel *startLatitude;
-@property (strong, nonatomic) IBOutlet UILabel *startLongitude;
-
-@property (strong, nonatomic) IBOutlet UILabel *aimLatitude;
-@property (strong, nonatomic) IBOutlet UILabel *aimLongitude;
-
-@property (strong, nonatomic) IBOutlet UILabel *endLatitude;
-@property (strong, nonatomic) IBOutlet UILabel *endLongitude;
 
 - (IBAction)UploadButton:(id)sender;
 

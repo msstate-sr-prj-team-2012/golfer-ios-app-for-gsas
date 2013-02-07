@@ -97,11 +97,11 @@
     
     [myDataManager.golfers addObject:golferInfo];
     
-    User *u = [[User alloc] construct: [golferID intValue]];
+    User *u = [[User alloc] construct: [NSNumber numberWithInt: [golferID intValue]]];
     [myDataManager addUser: u];
-    [myDataManager addRound: [Round startNewWithUser: u Course: [myDataManager course] teeID: [golferTee intValue]] forUserWithID: [u uid]];
+    [myDataManager startRoundForUser: u teeID: 3];
     
-    NSLog(@"Round: %@", [[myDataManager roundForUserWithID: [u uid]] export]);
+    NSLog(@"Round: %@", [[myDataManager roundForUserWithID: u.ID] export]);
         
     // Return to Previous View
     [self.navigationController popViewControllerAnimated:YES];

@@ -14,10 +14,6 @@
 
 @implementation OptionsVC
 
-@synthesize startLatitude, startLongitude;
-@synthesize aimLatitude, aimLongitude;
-@synthesize endLatitude, endLongitude;
-
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -39,22 +35,6 @@
 	// Do any additional setup after loading the view.
     
     NSLog(@"OptionsVC loaded");
-    
-    dataManager *myDataManager = [dataManager myDataManager];
-    
-    int selectedGolfer = [[myDataManager.roundInfo valueForKey:@"selectedGolfer"] intValue];
-    
-    startLatitude.text = [[[myDataManager.golfers objectAtIndex:selectedGolfer] objectForKey:@"currentShot"] valueForKey:@"startLatitude"];
-
-    startLongitude.text = [[[myDataManager.golfers objectAtIndex:selectedGolfer] objectForKey:@"currentShot"] valueForKey:@"startLongitude"];
-
-    aimLatitude.text = [[[myDataManager.golfers objectAtIndex:selectedGolfer] objectForKey:@"currentShot"] valueForKey:@"aimLatitude"];
-
-    aimLongitude.text = [[[myDataManager.golfers objectAtIndex:selectedGolfer] objectForKey:@"currentShot"] valueForKey:@"aimLongitude"];
-
-    endLatitude.text = [[[myDataManager.golfers objectAtIndex:selectedGolfer] objectForKey:@"currentShot"] valueForKey:@"endLatitude"];
-
-    endLongitude.text = [[[myDataManager.golfers objectAtIndex:selectedGolfer] objectForKey:@"currentShot"] valueForKey:@"endLongitude"];
 }
 
 - (void)didReceiveMemoryWarning
@@ -64,16 +44,9 @@
 }
 
 - (void)viewDidUnload {
-    [self setStartLatitude:nil];
-    [self setStartLongitude:nil];
-    [self setAimLatitude:nil];
-    [self setAimLongitude:nil];
-    [self setEndLatitude:nil];
-    [self setEndLongitude:nil];
     [super viewDidUnload];
 }
 - (IBAction)UploadButton:(id)sender {
-    NSLog(@"Uploading rounds");
     dataManager *myDataManager = [dataManager myDataManager];
     [myDataManager uploadRounds];
 }

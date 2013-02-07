@@ -7,7 +7,7 @@
 //
 
 #import "CourseSelectionVC.h"
-#import "API_Interface.h"
+#import "dataManager.h"
 
 @interface CourseSelectionVC ()
 
@@ -67,10 +67,10 @@
     courseNames = [[NSMutableArray alloc] init];
     courseIDs = [[NSMutableArray alloc] init];
     
-    NSMutableArray *courses = [Course getAll];
+    NSArray *courses = [Course getAll];
     for (Course *c in courses) {
-        [courseNames addObject: [c name]];
-        [courseIDs addObject: [[NSNumber alloc] initWithInt: [c cid]]];
+        [courseNames addObject: c.name];
+        [courseIDs addObject: c.ID];
     }
     
     // once results have all been added to arrays
@@ -89,7 +89,7 @@
     [myDataManager.roundInfo setValue:selectedCourseName forKey:@"courseName"];
     [myDataManager.roundInfo setValue:selectedCourseID forKey:@"courseID"];
     
-    myDataManager._course = [[Course alloc] construct: ID];
+    myDataManager._course = [[Course alloc] construct: [NSNumber numberWithInt: ID]];
     NSLog(@"Selected Course: %@", [[myDataManager course] export]);
     
     

@@ -242,23 +242,34 @@
                 dataManager *myDataManager = [dataManager myDataManager];
                 Shot *s = [[Shot alloc] init];
                 int selectedGolfer = [[myDataManager.roundInfo valueForKey:@"selectedGolfer"] intValue];
-                s._shotNumber = [[[myDataManager.golfers objectAtIndex: selectedGolfer] valueForKey: @"shotCount"] intValue];
-                s._club = 11;
+                s.shotNumber= [NSNumber numberWithInt: [[[myDataManager.golfers objectAtIndex: selectedGolfer] valueForKey: @"shotCount"] intValue]];
+                s.club = [NSNumber numberWithInt: 11];
                 
-                s._aimLatitude = [[[[myDataManager.golfers objectAtIndex: selectedGolfer] valueForKey: @"currentShot"] valueForKey: @"aimLatitude"] doubleValue];
-                s._aimLongitude = [[[[myDataManager.golfers objectAtIndex: selectedGolfer] valueForKey: @"currentShot"] valueForKey: @"aimLongitude"] doubleValue];
-                s._startLatitude = [[[[myDataManager.golfers objectAtIndex: selectedGolfer] valueForKey: @"currentShot"] valueForKey: @"startLatitude"] doubleValue];
-                s._startLongitude = [[[[myDataManager.golfers objectAtIndex: selectedGolfer] valueForKey: @"currentShot"] valueForKey: @"startLongitude"] doubleValue];
+                NSLog(@"getting aim lat lon");
+                
+                s.aimLatitude = [NSNumber numberWithDouble: [[[[myDataManager.golfers objectAtIndex: selectedGolfer] valueForKey: @"currentShot"] valueForKey: @"aimLatitude"] doubleValue]];
+                s.aimLongitude = [NSNumber numberWithDouble: [[[[myDataManager.golfers objectAtIndex: selectedGolfer] valueForKey: @"currentShot"] valueForKey: @"aimLongitude"] doubleValue]];
+                
+                NSLog(@"getting start lat lon");
+                
+                s.startLatitude = [NSNumber numberWithDouble: [[[[myDataManager.golfers objectAtIndex: selectedGolfer] valueForKey: @"currentShot"] valueForKey: @"startLatitude"] doubleValue]];
+                s.startLongitude = [NSNumber numberWithDouble: [[[[myDataManager.golfers objectAtIndex: selectedGolfer] valueForKey: @"currentShot"] valueForKey: @"startLongitude"] doubleValue]];
+                
+                NSLog(@"gettting end lat lon");
+                
                 //s._endLatitude = [[[[myDataManager.golfers objectAtIndex: selectedGolfer] valueForKey: @"currentShot"] valueForKey: @"endLatitude"] doubleValue];
                 //s._endLongitude = [[[[myDataManager.golfers objectAtIndex: selectedGolfer] valueForKey: @"currentShot"] valueForKey: @"endLongitude"] doubleValue];
                 
-                s._endLatitude = 33.12343456;
-                s._endLongitude = -88.1234;
+                s.endLatitude = [NSNumber numberWithDouble: 33.12343456];
+                s.endLongitude = [NSNumber numberWithDouble: -88.1234];
                 
-                int holeNumber = [[[myDataManager.golfers objectAtIndex: selectedGolfer] valueForKey: @"holeNum"] intValue] + 1;
-                int uid = [[[myDataManager users] objectAtIndex: selectedGolfer] uid];
+                NSLog(@"other stuff");
                 
-                Hole *h = [myDataManager addShot: s toHoleWithHoleNumber: holeNumber forUserWithID: uid];
+                int holeNumber = [[[myDataManager.golfers objectAtIndex: selectedGolfer] valueForKey: @"holeNum"] intValue]+1;
+                User *u = [[myDataManager users] objectAtIndex: selectedGolfer];
+                NSNumber *uID = u.ID;
+                
+                Hole *h = [myDataManager addShot: s toHoleWithHoleNumber: holeNumber forUserWithID: uID];
                 NSLog(@"Shot: %@", [s export]);
                 NSLog(@"Hole: %@", [h export]);
             }

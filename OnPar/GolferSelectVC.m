@@ -54,7 +54,6 @@
         NSLog(@"selectedGolfer is %i", selectedGolfer);
         [self activateTab:selectedGolfer + 1];
     }
-
 }
 
 

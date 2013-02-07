@@ -21,5 +21,6 @@
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *doneButton;
 
 - (IBAction)editOrder:(id)sender;
+- (IBAction)addButton:(id)sender;
 
 @end

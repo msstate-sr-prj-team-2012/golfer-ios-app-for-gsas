@@ -29,6 +29,8 @@
     NSMutableArray *wedgeType;
 }
 
+@property (strong, nonatomic) IBOutlet UILabel *clubLabel;
+
 - (void)populateClubArrays;
 
 - (IBAction)saveClubSelection:(id)sender;

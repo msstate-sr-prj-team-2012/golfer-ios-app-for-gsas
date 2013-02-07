@@ -38,11 +38,11 @@
 {
     if (self = [super init]) {
         // initialize data here
-        self.golfers = [[NSMutableArray alloc] init];
+        self.golfers   = [[NSMutableArray alloc] init];
         self.roundInfo = [[NSMutableDictionary alloc] init];
-        self._rounds = [[NSMutableDictionary alloc] init];
-        self._users = [[NSMutableArray alloc] init];
-        self._course = [[Course alloc] init];
+        self._rounds   = [[NSMutableDictionary alloc] init];
+        self._users    = [[NSMutableArray alloc] init];
+        self._course   = [[Course alloc] init];
     }
     return self;
 }
@@ -54,6 +54,7 @@
 
 - (Round *) roundForUserWithID: (int) userID;
 {
+    NSLog(@"Round: %@", [[[self rounds] valueForKey: [NSString stringWithFormat:@"%d", userID]] export]);
     return [[self rounds] valueForKey: [NSString stringWithFormat:@"%d", userID]];
 }
 
@@ -71,20 +72,20 @@
         Round *r = [[self rounds] objectForKey: key];
         
         Round *r2 = [[Round alloc] init];
-        r2._course = [self course];
-        r2._user = [[self users] objectAtIndex: 0];
-        r2._teeID = 3;
-        r2._totalScore = 4;
+        r2.course = [self course];
+        r2.user = [[self users] objectAtIndex: 0];
+        r2.teeID = [NSNumber numberWithInt: 3];
+        r2.totalScore = [NSNumber numberWithInt: 4];
         
         Hole *h = [[Hole alloc] init];
         
         h = [[r holes] objectAtIndex: 0];
-        h._holeScore = 4;
-        h._FIR = TRUE;
-        h._GIR = TRUE;
-        h._putts = 2;
+        h.holeScore = [NSNumber numberWithInt: 4];
+        h.FIR = [NSNumber numberWithBool: YES];
+        h.GIR = [NSNumber numberWithBool: YES];
+        h.putts = [NSNumber numberWithInt: 2];
         
-        [r2._holes addObject: h];
+        [r2.holes addObject: h];
         
         NSLog(@"Round: %@", [r export]);
         
@@ -97,8 +98,8 @@
 
 - (void) startRoundForUser: (User *) user teeID: (int) teeID;
 {
-    Round *r = [Round startNewWithUser: user Course: [self course] teeID: teeID];
-    [self addRound: r forUserWithID: [user uid]];
+    Round *r = [Round startNowWithUser: user onCourse: [[Course alloc] construct: [NSNumber numberWithInt: 1]] fromTee: [NSNumber numberWithInt: teeID]];
+    [self addRound: r forUserWithID: user.ID];
 }
 
 - (Hole *) getHoleWithHoleNumber: (int) holeNumber forUserWithID: (int) userID;
@@ -106,7 +107,7 @@
     Round *r = [self roundForUserWithID: userID];
     
     for (Hole *h in [r holes]) {
-        if ([h holeNumber] == holeNumber) {
+        if (h.holeNumber == [NSNumber numberWithInt: holeNumber]) {
             return h;
         }
     }
@@ -116,13 +117,11 @@
 
 - (Hole *) addShot: (Shot *) shot toHoleWithHoleNumber: (int) holeNumber forUserWithID: (int) userID;
 {
-    NSLog(@"Adding shot: %@ to hole with holeNumber: %d for user with ID: %d", [shot export], holeNumber, userID);
     Round *r = [self roundForUserWithID: userID];
     
     for (Hole *h in [r holes]) {
-        NSLog(@"Hole number: %d", [h holeNumber]);
-        if ([h holeNumber] == holeNumber) {
-            [[h shots] addObject: shot];
+        if (h.holeNumber == [NSNumber numberWithInt: holeNumber]) {
+            [h.shots addObject: shot];
             return h;
         }
     }

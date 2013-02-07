@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import "dataManager.h"
-#import "API_Interface.h"
 
 @interface GolferAddVC : UIViewController<UIPickerViewDataSource, UIPickerViewDelegate>
 {

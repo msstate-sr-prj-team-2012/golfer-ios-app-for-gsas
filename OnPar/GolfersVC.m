@@ -8,6 +8,7 @@
 
 #import "GolfersVC.h"
 #import "AppDelegate.h"
+#import "GolferAddVC.h"
 
 @interface GolfersVC ()
 

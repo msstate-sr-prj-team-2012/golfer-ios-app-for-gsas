@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "API_Interface.h"
+#import "onPar_SDK.h"
 
 @interface dataManager : NSObject{
     

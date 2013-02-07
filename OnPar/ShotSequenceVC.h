@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
 #import "dataManager.h"
-#import "API_Interface.h"
 
 @interface ShotSequenceVC : UITableViewController<UITableViewDelegate, CLLocationManagerDelegate>
 

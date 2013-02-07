@@ -7,10 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "XYPair.h"
+#import "LLPair.h"
 
 @interface ViewController : UIViewController
 
 - (IBAction)beginButton:(id)sender;
+
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activity;
 
 @end
