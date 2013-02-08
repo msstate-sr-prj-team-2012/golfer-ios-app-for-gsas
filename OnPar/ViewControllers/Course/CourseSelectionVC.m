@@ -67,7 +67,15 @@
     courseNames = [[NSMutableArray alloc] init];
     courseIDs = [[NSMutableArray alloc] init];
     
+    // display progress spinner
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo: self.view animated: YES];
+    hud.labelText = @"Loading...";
+    
     NSArray *courses = [Course getAll];
+    
+    // once the request finished, hide the spinner thing
+    [MBProgressHUD hideHUDForView: self.view animated: YES];
+    
     for (Course *c in courses) {
         [courseNames addObject: c.name];
         [courseIDs addObject: c.ID];

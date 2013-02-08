@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "onPar_SDK.h"
+#import "MBProgressHUD.h"
 
 @interface dataManager : NSObject{
     
