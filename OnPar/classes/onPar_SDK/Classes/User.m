@@ -161,6 +161,33 @@
             [message show];
             
             check = NO;
+        } else if (r.response.status == 412) {
+            UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"User Error"
+                                                              message:@"MemberID and email already taken."
+                                                             delegate:nil
+                                                    cancelButtonTitle:@"OK"
+                                                    otherButtonTitles:nil];
+            [message show];
+            
+            check = NO;
+        } else if (r.response.status == 406) {
+            UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"User Error"
+                                                              message:@"MemberID already taken."
+                                                             delegate:nil
+                                                    cancelButtonTitle:@"OK"
+                                                    otherButtonTitles:nil];
+            [message show];
+            
+            check = NO;
+        } else if (r.response.status == 409) {
+            UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"User Error"
+                                                              message:@"Email already taken."
+                                                             delegate:nil
+                                                    cancelButtonTitle:@"OK"
+                                                    otherButtonTitles:nil];
+            [message show];
+            
+            check = NO;
         } else {
             UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Unknown Error"
                                                               message:@"Something went terribly wrong."
@@ -250,7 +277,11 @@
         NSDictionary *users = [jsonObject valueForKey: @"users"];
         
         for (NSDictionary *user in users) {
-            [retUsers addObject: [[User alloc] construct: user]];
+            User *u = [[User alloc] construct: nil];
+            u.ID = [user valueForKey: @"id"];
+            u.name = [user valueForKey: @"startTime"];
+
+            [retUsers addObject: u];
         }
         
     } else {

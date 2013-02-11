@@ -31,7 +31,6 @@
 - (id) construct: (NSObject *) data;
 - (BOOL) save;
 - (BOOL) del;
-+ (NSArray *) getAll: (NSNumber *) userID;
 + (Round *) startNowWithUser: (User *) u onCourse: (Course *) c fromTee: (NSNumber *) t;
 
 // private methods

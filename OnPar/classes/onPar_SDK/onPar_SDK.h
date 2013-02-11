@@ -16,6 +16,7 @@
 #import "Hole.h"
 #import "Round.h"
 #import "Reachability.h"
+#import "RoundGetAll.h"
 
 @interface onPar_SDK : NSObject
 

@@ -228,37 +228,6 @@
     return round;
 }
 
-+ (NSArray *) getAll: (NSNumber *) userID;
-{
-    NSMutableArray *retRounds = [[NSMutableArray alloc] init];
-    
-    NSString *path= @"rounds/";
-    
-    if (userID) {
-        path = [NSString stringWithFormat: @"%@%@%@", path, @"user/", userID];
-    }
-    
-    // construct and execute the request
-    Request *r = [[Request alloc] init: path body: nil];
-    
-    if ([r execute]) {
-        // decode the json
-        SBJsonParser *jsonParser = [[SBJsonParser alloc] init];
-        NSDictionary *jsonObject = [jsonParser objectWithData: r.response.responseData];
-        NSDictionary *rounds = [jsonObject valueForKey: @"rounds"];
-        
-        for (NSDictionary *round in rounds) {
-            [retRounds addObject: [[Round alloc] construct: round]];
-        }
-        
-        
-    } else {
-        retRounds = [[NSMutableArray alloc] init];
-    }
-    
-    return [[NSArray alloc] initWithArray: retRounds];
-}
-
 + (Round *) startNowWithUser: (User *) u onCourse: (Course *) c fromTee: (NSNumber *) t;
 {
     Round *round = [[Round alloc] init];
