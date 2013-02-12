@@ -39,6 +39,7 @@
 @synthesize nickname;
 @synthesize name;
 @synthesize email;
+@synthesize stats;
 
 - (id) init;
 {
@@ -48,6 +49,7 @@
         self.nickname = nil;
         self.name = nil;
         self.email = nil;
+        self.stats = nil;
     }
     
     return self;
@@ -154,6 +156,7 @@
     self.nickname =  [user valueForKey: @"nickname"];
     self.name =      [user valueForKey: @"name"];
     self.email =     [user valueForKey: @"email"];
+    self.stats =     [user valueForKey: @"stats"];
 }
 
 - (BOOL) save;
@@ -279,6 +282,7 @@
     [params setObject: self.nickname ? self.nickname : [NSNull null] forKey: @"nickname"];
     [params setObject: self.name ? self.name : [NSNull null] forKey: @"name"];
     [params setObject: self.email ? self.email : [NSNull null] forKey: @"email"];
+    [params setObject: self.stats ? self.stats : [NSNull null] forKey: @"stats"];
     
     NSDictionary *user = [[NSDictionary alloc] initWithObjectsAndKeys: params, @"user" , nil];
     

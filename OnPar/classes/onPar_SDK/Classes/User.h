@@ -79,6 +79,14 @@
 @property (nonatomic, copy) NSString *email;
 
 /**
+ * stats - a dictionary of the User's stats for every year
+ *
+ * @security    public
+ * @var         NSDictionary
+ */
+@property (nonatomic, retain) NSDictionary *stats;
+
+/**
  * Constructor
  *
  * For public use, the constructor instantiates a User object
