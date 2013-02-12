@@ -1,10 +1,24 @@
-//
-//  Hole.m
-//  OnPar
-//
-//  Created by Kevin R Benton on 11/14/12.
-//  Copyright (c) 2012 Mississippi State. All rights reserved.
-//
+
+/**
+ * OnPar - Fall 2012 software engineering senior design project at Mississippi
+ *         State University.
+ *
+ * @author  Fall 2012 Senior Design Team
+ * @version 1.0
+ * @package OnPar
+ */
+
+/**
+ * Class Hole
+ * @package iOS
+ * @author  Kevin Benton
+ * @version 1.0
+ *
+ * Class to represent Hole.
+ * Generally used in Rounds. Will not be instantiated directly.
+ *
+ * roundID and holeNumber are the only required fields to insert a hole.
+ */
 
 #import "Hole.h"
 

@@ -1,10 +1,30 @@
-//
-//  Request.m
-//  OnPar
-//
-//  Created by Kevin R Benton on 11/14/12.
-//  Copyright (c) 2012 Mississippi State. All rights reserved.
-//
+
+/**
+ * OnPar - Fall 2012 software engineering senior design project at Mississippi
+ *         State University.
+ *
+ * @author  Fall 2012 Senior Design Team
+ * @version 1.0
+ * @package OnPar
+ */
+
+/**
+ * Class Request
+ * @package iOS
+ * @author  Kevin Benton
+ * @version 1.0
+ *
+ * Class to represent a request to the API.
+ * Takes the URI path and request body to create.
+ *
+ * USAGE
+ *
+ * For GET request
+ * Request *request = [[Request alloc] init: path body: nil];
+ *
+ * For POST request
+ * Request *request = [[Request alloc] init: path body: body];
+ */
 
 #import "Request.h"
 
@@ -66,6 +86,8 @@
 
 - (BOOL) executeGet;
 {
+    // block on the main thread
+    // this implements a synchronous request
     __block int status = -1;
         
     [[LRResty authenticatedClientWithUsername: API_USERNAME
@@ -98,6 +120,8 @@
 
 -(BOOL) executePost;
 {
+    // block on the main thread
+    // this implements a synchronous request
     __block int status = -1;
     
     [[LRResty authenticatedClientWithUsername: API_USERNAME

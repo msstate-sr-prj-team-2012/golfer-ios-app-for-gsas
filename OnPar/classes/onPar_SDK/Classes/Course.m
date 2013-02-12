@@ -1,10 +1,32 @@
-//
-//  Course.m
-//  OnPar
-//
-//  Created by Kevin R Benton on 11/14/12.
-//  Copyright (c) 2012 Mississippi State. All rights reserved.
-//
+
+/**
+ * OnPar - Fall 2012 software engineering senior design project at Mississippi
+ *         State University.
+ *
+ * @author  Fall 2012 Senior Design Team
+ * @version 1.0
+ * @package OnPar
+ */
+
+/**
+ * Class Course
+ * @package iOS
+ * @author  Kevin Benton
+ * @version 1.0
+ *
+ * Class to represent Course.
+ * Can represent a Course already in the database through the API or
+ * can represent a Course not in the database that can be saved to the
+ * database.
+ *
+ * USAGE
+ *
+ * For new Course
+ * Course *course = [[Course alloc] construct: nil];
+ *
+ * For existing Course
+ * Course *course = [[Course alloc] construct: [NSNumber numberWithInt: courseID]];
+ */
 
 #import "Course.h"
 

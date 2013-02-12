@@ -1,10 +1,30 @@
-//
-//  Round.m
-//  OnPar
-//
-//  Created by Kevin R Benton on 11/14/12.
-//  Copyright (c) 2012 Mississippi State. All rights reserved.
-//
+
+/**
+ * OnPar - Fall 2012 software engineering senior design project at Mississippi
+ *         State University.
+ *
+ * @author  Fall 2012 Senior Design Team
+ * @version 1.0
+ * @package OnPar
+ */
+
+/**
+ * Class Round
+ * @package iOS
+ * @author  Kevin Benton
+ * @version 1.0
+ *
+ * Class to represent Round.
+ * Can represent a Round already in the database through the API or
+ * can represent a Round not in the database that can be saved to the
+ * database.
+ *
+ * USAGE
+ *      For a round not in the database.
+ *          Round *round = [[Round alloc] construct: nil];
+ *      For a round already in the database.
+ *          Round *round = [[Round alloc] construct: [NSNumber numberWithInt: roundID]];
+ */
 
 #import "Round.h"
 

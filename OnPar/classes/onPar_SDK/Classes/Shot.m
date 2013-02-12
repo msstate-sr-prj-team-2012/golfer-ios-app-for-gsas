@@ -1,10 +1,31 @@
-//
-//  Shot.m
-//  OnPar
-//
-//  Created by Kevin R Benton on 11/14/12.
-//  Copyright (c) 2012 Mississippi State. All rights reserved.
-//
+
+/**
+ * OnPar - Fall 2012 software engineering senior design project at Mississippi
+ *         State University.
+ *
+ * @author  Fall 2012 Senior Design Team
+ * @version 1.0
+ * @package OnPar
+ */
+
+/**
+ * Class Shot
+ * @package iOS
+ * @author  Kevin Benton
+ * @version 1.0
+ *
+ * Class to represent a golf shot.
+ * Generally used in Holes. Will not be instantiated directly.
+ *
+ * To create a new Shot to add to a hole,
+ *
+ * Shot *shot = [[Shot alloc] construct: nil];
+ *
+ * Then set all of the variables, there are no optional ones.
+ * Finally add the Shot to the hole,
+ *
+ * [hole.shots addObject: shot];
+ */
 
 #import "Shot.h"
 

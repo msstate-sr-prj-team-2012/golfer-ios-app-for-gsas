@@ -1,10 +1,34 @@
-//
-//  User.m
-//  OnPar
-//
-//  Created by Kevin R Benton on 11/14/12.
-//  Copyright (c) 2012 Mississippi State. All rights reserved.
-//
+
+/**
+ * OnPar - Fall 2012 software engineering senior design project at Mississippi
+ *         State University.
+ *
+ * @author  Fall 2012 Senior Design Team
+ * @version 1.0
+ * @package OnPar
+ */
+
+/**
+ * Class User
+ * @package iOS
+ * @author  Kevin Benton
+ * @version 1.0
+ *
+ * Class to represent User.
+ * Can represent a User already in the database through the API or
+ * can represent a User not in the database that can be saved to the
+ * database.
+ *
+ * USAGE
+ *      For a user not in the database.
+ *          User *user = [[User alloc] construct: nil];
+ *      For a user already in the database.
+ *          User *user = [[User alloc] construct: [NSNumber numberWithInt: userID]];
+ *      OR
+ *          User *user = [[User alloc] construct: @"email"];
+ *      OR
+ *          User *user = [[User alloc] construct: @"memberID"];
+ */
 
 #import "User.h"
 
